@@ -1,0 +1,78 @@
+{block title}Galerie | Detail{/block}
+
+{block heading}
+	<a href="{link Gallery:default}" title="Zpět na výběr galerií">
+		<button class="btn btn-default pull-right">Zpět</button>
+	</a>
+	<h1 id="galerie" class="gallery-name">Loading ...</h1>
+	<small class="gallery-description"></small>
+{/block}
+
+{block mininav}
+	<li>
+		<a href="#galerie" class="gallery-name">Loading ...</a>
+	</li>
+{/block}
+
+{block scripts}
+{include parent}
+
+<script>
+$(function() {
+	
+	$.nette.ajax({
+		url: 'https://picasaweb.google.com/data/feed/api/user/bigbandbiskupska/albumid/{$gallery->id|noescape}?alt=json&imgmax=1080u&thumbsize=100c',
+		timeout: 10000,
+		dataType: 'jsonp'
+	}).done(function (result) {
+
+		if ( ! result.feed || ! result.feed.entry || ! result.feed.entry.length )
+		{
+			// empty (or fail)
+			$("#images").text("Litujeme, ale žádné obrázky nebyly nalezeny")
+			return;
+		}
+
+		$("#images").html("")
+
+		var linksContainer = $('#images')
+		$(".gallery-name").text(result.feed.title.$t)
+		$(".gallery-description").text(result.feed.subtitle.$t)
+
+		for ( var i = 0; i < result.feed.entry.length; i ++ ) 
+		{
+		      var $e = result.feed.entry[i];
+		      var $thumbnail = $e.media$group.media$thumbnail[0]
+		      var $image = $e.media$group.media$content[0]
+		      var $img = $('<img>')
+		      				.prop('src', $thumbnail.url)
+		      				.prop('type', $image.type)
+		      				.prop('alt', $e.media$group.media$title.$t)
+		      				.addClass('img')
+			    $('<a/>')
+				.append($img)
+				.prop('href', $image.url)
+				.prop('title', $e.media$group.media$description.$t)
+				.attr('data-gallery', '')
+				.appendTo(linksContainer)
+		}
+	}).fail(function () {
+		$(".gallery-name").text("404 Album nenalezeno")
+		$("#images").text("K albu se nejde připojit nebo vůbec neexistuje.")
+	})		
+});
+</script>
+{/block}
+
+
+{block content}
+
+
+<div class="row">
+	<div class="col-lg-12"  id="images">
+	</div>
+</div>
+
+
+{/block}
+
