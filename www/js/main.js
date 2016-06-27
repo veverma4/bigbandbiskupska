@@ -57,13 +57,15 @@ $(function() {
 		});
 
 		$("ul.song-list").each(function(){
-			if($(this).find("li:visible").length <= 0) {
+			var length = $(this).find("li:visible").length
+			if(length <= 0) {
 				$("<li>").addClass("list-group-item")
 					   .addClass("col-xs-12")
 					   .addClass("song-empty")
 					   .html("Bohužel tomuto vyhledávání nevyhovuje žádná položka.")
 					   .appendTo($(this))
 			}
+			$(".song-count").text(length);
 		});
 	});
 

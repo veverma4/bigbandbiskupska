@@ -27,7 +27,7 @@
 
 	<div class="clearfix"></div>
 
-	<h2 id="pisen" class="text-center">Seznam podle názvu písničky</h2>
+	<h2 id="pisen" class="text-center">Seznam podle názvu písničky <span class="badge song-count">{$songsByName|length}</span></h2>
 	<ul class="song-list list-group col-md-4 col-md-offset-4">
 		<li n:foreach="$songsByName as $id => $song" class="list-group-item col-xs-12">
 			{include song, "_iterator" => $iterator, "_song" => $song}
@@ -36,7 +36,7 @@
 
 	<div class="clearfix"></div>
 
-	<h2 id="autor" class="text-center">Seznam podle jména autora</h2>
+	<h2 id="autor" class="text-center">Seznam podle jména autora <span class="badge song-count">{$songsByInterpreter|length}</span></h2>
 	<ul class="song-list list-group col-md-4 col-md-offset-4">
 		<li n:foreach="$songsByInterpreter as $id => $song" class="list-group-item col-xs-12">
 			{include song, "_iterator" => $iterator, "_song" => $song}
