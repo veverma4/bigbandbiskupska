@@ -26,7 +26,7 @@ class MemberModel extends Tulinkry\Model\BaseModel
 				(object) [
 					"name" => "Milan Tolkner",
 					"instrument" => "dirigent",
-					"description" => "Milan Tolkner zasvětil svůj život hudbě. Při své profesionální dráze hudebníka vychovává mladé muzikanty a vede mladé hudebníky v orchestru Big band Biskupská. Ve svém volném čase pořádá s Big bandem koncerty, jezdí s námi po festivalech a na zahraniční vystoupení. Mladým muzikantům umožňuje zažít pocit rozdávat druhým radost z hudby.",
+					"description" => "Milan Tolkner zasvětil svůj život hudbě. Je sólistou Hudby Hradní stráže a Policie ČR, přičemž při své profesionální dráze ještě vychovává mladé muzikanty nejen v Big Bandu Biskupská. Mladým hudebníkům umožňuje zažít, jaký je to pocit rozdávat druhým radost z hudby.",
 					"dirigent" => true,
 					"male" => true,
 					"coords" => [ 711,278,698,355,703,393,736,406,790,411,797,340,798,300,781,266,753,262,755,239,736,233,724,255,729,268,726,267,727,268 ],
