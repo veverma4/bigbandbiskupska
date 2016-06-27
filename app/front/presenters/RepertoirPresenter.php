@@ -17,7 +17,7 @@ class RepertoirPresenter extends BasePresenter
 
 	public function actionDefault ()
 	{
-		$this -> template -> songsByName = $this -> repertoir -> order ( "name" );
-		$this -> template -> songsByInterpreter = $this -> repertoir -> order ( "interpreter" );
+		$this -> template -> songsByName = $this -> repertoir -> by ( [], [ "name" => "ASC" ] );
+		$this -> template -> songsByInterpreter = $this -> repertoir -> by ( [], [ "interpreter" => "ASC" ] );
 	}
 }

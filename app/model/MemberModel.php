@@ -3,8 +3,9 @@
 namespace App\Model;
 
 use Nette;
+use Tulinkry;
 
-class MemberModel
+class MemberModel extends Tulinkry\Model\BaseModel
 {
 
 	private $sections;
@@ -363,7 +364,7 @@ class MemberModel
 		return isset($this->sections[$id]) ? $this->sections[$id] : NULL;
 	}
 
-	public function limit ( $limit = 10, $offset = 0, $where = [], $by = [] )
+	public function limit ( $limit = 10, $offset = 0, $by = array (), $order = array () )
 	{
 		$limited = [];
 		for ( $i = $offset; $i < $limit + $offset; $i ++ )
@@ -377,7 +378,7 @@ class MemberModel
 		return $this->sections;
 	}
 
-	public function where ( $by = [], $order = [] )
+	public function by ( $by = array (), $order = array () )
 	{
 		if ( isset($by["old"]) && $by["old"] === true )
 			return $this -> oldmembers;

@@ -3,8 +3,9 @@
 namespace App\Model;
 
 use Nette;
+use Tulinkry;
 
-class ConcertModel
+class ConcertModel extends Tulinkry\Model\BaseModel
 {
 	const lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -114,7 +115,7 @@ Těšíme se na vás. V Žirovnici to žije!",
 		return isset($this->concerts[$id]) ? $this->concerts[$id] : NULL;
 	}
 
-	public function limit ( $limit = 10, $offset = 0, $by = [], $order = [] )
+	public function limit ( $limit = 10, $offset = 0, $by = array (), $order = array () )
 	{
 		$limited = [];
 		for ( $i = $offset; $i < $limit + $offset; $i ++ )
@@ -123,7 +124,7 @@ Těšíme se na vás. V Žirovnici to žije!",
 		return $limited;
 	}
 
-	public function all ( $order = [] )
+	public function all ()
 	{
 		return $this->concerts;
 	}

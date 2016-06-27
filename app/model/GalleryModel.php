@@ -3,8 +3,9 @@
 namespace App\Model;
 
 use Nette;
+use Tulinkry;
 
-class GalleryModel
+class GalleryModel extends Tulinkry\Model\BaseModel
 {
 	private $galleries;
 
@@ -37,7 +38,7 @@ tempor incididunt ut labore et dolore magna aliqua.";
 		return isset($this->galleries[$id]) ? $this->galleries[$id] : NULL;
 	}
 
-	public function limit ( $limit = 10, $offset = 0, $by = [], $order = [] )
+	public function limit ( $limit = 10, $offset = 0, $by = array (), $order = array () )
 	{
 		$limited = [];
 		for ( $i = $offset; $i < $limit + $offset; $i ++ )
@@ -46,7 +47,7 @@ tempor incididunt ut labore et dolore magna aliqua.";
 		return $limited;
 	}
 
-	public function all ( $order = [] )
+	public function all ()
 	{
 		return $this->galleries;
 	}

@@ -19,14 +19,11 @@ class BandPresenter extends BasePresenter
 	{
 
 		$this -> template -> sections = $this -> members -> all ();
-		$this -> template -> oldmembers = $this -> members -> where ( ["old" => true] );
+		$this -> template -> oldmembers = $this -> members -> by ( ["old" => true] );
 
 	}
 
 	public function generateDescription( $member ) {
-		// Na flétnu hraje od svých 11 let, je absolventkou třídy Pavla Zajíce. 
-		// V roce 2010 stála u zrodu big bandu pod vedením Milana Tolknera. 
-		// Kromě hudby se věnuje informatice, tenisu a fotografování.
 		$latte = new Latte\Engine;
 
 		$start = [
