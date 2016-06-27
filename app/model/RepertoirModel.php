@@ -742,6 +742,20 @@ class RepertoirModel extends Tulinkry\Model\BaseModel
                 "visible" => true,
                 "link" => "https://www.youtube.com/watch?v=0gIoTnBlh2Q",
             ],
+            (object) [
+                "name" => "Četník ze Saint Tropez",
+                "interpreter" => "Raymond Lefevre",
+                "duration" => NULL,
+                "visible" => true,
+                "link" => "",
+            ],
+            (object) [
+                "name" => "Četník v New Yorku",
+                "interpreter" => "Raymond Lefevre",
+                "duration" => NULL,
+                "visible" => true,
+                "link" => "",
+            ],
 		);
 	}
 
