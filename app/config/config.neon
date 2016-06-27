@@ -19,8 +19,12 @@ session:
 
 
 services:
-	router: App\RouterFactory::createRouter
+	routerFactory: App\RouterFactory
+	router: @routerFactory::createRouter
 	concerts: App\Model\ConcertModel()
 	members: App\Model\MemberModel()
 	galleries: App\Model\GalleryModel()
 	repertoir: App\Model\RepertoirModel()
+
+extensions:
+	git: Tulinkry\DI\GitExtension
