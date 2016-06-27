@@ -52,6 +52,10 @@ body {
 	z-index: 15000;
 }
 
+#top-margin {
+	min-height: 50px;
+}
+
 
 #navbar-top {
 	margin-bottom: 0;
@@ -62,7 +66,7 @@ body {
 
 #navbar-menu {
 	position: relative;
-	margin-top: 50px;
+	/*argin-top: 50px;*/
 }
 
 #navbar-menu:before {
