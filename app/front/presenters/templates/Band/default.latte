@@ -109,7 +109,7 @@
 			</div>
 		</div>
 		<div 
-			n:if="! isset($_old) || ! $_old"
+			n:if="(!isset($_old) || !$_old) && $template->length($description) >= 400"
 			class="panel-collapse collapse" 
 			id="{$_member->name|webalize}-description">
 			<div class="panel-body">
