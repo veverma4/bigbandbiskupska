@@ -139,13 +139,13 @@
 					</div>
 					<div class="player-description">
 						{if isset($_member->description) && !empty($_member->description)}
-							{$_member->description|noescape|activate|texy|truncateHtml: 400}
+							{$_member->description|noescape|activate|texy}
 						{/if}
 					</div>
 				</div>
 			</div>
 			<div 
-				n:if="isset($_member->description) && !empty($_member->description)" 
+				n:if="isset($_member->description) && !empty($_member->description) &&  $template->length($_member->description) >= 400" 
 				class="panel-collapse collapse" 
 				id="{$_member->name|webalize}-description">
 				<div class="panel-body">
