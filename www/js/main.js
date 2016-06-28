@@ -20,6 +20,11 @@ $(function() {
 
 	var offset = 80;
 
+	$("#mini-nav-menu ul li a[href^='#']").click(function(e) {
+		if($(".navbar-toggle:visible").length)
+			$("#mini-nav-menu").collapse("toggle");
+	});
+
 	$("#mini-nav-menu ul li a[href^='#'], map area").click(function(e) {
 	   e.preventDefault()
 
@@ -32,6 +37,7 @@ $(function() {
 	     })
 	});
 
+
 	/*
 		$('#mini-nav-menu .navbar-nav li a, area').click(function(e) {
 			if(!$(this).attr('href').startsWith('#')) return true;
@@ -40,33 +46,42 @@ $(function() {
 		    scrollBy(0, -offset);
 		});
 	*/
+	var timeout = null;
 
 	$("#filter").keyup(function(){
 		var $that = $(this);
-		$("ul.song-list li.song-empty").remove()
 
-		$("ul.song-list li").each(function(){
-			var $el = $(this)
-			var name = $el.find(".song-name").first().text().toLowerCase();
-			var author = $el.find(".song-interpreter").first().text().toLowerCase();
-			var val = $that.val().toLowerCase();
-			$el.show();
-			if(name.indexOf(val) < 0 &&
-			   author.indexOf(val) < 0)
-				$el.hide();
-		});
+		if(timeout) {
+			clearTimeout(timeout);
+			timeout = null;
+		}
 
-		$("ul.song-list").each(function(){
-			var length = $(this).find("li:visible").length
-			if(length <= 0) {
-				$("<li>").addClass("list-group-item")
-					   .addClass("col-xs-12")
-					   .addClass("song-empty")
-					   .html("Bohužel tomuto vyhledávání nevyhovuje žádná položka.")
-					   .appendTo($(this))
-			}
-			$(".song-count").text(length);
-		});
+		timeout = setTimeout(function() {
+			$("ul.song-list li.song-empty").remove()
+
+			$("ul.song-list li").each(function(){
+				var $el = $(this)
+				var name = $el.find(".song-name").first().text().toLowerCase();
+				var author = $el.find(".song-interpreter").first().text().toLowerCase();
+				var val = $that.val().toLowerCase();
+				$el.show();
+				if(name.indexOf(val) < 0 &&
+				   author.indexOf(val) < 0)
+					$el.hide();
+			});
+
+			$("ul.song-list").each(function(){
+				var length = $(this).find("li:visible").length
+				if(length <= 0) {
+					$("<li>").addClass("list-group-item")
+						   .addClass("col-xs-12")
+						   .addClass("song-empty")
+						   .html("Bohužel tomuto vyhledávání nevyhovuje žádná položka.")
+						   .appendTo($(this))
+				}
+				$(".song-count").text(length);
+			});
+		}, 300);
 	});
 
 	if($(".google-image").length) {
@@ -103,6 +118,7 @@ $(function() {
 							.prop('src', $thumbnail.url)
 							.prop('type', $image.type)
 							.addClass('img img-rounded')
+							.addClass('img-resp')
 							.prop('alt', $e.media$group.media$title.$t)
 			$('<a/>')
 				.append($img)

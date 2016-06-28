@@ -85,7 +85,7 @@ class BandPresenter extends BasePresenter
 				. "Ale taky zbožňuje {array_slice(\$other, 3, 2)|case: 4|implode: ', '} a {array_slice(\$other, 5, 1)|case: 4|implode: ', '}. "
 				. "Je ohromující, že to všechno stíhá.", 
 			"V budoucnu by chtěl{\$suffix} na {\$interests[0]|case: 6} založit byznys. Plány jsou velké, ale dost ještě času.",
-			"Jednou se chce {\$interests[0]|case: 7} živit, ale do té doby musí dělat {\$interests[0]|case: 4}.",
+			"Jednou se chce {\$interests[0]|case: 7} živit, ale do té doby musí dělat {\$interests[1]|case: 4}.",
 		];
 
 		$instruments = [
