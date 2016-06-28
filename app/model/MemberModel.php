@@ -82,7 +82,7 @@ class MemberModel extends Tulinkry\Model\BaseModel
 				(object) [
 					"name" => "Václav Koucký",
 					"instrument" => "klarinet",
-					"description" => $lorem,
+					"description" => "Proč vlastně i po téměř 20 letech stále tak rád zasedá za notový part s klarinetem v ruce? No proto, že to je výborná relaxace a taky skvělá zábava si s dobrou kapelou zahrát známé melodie. A jelikož pracovní vytížení stále narůstá, musí narůstat i hudební relaxace – třeba v Big Bandu Biskupská.",
 					"male" => true,
 					"coords" => [  ],
 				],
