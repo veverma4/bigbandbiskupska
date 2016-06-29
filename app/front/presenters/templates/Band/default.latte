@@ -71,13 +71,13 @@
 		{/foreach}
 
 		<h2>Bývalí členové</h2>
-		<section class="">
+		<ul class="list-item col-md-6 col-md-offset-3">
 		{foreach $oldmembers as $id => $member}
-			{include member, "_member" => $member, '_old' => true}
+			{include old, "_member" => $member}
 		{/foreach}
-		</section>
-	</div>
+		</ul>
 
+	</div>
 {/block}
 
 
@@ -91,12 +91,14 @@
 
 			<div class="col-lg-2">
 				<img class="img img-rounded img100x100" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
-				<!-- TODO: changed src="http://placehold.it/150x100" -->
 			</div>
 
 			<div class="col-lg-10">
 				<div class="player-name">
-					<h4>{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small></h4>
+					<h4>
+						<span n:if="$_member->flash" class="glyphicon glyphicon-flash"></span>
+						{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
+					</h4>
 				</div>
 				<div class="player-description" n:if="! isset($_old) || ! $_old">
 					{if isset($_member->description) && !empty($_member->description)}
@@ -119,6 +121,19 @@
 			</div>
 		</div>
 	</article>
+{/block}
+
+
+{block old}
+	<li id="{$_member->name|webalize}" class="list-group-item band-member clearfix">
+		<span class="player-name text-center">
+			<h5>
+				<img class="img img-rounded img50x50" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
+
+				{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
+			</h5>
+		</span>
+	</li>
 {/block}
 
 {block conductor}
