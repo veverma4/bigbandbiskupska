@@ -11,7 +11,7 @@ class RepertoirModel extends Tulinkry\Model\BaseModel
 
 	public function __construct ()
 	{
-		$this -> songs = array (
+        $this -> songs = array (
             (object) [
                 "name" => "S' Wonderful",
                 "interpreter" => "George Gershwin",
@@ -756,65 +756,65 @@ class RepertoirModel extends Tulinkry\Model\BaseModel
                 "link" => "https://www.youtube.com/watch?v=chDjya8jDEU",
                 "tags" => [],
             ],
-
+ 
             (object) [
                 "name" => "Třešňové květy",
                 "interpreter" => "Perez Prado",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=ta6n8C2ea2Y",
                 "tags" => [],
             ],
             (object) [
                 "name" => "What A Wonderful World",
                 "interpreter" => "Frank Sinatra",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=A3yCcXgbKrE",
                 "tags" => [],
             ],
             (object) [
                 "name" => "Švihák Lázeňský",
                 "interpreter" => "Václav Zahradník",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=RcIe26APRRQ",
                 "tags" => [],
             ],
             (object) [
                 "name" => "Saxana",
                 "interpreter" => "Angela Michaljov",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=cFAykQakqtQ",
                 "tags" => [],
             ],
             (object) [
                 "name" => "Oh Happy Day",
                 "interpreter" => "Gospel",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=FpUVF1MAkNc",
                 "tags" => [],
             ],
             (object) [
                 "name" => "Turecký pochod",
                 "interpreter" => "W. A. Mozart",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=DphG2Lr5cSA",
                 "tags" => [],
             ],
             (object) [
                 "name" => "Oh, Baby, Baby",
                 "interpreter" => "Golden Kids",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=kIpOe7AHURI",
                 "tags" => [],
             ],
             (object) [
                 "name" => "True Love",
                 "interpreter" => "Cole Porter",
                 "visible" => true,
-                "link" => "",
+                "link" => "https://www.youtube.com/watch?v=8bKr_XE0MsA",
                 "tags" => [],
             ],
-		);
-	}
+        );
+    }
 
 
 	public function all ( $order = [] )
