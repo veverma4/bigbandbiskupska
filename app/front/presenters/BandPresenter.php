@@ -25,6 +25,8 @@ class BandPresenter extends BasePresenter
 
 	public function generateDescription( $member ) {
 		$latte = new Latte\Engine;
+		$latte->setLoader(new Latte\Loaders\StringLoader());
+
 
 		$start = [
 			"Na {\$instrument|case: 4} hraje od svých {\$age|years: 2}.",
@@ -72,20 +74,86 @@ class BandPresenter extends BasePresenter
 				. "A to tak moc, že nestíhá ani moc cvičit na {\$instrument|case: 4}.",
 			"Mívá noční můry. Je{\$gender|case: 4} nadřízený v nich hraje na {\$instrument|case: 4} sólo s hroznýma overtónama a {\$gender|case: 1} pak nemůže několik hodin usnout. "
 				. "Nikdo neví, kdy se to objevilo, ale zřejmě se to stalo při {\$interests[0]|case: 6}.",
-			"Má strašlivé sny. Je{\$gender|case: 4} kamarád v nich hraje na {\$instrument|case: 4} sólo s hroznýma vytaženýma tónama a {\$gender|case: 1} pak nemůže ani polapit dech. "
+			"Má strašlivé sny. Je{\$gender|case: 4} kamarád v nich hraje na {\$instrument|case: 4} sólo s hroznými vytaženými tóny a {\$gender|case: 1} pak nemůže ani polapit dech. "
 				. "Kdysi dávno při {\$interests[0]|case: 6} se uhodil{\$suffix} a od té doby to má.",
-			"Snívá hrozivé sny. Je{\$gender|case: 4} kamarád v nich hraje na {\$instrument|case: 4} sólo s dlouhýma tónama a {\$gender|case: 1} pak nemůže ani polapit dech. "
+			"Snívá hrozivé sny. Je{\$gender|case: 4} kamarád v nich hraje na {\$instrument|case: 4} sólo s dlouhými tóny a {\$gender|case: 1} pak nemůže ani polapit dech. "
 				. "Asi to má z dlouhodobého hlediska zabýváním se {\$interests[0]|case: 7}.",
 			"Všechno před ostatními tají, takže není moc informací, které o {\$gender|case: 6} napsat. Je{\$gender|case: 4} nejbližší však tvrdí, že se v nejhlubších sklepeních své duše oddává {\$interests[0]|case: 3}.",
 			"Tajnůstkář{\$suffix}. Je však jasně vidět, že {\$gender|case: 4} baví {\$interests[0]|case: 1} nebo {\$interests[1]|case: 1}.",
-			"Miluje filmy. Například Marečku, podejte mi {\$instrument|case: 4} nebo Slunce, seno, {\$instrument|case: 1}. Rád{\$suffix} chodí do kina a do divadla, celkově dost kulturně žije.",
-			"Miluje filmy. Například Dneska to roztočíme, {\$instrument|case: 5} nebo {\$instrument|case: 1|firstUpper} se vrací. Na filmy kouká doma.",
-			"Miluje divadlo. Nejoblíbenější hrou je Továrna na {\$instrument|case: 4} z roku 1922 nebo, o něco starší, Mnoho povyku pro {\$instrument|case: 4}. A vůbec Shakespearem žije.",
+			
 			"Je toho tolik, co dělá. Například miluje {array_slice(\$other, 0, 2)|case: 4|implode: ', '} a {array_slice(\$other, 2, 1)|case: 4|implode: ', '}. "
 				. "Ale taky zbožňuje {array_slice(\$other, 3, 2)|case: 4|implode: ', '} a {array_slice(\$other, 5, 1)|case: 4|implode: ', '}. "
 				. "Je ohromující, že to všechno stíhá.", 
 			"V budoucnu by chtěl{\$suffix} na {\$interests[0]|case: 6} založit byznys. Plány jsou velké, ale dost ještě času.",
 			"Jednou se chce {\$interests[0]|case: 7} živit, ale do té doby musí dělat {\$interests[1]|case: 4}.",
+			"Vlastně {\$gender|case: 4} nic jiného než hudba nebaví. Ale potají stejně trochu dělá {\$interests|rand|case: 4}."
+		];
+
+		$after = [
+			"Také {\$likes|rand} filmy. Například {\$movies[0]} nebo {\$movies[1]}. Rád{\$suffix} chodí do kina a do divadla, celkově dost kulturně žije.",
+			"{\$likes|rand|firstUpper} filmy. Například {\$movies[0]} nebo {\$movies[1]}. Na filmy kouká doma.",
+			"{\$likes|rand|firstUpper} filmy. Například {\$movies[0]}, {\$movies[1]}, ale i {\$movies[2]}. Na filmy kouká venku.",
+			"{\$likes|rand|firstUpper} divadlo. {\$top|rand|firstUpper} hrou je {\$theatres[0]} nebo {\$theatres[1]}. A vůbec divadlem žije.",
+			"Hrozně {\$likes|rand|firstUpper} hudbu. {\$top|rand|firstUpper} písní je {\$songs[0]}, a pak hned v pořadí jsou {\$songs[1]} a {\$songs[2]}. A vůbec se mu neoposlouchají.",
+			"Poslouchá i různé jiné styly hudby, mezi oblíbené patří písně {array_slice(\$songs, 0, rand(2, 3))|implode: ', '} a {\$songs[5]}.",
+			"Má velký umělecký rozhled. Není divu s takovým rodinným zázemím. Doporučil{\$suffix} by například film {\$movies|rand} nebo divadlo {\$theatres|rand}."
+		];
+
+		$songs = [
+			"Chtěl bych mít kapelu ze samých {\$instruments|case: 2}",
+			"Což takhle dát si {\$instrument|case: 4}",
+			"Decibely {\$instrument|case: 2}",
+			"Ezop a {\$instrument|case: 1}",
+			"{\$instrument|case: 1|firstUpper} a brabenec",
+			"{\$instrument|case: 1|firstUpper} na vrbě",
+			"Já budu chodit po {\$instruments|case: 6}",
+			"{\$instruments|case: 1|firstUpper} z Texasu",
+			"{\$instrument|case: 1|firstUpper} to je moje gusto",
+			"Zavři {\$instruments|case: 4} když se červenám",
+
+		];
+
+		$movies = [
+			"Dneska to roztočíme, {\$instrument|case: 5}",
+			"Kdyby tisíc {\$instruments|case: 2}",
+			"{\$instrument|case: 1|firstUpper} se vrací",
+			"Slunce, seno, {\$instrument|case: 1}",
+			"Marečku, podejte mi {\$instrument|case: 4}",
+			"Mlčení {\$instruments|case: 2}",
+			"Tři {\$instruments|case: 1} pro Popelku",
+			"Padesát odstínů {\$instruments|case: 2}",
+			"{\$instrument|case: 1|firstUpper} ve městě",
+			"Vrchní {\$instrument|case: 1} prchni",
+			"{\$instrument|case: 1|firstUpper} z Beverly Hills",
+			"Ať žijí {\$instruments|case: 1}!",
+			"Čtyři {\$instruments|case: 1} stačí, drahoušku",
+			"{\$instruments|case: 1|firstUpper} z druhého patra",
+
+
+		];
+
+		$theatres = [
+			"Továrna na {\$instrument|case: 4} z roku 1922",
+			", o něco starší, Mnoho povyku pro {\$instrument|case: 4}",
+			"{\$instrument|case: 1|firstUpper} noci svatojánské",
+			"Romeo a {\$instrument|case: 1}",
+			"{\$instrument|case: 1|firstUpper} a Julie",
+			"{\$instrument|case: 1|firstUpper} na mýtince",
+			"{\$instrument|case: 1|firstUpper} v salonním coupé",
+			"Gulliverovy {\$instruments|case: 1}",
+			"{\$instrument|case: 1|firstUpper} na Karlštejně",
+			"Čekání na {\$instrument|case: 4}",
+			"Ze života {\$instruments|case: 4}",
+		];
+
+		$books = [
+			"Ostře sledované {\$instruments|case: 1}",
+			"Válka s {\$instrument|case: 7|firstUpper}",
+			"Spalovač {\$instruments|case: 2}",
+			"Romance na {\$instrument|case: 4} od Františka Hrubína",
+			"Po nás ať přijde {\$instrument|case: 1}",
+			"{\$instrument|case: 1|firstUpper} s kaméliemi",
+			"Jak je důležité míti {\$instrument|case: 4|firstUpper}",
 		];
 
 		$instruments = [
@@ -100,7 +168,30 @@ class BandPresenter extends BasePresenter
 			"zpěv" => [ "zpěv", "zpěvu", "zpěvu", "zpěv", "zpěve", "zpěvu", "zpěvem" ],
 		];
 
+		$plural = [
+			"trumpeta" => "trumpety",
+			"klarinet" => "klarinety",
+			"saxofon" => "saxofony",
+			"basa" => "basy",
+			"bicí" => "bicí",
+			"klávesy" => "klávesy",
+			"flétna" => "flétny",
+			"trombón" => "trombóny",
+			"zpěv" => "zpěv",
+		];
+
 		$words = [
+			"trumpety" => [ "trumpety", "trumpet", "trumpetám", "trumpety", "trumpety", "trumpetách", "trumpetami" ],
+			"klarinety" => [ "klarinety", "klarinetů", "klarinetům", "klarinety", "klarinety", "klarinetech", "klarinetům" ],
+			"saxofony" => [ "saxofony", "saxofonů", "saxofonům", "saxofony", "saxofony", "saxofonech", "saxofony" ],
+			"basy" => [ "basy", "bas", "basám", "basy", "basy", "basách", "basami" ],
+			//"bicí" => [ "bicí", "bicích", "bicím", "bicí", "bicí", "bicích", "bicími" ],
+			//"klávesy" => [ "klávesy", "kláves", "klávesám", "klávesy", "klávesy", "klávesách", "klávesami" ],
+			"flétny" => [ "flétny", "fléten", "flétnám", "flétny", "flétny", "flétnách", "flétnami" ],
+			"trombóny" => [ "trombóny", "trombónů", "trombónům", "trombóny", "trombóny", "trombónech", "trombóny" ],
+			"zpěvy" => [ "zpěvy", "zpěvů", "zpěvům", "zpěvy", "zpěvy", "zpěvech", "zpěvy" ],
+
+
 			"rok" => [ "rok", "roku", "rokem", "rok", "roku", "roku", "rokem" ],
 			"roky" => [ "roky", "roků", "rokům", "roky", "roky", "rocích", "rokami" ],
 			"léta" => [ "léta", "let", "letům", "léta", "léta", "letech", "lety" ],
@@ -151,7 +242,26 @@ class BandPresenter extends BasePresenter
 			"opravování telefonů" => [ "opravování telefonů", "", "opravování telefonů", "opravování telefonů", "", "opravování telefonů", "opravováním telefonů" ],
 			"závody na kancelářských křeslech" => [ "závody na kancelářských křeslech", "", "závodům na kancelářských křeslech", "závody na kancelářských křeslech", "", "závodech na kancelářských křeslech", "závody na kancelářských křeslech" ],
 			"kloboučnictví" => [ "kloboučnictví", "", "kloboučnictví", "kloboučnictví", "", "kloboučnictví", "kloboučnictvím" ],
+			"šeptání do hrnce" => [ "šeptání do hrnce", "", "šeptání do hrnce", "šeptání do hrnce", "", "šeptání do hrnce", "šeptáním do hrnce" ],
+			"čištění bazenů" => [ "čištění bazenů", "", "čištění bazenů", "čištění bazenů", "", "čištění bazenů", "čištěním bazenů" ],
+			"pojídání másla" => [ "pojídání másla", "", "pojídání másla", "pojídání másla", "", "pojídání másla", "pojídáním másla" ],
 
+		];
+
+		$top = [
+			"nejoblíbenější",
+			"nejmilovanější",
+			"nejlepší",
+			"nejbožštější",
+			"nejkoulikatější",
+			"nej nej"
+		];
+
+		$like = [
+			"zbožňuje",
+			"miluje",
+			"žere",
+			"sleduje",
 
 		];
 
@@ -165,17 +275,6 @@ class BandPresenter extends BasePresenter
 		$exluded_instruments = array_diff(array_keys($instruments), [$member->instrument]);
 		shuffle($exluded_instruments);
 
-		$parameters = [
-			"year" => rand ( 2010, date('Y') - 1 ),
-			'suffix' => $member->male ? '' : 'a',
-			'instrument' => $member->instrument,
-			'gender' => $member->male ? 'on' : 'ona',
-			'age' => rand ( 8, 15 ),
-			'member' => $member,
-			'interests' => $xxx = self::generateInterests ( $interests, $max = rand( 3, 4 ) ),
-			'other' => self::generateInterests ( $interests, count($interests) - $max, $xxx ),
-			'oinstruments' => $exluded_instruments,
-		];
 
 		$latte->addFilter('years', function ($s, $case = 1) use($words) {
 			switch ( $s ) {
@@ -188,13 +287,19 @@ class BandPresenter extends BasePresenter
 			}
 		});
 
+		$latte->addFilter('rand', function($s) {
+			if( is_array ( $s ) )
+				return $s [ array_rand( $s ) ];
+			return $s;
+		});
+
 		$latte->addFilter("case", function($s, $case = 1) use ($dictionary) {
 			$convert = function($x) use($dictionary, $case) {
 				foreach ($dictionary as $dict) {
 					if(isset($dict[$x]) && isset($dict[$x][$case - 1])) 
 						return $dict[$x][$case - 1];
 				}
-				throw new Nette\InvalidArgumentException("word was not found " . $s);
+				throw new Nette\InvalidArgumentException("word was not found \"" . $s . "\"");
 			};
 
 			if(is_array($s)) {
@@ -205,14 +310,53 @@ class BandPresenter extends BasePresenter
 		});
 
 
-		$template = [
-			$start [ rand () % count($start) ],
-			$bigband [ rand () % count($bigband) ],
-			$interest [ rand () % count($interest) ],
+		$parameters = [
+			"year" => rand ( 2010, date('Y') - 1 ),
+			'suffix' => $member->male ? '' : 'a',
+			'instrument' => $member->instrument,
+			'gender' => $member->male ? 'on' : 'ona',
+			'age' => rand ( 8, 15 ),
+			'member' => $member,
+			'interests' => $xxx = self::generateInterests ( $interests, $max = rand( 3, 4 ) ),
+			'other' => self::generateInterests ( $interests, count($interests) - $max, $xxx ),
+			'oinstruments' => $exluded_instruments,
+			'movies' => $this->arrayShuffle(array_map( function($s) use($latte, $member, $plural) { 
+					return $latte->renderToString($s, [ "instrument" => $member->instrument,
+														"instruments" => $plural[$member->instrument] ] );
+			 }, $movies )),
+			'theatres' => $this->arrayShuffle(array_map( function($s) use($latte, $member, $plural) { 
+					return $latte->renderToString($s, [ "instrument" => $member->instrument,
+														"instruments" => $plural[$member->instrument] ] );
+			 }, $theatres )),
+			'songs' => $this->arrayShuffle(array_map( function($s) use($latte, $member, $plural) { 
+					return $latte->renderToString($s, [ "instrument" => $member->instrument,
+														"instruments" => $plural[$member->instrument] ] );
+			 }, $songs )),
+			'books' => $this->arrayShuffle(array_map( function($s) use($latte, $member, $plural) { 
+					return $latte->renderToString($s, [ "instrument" => $member->instrument,
+														"instruments" => $plural[$member->instrument] ] );
+			 }, $books )),
+			'likes' => $like,
+			'top' => $top,
 		];
 
-		$latte->setLoader(new Latte\Loaders\StringLoader());
+		
+
+
+		$template = [
+			count($start) ? $start [ array_rand($start) ] : "",
+			count($bigband) ? $bigband [ array_rand($bigband) ] : "",
+			count($interest) ? $interest [ array_rand($interest) ] : "",
+			count($after) ? $after [ array_rand($after) ] : "",
+		];
+
+		
 		return $latte->renderToString(implode(" ", $template), $parameters);
+	}
+
+	protected function arrayShuffle($array) {
+		shuffle($array);
+		return $array;
 	}
 
 	public static function generateInterests ($interests, $n, $exlude = []) {
@@ -232,5 +376,21 @@ class BandPresenter extends BasePresenter
 	}
 
 
+	public function generateExtendedDescription($member) {
+
+		$latte = new Latte\Engine;
+
+
+		$latte->addFilter("length", function($s) {
+			return count($s);
+		});
+
+		$template = '{(string)"ahoj"|firstUpper}';
+
+		$latte->setLoader(new Latte\Loaders\StringLoader());
+		return $latte->renderToString($template, ["c" => true]);
+
+
+	}
 }
 
