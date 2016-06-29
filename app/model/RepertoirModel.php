@@ -133,7 +133,7 @@ class RepertoirModel extends Tulinkry\Model\BaseModel
             ],
             (object) [
                 "name" => "Chain Of Fools",
-                "interpreter" => "Anretha Franklin",
+                "interpreter" => "Aretha Franklin",
                 "visible" => true,
                 "link" => "https://www.youtube.com/watch?v=gGAiW5dOnKo",
                 "tags" => [],
