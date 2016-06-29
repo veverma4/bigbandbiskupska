@@ -4,8 +4,6 @@
 </IfModule>
       
 <IfModule mod_rewrite.c>
-
-
   RewriteEngine On
 
   # cele domeny (aliasy)
@@ -37,7 +35,7 @@
   RewriteCond %{HTTP_HOST} ^(www.)?([^.]*).([^.]*){2,4}$
   RewriteCond %{REQUEST_URI} !^www/
   RewriteCond %{REQUEST_URI} !^/www/
-  RewriteCond %{DOCUMENT_ROOT}/www -d
+  #RewriteCond %{DOCUMENT_ROOT}/www -d
   RewriteRule (.*) www/$1 [DPI]
   # Nette Framework
 </IfModule>
