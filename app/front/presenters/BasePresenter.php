@@ -5,6 +5,7 @@ namespace App\FrontModule\Presenters;
 
 use Nette;
 use Texy;
+use Tracy;
 
 class BasePresenter extends Nette\Application\UI\Presenter
 {
@@ -17,6 +18,10 @@ class BasePresenter extends Nette\Application\UI\Presenter
 	protected function forbiddenException ( $message = NULL )
 	{
 		throw new Nette\Application\ForbiddenRequestException;
+	}
+
+	public function beforeRender() {
+		$this->template->productionMode = Tracy\Debugger::$productionMode;
 	}
 
 	protected function createTemplate($class = NULL)
