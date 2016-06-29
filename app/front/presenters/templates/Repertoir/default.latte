@@ -61,6 +61,12 @@
 		{if isset($_song->link) && !empty($_song->link)}
 			</a>
 		{/if}
+		{*
+		{if isset($_song->tags) && count($_song->tags) > 0}
+		{var $items = [ "default", "primary", "warning", "danger", "info", "success" ]}
+		<span n:foreach="$_song->tags as $tag" class="label label-{$items[$iterator->counter % count($items)]}">{$tag}</span>
+		{/if}
+		*}
 	</h6>
 	{*
 	<h6 class="col-xs-2">
