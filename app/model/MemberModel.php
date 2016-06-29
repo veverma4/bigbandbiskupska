@@ -328,7 +328,7 @@ class MemberModel extends Tulinkry\Model\BaseModel
 				(object) [
 					"name" => "Hugo Marek",
 					"instrument" => "basa",
-					"description" => $lorem,
+					"description" => "V červnu 2016 to byly již tři měsíce, co chodil do big bandu. Život hráče v big bandu rozhodně není pro každého a rozhodně není jednoduchý. Cvičí každý den od rána do noci, prsty mu pukají více než masité struny baryton-kytary, lámou se mu trsátka, nohy, prsty a taky ruce! Možná si říkáte: \"Hmmmm, proč to asi dělá? Proč si nechává ubližovat? Proč vůbec hraje na tento nástroj smrti? Proč neuteče do Mongolských pustin, kde by se mohl přidat ke kočovnému kmenu, který obchoduje s kořením a chová ovce? Proč žije tento život?\" On by vám ale rád sdělil, že on si tento život nevybral. To ten život si vybral jeho!",
 					"male" => true,
 					"coords" => [ 529,194,530,178,539,169,541,138,551,129,569,135,572,147,570,160,555,153,544,154,541,174,532,194 ],
 					"flash" => false,
