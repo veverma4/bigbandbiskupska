@@ -143,7 +143,7 @@ class BandPresenter extends BasePresenter
 			"Gulliverovy {\$instruments|case: 1}",
 			"{\$instrument|case: 1|firstUpper} na Karlštejně",
 			"Čekání na {\$instrument|case: 4}",
-			"Ze života {\$instruments|case: 4}",
+			"Ze života {\$instruments|case: 2}",
 		];
 
 		$books = [
