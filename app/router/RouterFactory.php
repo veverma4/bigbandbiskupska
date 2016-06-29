@@ -26,6 +26,7 @@ class RouterFactory extends Nette\Object
 		$router[] = new Route('kontakt', 'Front:Contact:default');
 		$router[] = new Route('historie', 'Front:History:default');
 		$router[] = new Route('repertoar', 'Front:Repertoir:default');
+		$router[] = new Route('videa', 'Front:Video:default');
 		$router[] = new Route('koncerty', 'Front:Concert:default');
 		$router[] = new Route('koncert/<id>', 'Front:Concert:detail');
 		$router[] = new Route('galerie', 'Front:Gallery:default');

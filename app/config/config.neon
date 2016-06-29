@@ -25,6 +25,7 @@ services:
 	members: App\Model\MemberModel()
 	galleries: App\Model\GalleryModel()
 	repertoir: App\Model\RepertoirModel()
+	videos: App\Model\VideoModel()
 
 extensions:
 	git: Tulinkry\DI\GitExtension
