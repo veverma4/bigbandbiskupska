@@ -115,7 +115,7 @@ class MemberModel extends Tulinkry\Model\BaseModel
 				(object) [
 					"name" => "Tereza Čivrná",
 					"instrument" => "saxofon",
-					"description" => "Na různé druhy saxofonů hraje již {since: 2003}. Poté, co ukončila ZUŠ ve třídě Jiřího Kobra, se rozhodla věnovat samostudiu. Se zkušenostmi z vrchlabského big bandu se na podzim 2013 vnutila do Big bandu Biskupská. Mimo hudbu je zapálenou architektkou.",
+					"description" => "Na různé druhy saxofonů hraje již {since: 2003}. Poté, co ukončila ZUŠ ve třídě Jiřího Kobra, se rozhodla věnovat samostudiu. Se zkušenostmi z vrchlabského big bandu se na podzim 2013 vnutila do Big bandu Biskupská. Mimo hudbu je zapálenou architektkou. Jejími hudebními vzory jsou Milan Tolkner, Charlie Parker, Bob Mintzer a Earth, Wind and Fire.",
 					"male" => false,
 					"coords" => [ 634,389,645,375,633,316,621,250,620,229,633,195,650,188,651,160,668,161,678,169,674,192,680,202,681,294,669,386 ],
 					"flash" => false,
