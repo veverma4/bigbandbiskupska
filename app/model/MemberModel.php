@@ -237,7 +237,7 @@ class MemberModel extends Tulinkry\Model\BaseModel
 				(object) [
 					"name" => "Antonín Bolardt",
 					"instrument" => "trumpeta",
-					"description" => "Od svých pěti let jsem hrál na flétnu. Ve druhé třídě pak na trumpetu a té se věnuje dodnes .V big bandu působí od úplného začátku v roce 2010, s roční pauzou. Mezi jeho koníčky patří sport (závodně tenis), posilovna a poslouchání hudby. Chodí na SZŠ Ruská.",
+					"description" => "Od svých pěti let hrál na flétnu. Ve druhé třídě začal s trumpetou, které se věnuje dodnes. V big bandu působí s roční pauzou od úplného začátku v roce 2010. Mezi jeho koníčky patří sport (hraje závodně tenis), posilovna a poslouchání hudby. Chodí na SZŠ Ruská.",
 					"male" => true,
 					"coords" => [ 730,163,725,132,746,126,756,149,760,171,761,181,749,202,747,184 ],
 					"flash" => false,
