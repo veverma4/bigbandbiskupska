@@ -1,0 +1,3 @@
+#!/bin/sh
+
+vendor/bin/tester -p `which php` tests/
