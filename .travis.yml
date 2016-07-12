@@ -10,16 +10,12 @@ matrix:
   allow_failures:
     - php: hhvm
 
-before_script:
-  - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - echo -e "$PUBLIC_SSH_KEY" > ~/.ssh/id_rsa.pub
-  - echo -e "$PRIVATE_SSH_KEY" > ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa*
-  - eval `ssh-agent -s`
-  - ssh-add ~/.ssh/id_rsa
-
 before_install:
-  - composer self-update
+  - composer self-update -q
+  - composer config github-oauth.github.com "${GH_TOKEN}"
+
+before_script:
+  - echo -e "${CONFIG_LOCAL}" > app/config/config.local.neon
 
 install:
   - composer install --no-interaction --prefer-source
