@@ -13,7 +13,8 @@
 {block scripts}
 {include parent}
 
-<script>
+<script type="text/javascript">
+//<![CDATA[
 $(function() {
 	$.nette.ajax({
 		url: 'https://picasaweb.google.com/data/feed/api/user/bigbandbiskupska?alt=json&imgmax=1080u&thumbsize=200u',
@@ -69,6 +70,7 @@ $(function() {
 		$("#galleries").text("Nelze se připojit k seznamu galerií, opakujte akci později.")
 	})
 });
+//]]>
 </script>
 
 {/block}
@@ -76,8 +78,10 @@ $(function() {
 {block content}
 
 <script>
+//<![CDATA[
 	var linkUrl = {link Gallery:detail, 0}
 	var errorUrl = {link logError!}
+//]]>
 </script>
 
 <div class="row">
@@ -99,14 +103,12 @@ $(function() {
 		<div class="panel-body">
 			<a href=""
 			   title=""
-			   class="album-link"
-			>
+			   class="album-link">
 				<img
 					src=""
 					class="img img-responsive img-rounded album-cover"
 					title=""
-					alt=""
-				/>
+					alt="" />
 			</a>
 		</div>
 	</div>
