@@ -27,5 +27,3 @@ services:
 	repertoir: App\Model\RepertoirModel()
 	videos: App\Model\VideoModel()
 
-extensions:
-	git: Tulinkry\DI\GitExtension
