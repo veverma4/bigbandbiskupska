@@ -13,7 +13,6 @@ $configurator->setTempDirectory(__DIR__ . '/../temp');
 
 $configurator->createRobotLoader()
 	->addDirectory(__DIR__)
-	->addDirectory(__DIR__ . "/../vendor/tulinkry/")
 	->register();
 
 $configurator->addConfig(__DIR__ . '/config/config.neon');

@@ -1,4 +1,6 @@
 app/config/config.local.neon
+vendor/*
+!vendor/.htaccess
 log/*
 temp/cache/*
 composer.lock
