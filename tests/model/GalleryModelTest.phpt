@@ -28,5 +28,4 @@ class GalleryModelTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new GalleryModelTest($container);
-$testCase->run();
+run(new GalleryModelTest($container));

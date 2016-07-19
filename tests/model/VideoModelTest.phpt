@@ -28,5 +28,4 @@ class VideoModelTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new VideoModelTest($container);
-$testCase->run();
+run(new VideoModelTest($container));

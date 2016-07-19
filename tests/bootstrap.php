@@ -24,4 +24,15 @@ $configurator->addConfig(APP_DIR . '/config/config.local.neon');
 
 $container = $configurator->createContainer();
 
+register_shutdown_function(function() {
+	Tester\Helpers::purge(TMP_DIR);
+	@rmdir(TMP_DIR);
+});
+
+/** helpers */
+
+function run($testcase) {
+	$testcase->run();
+}
+
 return $container;

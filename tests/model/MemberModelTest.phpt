@@ -28,5 +28,4 @@ class MemberModelTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new MemberModelTest($container);
-$testCase->run();
+run(new MemberModelTest($container));

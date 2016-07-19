@@ -38,5 +38,4 @@ class ConcertPresenterTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new ConcertPresenterTest($container);
-$testCase->run();
+run(new ConcertPresenterTest($container));

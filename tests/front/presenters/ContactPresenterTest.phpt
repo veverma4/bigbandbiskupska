@@ -38,5 +38,4 @@ class ContactPresenterTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new ContactPresenterTest($container);
-$testCase->run();
+run(new ContactPresenterTest($container));

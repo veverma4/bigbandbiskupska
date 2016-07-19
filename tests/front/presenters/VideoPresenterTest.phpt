@@ -37,5 +37,4 @@ class VideoPresenterTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new VideoPresenterTest($container);
-$testCase->run();
+run(new VideoPresenterTest($container));

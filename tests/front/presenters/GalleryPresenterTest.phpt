@@ -40,5 +40,4 @@ class GalleryPresenterTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new GalleryPresenterTest($container);
-$testCase->run();
+run(new GalleryPresenterTest($container));

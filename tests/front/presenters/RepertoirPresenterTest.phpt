@@ -40,5 +40,4 @@ class RepertoirPresenterTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new RepertoirPresenterTest($container);
-$testCase->run();
+run(new RepertoirPresenterTest($container));

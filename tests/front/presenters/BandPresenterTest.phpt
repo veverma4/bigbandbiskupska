@@ -38,5 +38,4 @@ class BandPresenterTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-$testCase = new BandPresenterTest($container);
-$testCase->run();
+run(new BandPresenterTest($container));
