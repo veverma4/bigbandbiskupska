@@ -20,7 +20,8 @@ class BasePresenter extends Nette\Application\UI\Presenter
 		throw new Nette\Application\ForbiddenRequestException;
 	}
 
-	public function beforeRender() {
+	public function startup() {
+		parent::startup();
 		$this->template->productionMode = Tracy\Debugger::$productionMode;
 	}
 
