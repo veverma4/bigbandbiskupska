@@ -12,10 +12,10 @@ matrix:
 
 before_install:
   - composer self-update -q
-  - composer config github-oauth.github.com "${GH_TOKEN}"
+#  - composer config github-oauth.github.com "${GH_TOKEN}"
 
 before_script:
-  - echo -e "${CONFIG_LOCAL}" > app/config/config.local.neon
+  - cp app/config/sample.config.local.neon app/config/config.local.neon
 
 install:
   - composer install --no-interaction --prefer-source
