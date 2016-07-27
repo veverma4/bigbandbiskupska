@@ -7,19 +7,15 @@ use Nette\Application\Routers\RouteList;
 use Nette\Application\Routers\Route;
 
 
-class RouterFactory extends Nette\Object
+class RouterFactory
 {
 
-    public $onCreate = array ();
-    public $onDone = array ();
 	/**
 	 * @return Nette\Application\IRouter
 	 */
 	public function createRouter()
 	{
 		$router = new RouteList;
-
-		$this->onCreate($router);
 
 		$router[] = new Route('[home]', 'Front:Homepage:default');
 		$router[] = new Route('kapela', 'Front:Band:default');
@@ -31,8 +27,6 @@ class RouterFactory extends Nette\Object
 		$router[] = new Route('koncert/<id>', 'Front:Concert:detail');
 		$router[] = new Route('galerie', 'Front:Gallery:default');
 		$router[] = new Route('galerie/<id>', 'Front:Gallery:detail');
-
-		$this->onDone($router);
 
 		#$router[] = new Route('<presenter>/<action>[/<id>]', 'Front:Homepage:default');
 		return $router;
