@@ -272,6 +272,12 @@ img.alignleft {
 }
 
 
+/* ------------------ nation flag --------- */
+
+.nation_flag {
+	height: 1em;
+}
+
 /* ------------------ lead ---------------- */
 
 @media (min-width: 768px) {
