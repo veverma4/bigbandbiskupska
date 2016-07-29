@@ -6,9 +6,13 @@ namespace App\FrontModule\Presenters;
 use Nette;
 use Texy;
 use Tracy;
+use Tulinkry;
 
-class BasePresenter extends Nette\Application\UI\Presenter
+class BasePresenter extends Tulinkry\Application\UI\Presenter
 {
+
+    /** @var \Kdyby\Translation\Translator @inject */
+    public $translator;
 
 	protected function notFoundException ( $message = NULL )
 	{

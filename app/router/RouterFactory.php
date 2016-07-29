@@ -17,16 +17,16 @@ class RouterFactory
 	{
 		$router = new RouteList;
 
-		$router[] = new Route('[home]', 'Front:Homepage:default');
-		$router[] = new Route('kapela', 'Front:Band:default');
-		$router[] = new Route('kontakt', 'Front:Contact:default');
-		$router[] = new Route('historie', 'Front:History:default');
-		$router[] = new Route('repertoar', 'Front:Repertoir:default');
-		$router[] = new Route('videa', 'Front:Video:default');
-		$router[] = new Route('koncerty', 'Front:Concert:default');
-		$router[] = new Route('koncert/<id>', 'Front:Concert:detail');
-		$router[] = new Route('galerie', 'Front:Gallery:default');
-		$router[] = new Route('galerie/<id>', 'Front:Gallery:detail');
+		$router[] = new Route('[<locale=cs cs|en>/][home]', 'Front:Homepage:default');
+		$router[] = new Route('[<locale=cs cs|en>/]kapela', 'Front:Band:default');
+		$router[] = new Route('[<locale=cs cs|en>/]kontakt', 'Front:Contact:default');
+		$router[] = new Route('[<locale=cs cs|en>/]historie', 'Front:History:default');
+		$router[] = new Route('[<locale=cs cs|en>/]repertoar', 'Front:Repertoir:default');
+		$router[] = new Route('[<locale=cs cs|en>/]videa', 'Front:Video:default');
+		$router[] = new Route('[<locale=cs cs|en>/]koncerty', 'Front:Concert:default');
+		$router[] = new Route('[<locale=cs cs|en>/]koncert/<id>', 'Front:Concert:detail');
+		$router[] = new Route('[<locale=cs cs|en>/]galerie', 'Front:Gallery:default');
+		$router[] = new Route('[<locale=cs cs|en>/]galerie/<id>', 'Front:Gallery:detail');
 
 		#$router[] = new Route('<presenter>/<action>[/<id>]', 'Front:Homepage:default');
 		return $router;

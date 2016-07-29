@@ -26,4 +26,14 @@ services:
 	galleries: App\Model\GalleryModel()
 	repertoir: App\Model\RepertoirModel()
 	videos: App\Model\VideoModel()
+	parameters: Tulinkry\Services\ParameterService
 
+extensions:
+    translation: Kdyby\Translation\DI\TranslationExtension
+
+
+translation:
+    default: cs
+    fallback: [cs_CZ, cs]
+    whitelist: [cs, en]
+    debugger: on
