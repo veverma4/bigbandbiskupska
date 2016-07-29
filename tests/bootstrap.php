@@ -19,8 +19,8 @@ $configurator->createRobotLoader()
 	->addDirectory(APP_DIR)
 	->register();
 
-$configurator->addConfig(APP_DIR . '/config/config.neon');
-$configurator->addConfig(APP_DIR . '/config/config.local.neon');
+$configurator->addConfig(APP_DIR . '/config/config.neon', Nette\Configurator::AUTO);
+$configurator->addConfig(APP_DIR . '/config/config.local.neon', Nette\Configurator::AUTO);
 
 $container = $configurator->createContainer();
 

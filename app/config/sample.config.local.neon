@@ -1,8 +1,21 @@
-parameters:
+common:
+	parameters:
 
-extensions:
-	git: Tulinkry\DI\GitExtension
+	extensions:
+		git: Tulinkry\DI\GitExtension
 
-git:
-	repository: "null"
+	git:
+		repository: "null"
+
+development < common:
+
+production < common:
+	parameters:
+		database:
+			host: localhost
+			dbname: bigbandbiskupska
+			user: root
+			password:
+			dsn: 'mysql:host=%database.host%;dbname=%database.dbname%'
+
 	

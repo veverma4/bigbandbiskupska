@@ -1,39 +1,55 @@
 # WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
 # https://nette.org/security-warning
 
-parameters:
+common:
+	parameters:
+		database:
+			host: localhost
+			dbname: bigbandbiskupska
+			user: root
+			password:
+			dsn: 'mysql:host=%database.host%;dbname=%database.dbname%'
+
+	php:
+		date.timezone: Europe/Prague
 
 
-php:
-	date.timezone: Europe/Prague
+	application:
+		errorPresenter: Error
+		mapping:
+			*: App\*Module\Presenters\*Presenter
 
 
-application:
-	errorPresenter: Error
-	mapping:
-		*: App\*Module\Presenters\*Presenter
+	session:
+		expiration: 14 days
 
 
-session:
-	expiration: 14 days
+	services:
+		routerFactory: App\RouterFactory
+		router: @routerFactory::createRouter
+		concerts: App\Model\ConcertModel()
+		members: App\Model\MemberModel()
+		galleries: App\Model\GalleryModel()
+		repertoir: App\Model\RepertoirModel()
+		videos: App\Model\VideoModel()
+		parameters: Tulinkry\Services\ParameterService
+
+	extensions:
+	    translation: Kdyby\Translation\DI\TranslationExtension
 
 
-services:
-	routerFactory: App\RouterFactory
-	router: @routerFactory::createRouter
-	concerts: App\Model\ConcertModel()
-	members: App\Model\MemberModel()
-	galleries: App\Model\GalleryModel()
-	repertoir: App\Model\RepertoirModel()
-	videos: App\Model\VideoModel()
-	parameters: Tulinkry\Services\ParameterService
+	translation:
+	    default: cs
+	    fallback: [cs_CZ, cs]
+	    whitelist: [cs, en]
+	    debugger: on
 
-extensions:
-    translation: Kdyby\Translation\DI\TranslationExtension
+	database:
+		dsn: %database.dsn%
+		user: %database.user%
+		password: %database.password%
 
+development < common:
 
-translation:
-    default: cs
-    fallback: [cs_CZ, cs]
-    whitelist: [cs, en]
-    debugger: on
+production < common:
+
