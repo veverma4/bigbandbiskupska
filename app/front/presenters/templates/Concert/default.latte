@@ -25,7 +25,7 @@
 {block concert}
 	{var $diff = $_concert->date->diff(new \Nette\Utils\DateTime ())}
 
-	<article class="panel panel-default {if $diff->invert}panel-concert-future{else}panel-concert-past{/if}" role="tab">
+	<article class="panel panel-default panel-concert {if $diff->invert}panel-concert-future{else}panel-concert-past{/if}" role="tab">
 		<div 
 			class="panel-heading clearfix" 
 			data-toggle="collapse" 

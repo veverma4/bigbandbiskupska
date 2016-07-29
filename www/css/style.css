@@ -271,6 +271,11 @@ img.alignleft {
 	color: #A94442;
 }
 
+.panel-concert {
+	cursor: pointer;
+	cursor: hand;
+}
+
 
 /* ------------------ nation flag --------- */
 
