@@ -94,7 +94,7 @@ class BandPresenter extends BasePresenter
 			"{\$likes|rand|firstUpper} filmy. Například {\$movies[0]} nebo {\$movies[1]}. Na filmy kouká doma.",
 			"{\$likes|rand|firstUpper} filmy. Například {\$movies[0]}, {\$movies[1]}, ale i {\$movies[2]}. Na filmy kouká venku.",
 			"{\$likes|rand|firstUpper} divadlo. {\$top|rand|firstUpper} hrou je {\$theatres[0]} nebo {\$theatres[1]}. A vůbec divadlem žije.",
-			"Hrozně {\$likes|rand|firstUpper} hudbu. {\$top|rand|firstUpper} písní je {\$songs[0]}, a pak hned v pořadí jsou {\$songs[1]} a {\$songs[2]}. A vůbec se mu neoposlouchají.",
+			"Hrozně {\$likes|rand|firstUpper} hudbu. {\$top|rand|firstUpper} písní je {\$songs[0]}, a pak hned v pořadí jsou {\$songs[1]} a {\$songs[2]}. A vůbec se {\$gender|case: 4} neoposlouchají.",
 			"Poslouchá i různé jiné styly hudby, mezi oblíbené patří písně {array_slice(\$songs, 0, rand(2, 3))|implode: ', '} a {\$songs[5]}.",
 			"Má velký umělecký rozhled. Není divu s takovým rodinným zázemím. Doporučil{\$suffix} by například film {\$movies|rand} nebo divadlo {\$theatres|rand}."
 		];
