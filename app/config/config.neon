@@ -32,10 +32,10 @@ common:
 		galleries: App\Model\GalleryModel()
 		repertoir: App\Model\RepertoirModel()
 		videos: App\Model\VideoModel()
-		parameters: Tulinkry\Services\ParameterService
 
 	extensions:
 	    translation: Kdyby\Translation\DI\TranslationExtension
+	    tulinkry: Tulinkry\DI\TulinkryExtension
 
 
 	translation:
