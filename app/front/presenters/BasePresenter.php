@@ -27,6 +27,7 @@ class BasePresenter extends Tulinkry\Application\UI\Presenter
 	public function startup() {
 		parent::startup();
 		$this->template->productionMode = Tracy\Debugger::$productionMode;
+		$this->template->isMobile = Tulinkry\Http\Browser::isMobile();
 	}
 
 	protected function createTemplate($class = NULL)

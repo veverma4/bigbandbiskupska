@@ -216,7 +216,7 @@
 
 	<div class="container-fluid pic picture" {ifCurrent :Front:Homepage:Default}{else}id="picture"{/ifCurrent}>
 		<header class="bg-image clearfix">
-	    	<img src="{$basePath}/img/band/01.jpg" alt="" class="img-responsive" />
+	    	<img src="{$basePath}/img/band/{if $isMobile}mobile/{/if}01.jpg" alt="" class="img-responsive" />
 		</header>
 		<div class="img-gradient-bottom"></div>
 	</div>
