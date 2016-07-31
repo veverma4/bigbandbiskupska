@@ -2,11 +2,17 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+define ( "APP_DIR", __DIR__ . "/../app");
+define ('TMP_DIR', __DIR__ . "/temp/" . getmypid() );
+
+register_shutdown_function(function() {
+	Tester\Helpers::purge(TMP_DIR);
+	@rmdir(TMP_DIR);
+});
+
 Tester\Environment::setup();
 date_default_timezone_set('Europe/Prague');
 
-define ( "APP_DIR", __DIR__ . "/../app");
-define ('TMP_DIR', __DIR__ . "/temp/" . getmypid() );
 @mkdir(__DIR__."/temp");
 Tester\Helpers::purge(TMP_DIR);
 
@@ -24,10 +30,6 @@ $configurator->addConfig(APP_DIR . '/config/config.local.neon', Nette\Configurat
 
 $container = $configurator->createContainer();
 
-register_shutdown_function(function() {
-	Tester\Helpers::purge(TMP_DIR);
-	@rmdir(TMP_DIR);
-});
 
 /** helpers */
 
