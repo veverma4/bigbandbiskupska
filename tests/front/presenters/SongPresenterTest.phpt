@@ -4,7 +4,7 @@ $container = require __DIR__ . "/../../bootstrap.php";
 
 use Tester\Assert;
 
-class RepertoirPresenterTest extends Tester\TestCase
+class SongPresenterTest extends Tester\TestCase
 {
 	protected $presenter;
 	protected $container;
@@ -17,12 +17,12 @@ class RepertoirPresenterTest extends Tester\TestCase
 
     public function setUp() {
     	$factory = $this->container->getByType('Nette\Application\IPresenterFactory');
-        $this->presenter = $factory->createPresenter('Front:Repertoir');
+        $this->presenter = $factory->createPresenter('Front:Song');
         $this->presenter->autoCanonicalize = false;
     }
 
     public function testRender() {
-        $request = new Nette\Application\Request('Front:Repertoir', 'GET', array () );
+        $request = new Nette\Application\Request('Front:Song', 'GET', array () );
         $response = $this->presenter->run($request);
 
         Assert::type('Nette\Application\Responses\TextResponse', $response);
@@ -40,4 +40,4 @@ class RepertoirPresenterTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-run(new RepertoirPresenterTest($container));
+run(new SongPresenterTest($container));

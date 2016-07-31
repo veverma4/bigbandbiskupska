@@ -5,7 +5,7 @@ namespace App\Model;
 use Nette;
 use Tulinkry;
 
-class RepertoirModel extends Tulinkry\Model\BaseModel
+class SongModel extends Tulinkry\Model\BaseModel
 {
 	private $songs;
 

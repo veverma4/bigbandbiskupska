@@ -21,7 +21,7 @@ class RouterFactory
 		$router[] = new Route('[<locale=cs cs|en>/]kapela', 'Front:Band:default');
 		$router[] = new Route('[<locale=cs cs|en>/]kontakt', 'Front:Contact:default');
 		$router[] = new Route('[<locale=cs cs|en>/]historie', 'Front:History:default');
-		$router[] = new Route('[<locale=cs cs|en>/]repertoar', 'Front:Repertoir:default');
+		$router[] = new Route('[<locale=cs cs|en>/]repertoar', 'Front:Song:default');
 		$router[] = new Route('[<locale=cs cs|en>/]videa', 'Front:Video:default');
 		$router[] = new Route('[<locale=cs cs|en>/]koncerty', 'Front:Concert:default');
 		$router[] = new Route('[<locale=cs cs|en>/]koncert/<id>', 'Front:Concert:detail');

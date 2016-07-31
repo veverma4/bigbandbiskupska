@@ -89,9 +89,9 @@
 		        		<span n:if="$presenter->isLinkCurrent(':Front:Concert:default')" class="sr-only"> (aktuální)</span>
 		        	</a>
 		        </li>
-		        <li n:class="$presenter->isLinkCurrent(':Front:Repertoir:default') ? 'active'">
-		        	<a href="{link :Front:Repertoir:default}" class="">Repertoár
-		        		<span n:if="$presenter->isLinkCurrent(':Front:Repertoir:default')" class="sr-only"> (aktuální)</span>
+		        <li n:class="$presenter->isLinkCurrent(':Front:Song:default') ? 'active'">
+		        	<a href="{link :Front:Song:default}" class="">Repertoár
+		        		<span n:if="$presenter->isLinkCurrent(':Front:Song:default')" class="sr-only"> (aktuální)</span>
 		        	</a>
 		        </li>
 		        <li n:class="$presenter->isLinkCurrent(':Front:Video:default') ? 'active'">
@@ -127,6 +127,7 @@
 					<a title="Zpátky nahoru" href="#top">Nahoru</a>
 				</li>
 				<!--
+				{*
 				TODO: uncomment this when the translations are ready
 	            <li class="dropdown ">
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -138,6 +139,7 @@
 	                <li><a href="{link this, locale => 'en'}"><img class="nation_flag" src="{$basePath}/img/locale/en.png"></img> {_ 'english'}</a></li>
 	              </ul>
 	            </li>
+	            *}
 		        -->
 			</ul>
 	    </div><!-- /.navbar-collapse -->
@@ -180,9 +182,9 @@
 	        		<span n:if="$presenter->isLinkCurrent(':Front:Concert:default')" class="sr-only"> (aktuální)</span>
 	        	</a>
 	        </li>
-	        <li n:class="$presenter->isLinkCurrent(':Front:Repertoir:default') ? 'active'">
-	        	<a href="{link :Front:Repertoir:default}" class="">Repertoár
-	        		<span n:if="$presenter->isLinkCurrent(':Front:Repertoir:default')" class="sr-only"> (aktuální)</span>
+	        <li n:class="$presenter->isLinkCurrent(':Front:Song:default') ? 'active'">
+	        	<a href="{link :Front:Song:default}" class="">Repertoár
+	        		<span n:if="$presenter->isLinkCurrent(':Front:Song:default')" class="sr-only"> (aktuální)</span>
 	        	</a>
 	        </li>
 	        <li n:class="$presenter->isLinkCurrent(':Front:Video:default') ? 'active'">

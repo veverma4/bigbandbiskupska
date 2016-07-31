@@ -4,7 +4,7 @@ $container = require __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR 
 
 use Tester\Assert;
 
-class RepertoirModelTest extends Tester\TestCase
+class SongModelTest extends Tester\TestCase
 {
 	protected $model;
 	protected $container;
@@ -16,7 +16,7 @@ class RepertoirModelTest extends Tester\TestCase
 
 
     public function setUp() {
-    	$this->model = $this->container->getService('repertoir');
+    	$this->model = $this->container->getService('songs');
     }
 
     public function tearDown() {
@@ -28,4 +28,4 @@ class RepertoirModelTest extends Tester\TestCase
 }
 
 # Spuštění testovacích metod
-run(new RepertoirModelTest($container));
+run(new SongModelTest($container));
