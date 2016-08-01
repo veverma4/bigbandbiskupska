@@ -16,7 +16,12 @@ class ConcertPresenter extends BasePresenter
 
 	public function actionDefault ()
 	{
-		$this -> template -> concerts = $this -> concerts -> all ( [ "date" => "DESC" ] );
+		$paginator = $this -> getPaginator ();
+		$paginator -> itemCount = $this -> concerts -> count ( [ "visible" => true ], [ "start" => "DESC", "end" => "DESC" ] );
+		$this -> template -> concerts = $this -> concerts -> limit ( $paginator -> itemsPerPage, $paginator -> offset, [ "visible" => true ], [ "start" => "DESC", "end" => "DESC" ] );
+		if($this->isAjax()) {
+			$this->invalidateControl("concerts");
+		}
 	}
 }
 

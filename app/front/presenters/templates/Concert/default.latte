@@ -13,13 +13,20 @@
 
 {block content}
 
+	{snippet concert}
 	<section class="panel-group" id="band-accordion">
 		{foreach $concerts as $id => $concert}
 			{include concert, "_concert" => $concert}
 		{/foreach}
 
 	</section>
+	{/snippet}
 
+	<div class="text-center">
+		{snippet paginator}
+		{control paginator}
+		{/snippet}
+	</div>
 {/block}
 
 {block concert}

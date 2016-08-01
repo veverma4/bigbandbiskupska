@@ -124,6 +124,11 @@ Těšíme se na vás. V Žirovnici to žije!",
 		return $limited;
 	}
 
+	public function count ( $by = array (), $order = array () )
+	{
+		return count($this->concerts);
+	}
+
 	public function all ()
 	{
 		return $this->concerts;
