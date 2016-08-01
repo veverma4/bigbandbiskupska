@@ -16,6 +16,7 @@ common:
 
 	application:
 		errorPresenter: Error
+		scanComposer: false
 		mapping:
 			*: App\*Module\Presenters\*Presenter
 
