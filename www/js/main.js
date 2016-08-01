@@ -59,15 +59,50 @@ $(function() {
 		timeout = setTimeout(function() {
 			$("ul.song-list li.song-empty").remove()
 
+			var removeHighlight = function($el) {
+				$el.text($el.data("text") || $el.text())
+			};
+
+			var addHightlight = function($el, start, end) {
+				var text = $el.text()
+				$el.data("text", $el.text()); // save old
+				$el.empty()
+				$("<span>")
+					.text(text.substring(0, start))
+					.appendTo($el)
+				$("<span>")
+					.addClass('list-group-item-success')
+					.text(text.substring(start, start + end))
+					.appendTo($el);
+				$("<span>")
+					.text(text.substring(start + end, text.length))
+					.appendTo($el)
+			}
+
 			$("ul.song-list li").each(function(){
 				var $el = $(this)
 				var name = $el.find(".song-name").first().text().toLowerCase();
 				var author = $el.find(".song-interpreter").first().text().toLowerCase();
 				var val = $that.val().toLowerCase();
+				var n, a
+
+				removeHighlight($el.find(".song-name").first())
+				removeHighlight($el.find(".song-interpreter").first())
+
 				$el.show();
-				if(name.indexOf(val) < 0 &&
-				   author.indexOf(val) < 0)
+
+				if((n = name.indexOf(val)) < 0 &&
+				   (a = author.indexOf(val)) < 0) {
 					$el.hide();
+				} else if (n < 0) {
+					addHightlight($el.find(".song-interpreter").first(), a, val.length)
+				} else if (a < 0) {
+					addHightlight($el.find(".song-name").first(), n, val.length)
+				} else {
+					addHightlight($el.find(".song-interpreter").first(), a, val.length)
+					addHightlight($el.find(".song-name").first(), n, val.length)
+				}
+
 			});
 
 			$("ul.song-list").each(function(){
