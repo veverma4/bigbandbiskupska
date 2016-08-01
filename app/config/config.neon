@@ -50,6 +50,8 @@ common:
 		password: %database.password%
 
 development < common:
+	extensions:
+	    console: Kdyby\Console\DI\ConsoleExtension
 
 production < common:
 
