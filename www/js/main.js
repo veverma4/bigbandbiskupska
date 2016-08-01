@@ -119,6 +119,7 @@ $(function() {
 							.prop('type', $image.type)
 							.addClass('img img-rounded')
 							.addClass('img-resp')
+							.addClass('img-responsive')
 							.prop('alt', $e.media$group.media$title.$t)
 			$('<a/>')
 				.append($img)
