@@ -65,6 +65,8 @@ $(function() {
 
 			var addHightlight = function($el, start, end) {
 				var text = $el.text()
+				console.log(text)
+				console.log({ start: start, end: end })
 				$el.data("text", $el.text()); // save old
 				$el.empty()
 				$("<span>")
@@ -84,15 +86,14 @@ $(function() {
 				var name = $el.find(".song-name").first().text().toLowerCase();
 				var author = $el.find(".song-interpreter").first().text().toLowerCase();
 				var val = $that.val().toLowerCase();
-				var n, a
+				var n = name.indexOf(val)
+				var a = author.indexOf(val)
 
 				removeHighlight($el.find(".song-name").first())
 				removeHighlight($el.find(".song-interpreter").first())
 
 				$el.show();
-
-				if((n = name.indexOf(val)) < 0 &&
-				   (a = author.indexOf(val)) < 0) {
+				if(n < 0 && a < 0) {
 					$el.hide();
 				} else if (n < 0) {
 					addHightlight($el.find(".song-interpreter").first(), a, val.length)
@@ -102,7 +103,6 @@ $(function() {
 					addHightlight($el.find(".song-interpreter").first(), a, val.length)
 					addHightlight($el.find(".song-name").first(), n, val.length)
 				}
-
 			});
 
 			$("ul.song-list").each(function(){
