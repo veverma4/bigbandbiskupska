@@ -65,8 +65,6 @@ $(function() {
 
 			var addHightlight = function($el, start, end) {
 				var text = $el.text()
-				console.log(text)
-				console.log({ start: start, end: end })
 				$el.data("text", $el.text()); // save old
 				$el.empty()
 				$("<span>")
