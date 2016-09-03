@@ -19,6 +19,17 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 	{
 		$this -> concerts = array (
 			(object) [
+				"date" => Nette\Utils\DateTime::from ( "2016-10-04 18:00:00" ),
+				"name" => "Big Band Biskupská na HAMU",
+				"location_text" => "Sál Bohuslava Martinů, Malostranské náměstí, Praha",
+				"photo_id" => "6297830529003997106",
+				"album_id" => self::ALBUM_ID,
+				"description" => "Koncert k příležitosti imatrikulace studentů III. generace.
+
+Těšíme se na vás!",
+			],
+
+			(object) [
 				"date" => Nette\Utils\DateTime::from ( "2016-06-28 16:00:00" ),
 				"name" => "Big Band Biskupská na Střeleckém ostrově",
 				"location_text" => "Střelecký ostrov, Praha 5",
