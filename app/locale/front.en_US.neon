@@ -1,0 +1,88 @@
+layout:
+	name: "Big Band Biskupská"
+	description: "Big Band Biskupská patří mezi největší žákovské a studentské hudební kapely v Praze. Vystupoval s Václavem Noidem Bártou, Ondřejem Rumlem, Františkem Zahradníčkem, Tomášem Savkou nebo Michaelou Noskovou. Stálou sólistkou big bandu je Kateřina Tošnarová, absolventka ZUŠ Biskupská."
+	copyright: Tuli
+
+	lang:
+		czech: Czech
+		english: English
+
+	menu:
+		start: Home
+		home: Home
+		concerts: Concerts
+		galleries: Gallery
+		contact: Contact
+		band: Members
+		songs: Repertoir
+		history: History
+		show: "Show menu"
+		actual: current
+		top: To the top
+
+	hash:
+		top: top
+
+presenters:
+	homepage:
+		default:
+			title: "Introduction"
+			name: "Big Band Biskupská"
+			history: "History"
+			zus-biskupska: "Elementary music school Biskupská"
+			no-concerts: "No planned"
+			future-concerts: "Upcoming events"
+			past-concerts: "Past events"
+			title-concerts: "Concerts of Big Band Biskupská"
+
+			netherlands: "Arnhem, The Netherlands"
+			france: "Nîmes a Basilej, France a Switzerland"
+			sweden: "Tranås, Sweden"
+
+			hash:
+				zus-biskupska: zusbiskupska
+				bigband: bigband
+				history: history
+
+			text:
+				lead:
+					1: "Big band Biskupská is one of the largest student music orchestras in Prague. It has performed with Václav Noid Bárta, Ondřej Ruml, František Zahradníček, Tomáš Savka, or Micheala Nosková. A permanent singer soloist of the band is Kateřina Tošnarová, ZUŠ Biskupská’s absolvent."
+					2: "Big band Biskupská’s frequently rearranged repertoire contains more than 100 pieces of swing, pop, dance, jazz or rock music."
+					3: "The conductor of the band is Milan Tolkner, a music teacher and a longtime soloist of The Band of the Castle Guards and Police of the Czech Republic."
+				brief:
+					1: "Big band Biskupská has been conducted by Milan Tolkner since 2010. It’s first concert was a Christmas concert held in 2010 in Barbora hotel in Prague, Zbraslav. At that time, there were 15 musicians in the band, mostly students of Milan Tolkner, who has been teaching at ZUŠ Zbraslav and ZUŠ Biskupská."
+					2: "Through the following years, the band has undergone some significant changes. It has dramatically broadened its repertoire and is has grown into its today’s size – 35 instrumentalists and a singer."
+				history:
+					1: "In the past five years, Big band Biskupská has participated in more than 50 musical events. It has performed at the Representational ball of Prague 1, the International student ball in Prague, Jazz na hradě festival in Žirovnice, Jazz festival Černošice, Prague Conservatory stage, in the National House of Vinohrady, Žofín palace, or in the Czech National Bank. It has also performed in Nîmes in France and at many other events in the Czech Republic or abroad."
+					2: "Every year, Big band Biskupská holds its own Christmas concert, which is annually attended by audience larger than 400 people."
+				netherlands:
+					1: "In 2013, Big band Biskupská and ZUŠ Biskupská’s Chamber orchestra went onto a reciprocal tour to Arnhem. Along with the Arnhem student orchestra, Big band Biskupská has performed in Arnhem and its surroundings on three concert venues, one of them being the famous Openluch museum Arnhem."
+				france:
+					1: "In 2015, ZUŠ Biskupská has been invited to perform at the prestigious Music Day festival in Nîmes in the South of France. Big band Biskupská and Chamber Orchestra’s performances had been very positively received there. The audience of several hundreds of people praised Big band Biskupská by a standing ovation for its performance and repertoire containing for example the songs of the worldwide known French chanson singer Edith Piaf or the French contemporary singer Lara Fabian."
+					2: "The two orchestras have also visited the town of Basel, Switzerland, in the same year. In cooperation with the local music school, Big band Biskupská held a concert there."
+				sweden:
+					1: "The latest tour abroad was held in June 2016, when Big band Biskupská had visited Tranås. The five days the big band has spent there were occupied by three concerts on three different places – in the city centre of Jönköping, by the lake Sommen, and in the Tranås city park near the local town hall."
+				zus-biskupska:
+					1: "The elementary music school Biskupská has originated from a Prague music school that was opened shortly after the WWII. Gradually, the school started to establish its individual branches, which have later been developed into independent elementary music schools. In 1947, the school has moved into a building near Bílá Labuť, where it resides until today."
+					2: "ZUŠ Biskupská has three departments – the music department, the department of fine arts, and the department of literary drama. The pupils of the school are of all ages – preschool, elementary school and secondary school students are systematically musically educated and prepared for their subsequent studies at various art schools. ZUŠ Biskupská is also oriented on educating amateur semi-professional artists, for whom the art is just a hobby."
+					3: "Within the music department, the pupils of ZUŠ Biskupská can choose to learn the piano, violin, cello, double bass, harp, accordion, keyboard, recorder, flute, guitar, electric guitar, clarinet, trumpet, trombone, French horn, and the percussion instruments, as well as they can attend solo singing or choir singing lessons. Along with Big band Biskupská, there are two string orchestras and a mixed choir in the school."
+					4: "The students of ZUŠ Biskupská are frequently awarded in various competitions, Czech or international ones. ZUŠ Biskupská has also prepared many famous Czech artists and performers for their professional career. In the 2015/2016 school year, the school has been attended by 750 students."
+	song:
+		default:
+			hash:
+				filter: filter
+				songs: song
+				author: author
+	contact:
+		default:
+			hash:
+				contact: contact
+	concert:
+		default:
+			hash:
+				concerts: concerts
+	band:
+		default:
+			hash:
+				photo: band-photo
+				members: member-accordion

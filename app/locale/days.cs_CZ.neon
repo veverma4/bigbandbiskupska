@@ -1,0 +1,16 @@
+long:
+	monday: Pondělí
+	tuesday: Úterý
+	wendesday: Středa
+	thursday: Čtvrtek
+	friday: Pátek
+	saturday: Sobota
+	sunday: Neděle
+short:
+	monday: Po
+	tuesday: Út
+	wendesday: St
+	thursday: Čt
+	friday: Pá
+	saturday: So
+	sunday: Ne

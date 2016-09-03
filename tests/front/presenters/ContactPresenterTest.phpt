@@ -35,8 +35,8 @@ class ContactPresenterTest extends TestCase
 
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom -> has( '#kontakt' ) );
-        Assert::true( $dom -> has( '#top' ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.contact.default.hash.contact') ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
 }

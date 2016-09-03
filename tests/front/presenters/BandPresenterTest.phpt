@@ -35,8 +35,9 @@ class BandPresenterTest extends TestCase
 
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom -> has( '#band-photo' ) );
-        Assert::true( $dom -> has( '#member-accordion' ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.band.default.hash.photo') ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.band.default.hash.members') ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
 }

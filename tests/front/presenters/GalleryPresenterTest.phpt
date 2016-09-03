@@ -35,12 +35,12 @@ class GalleryPresenterTest extends TestCase
         $html = (string) $response -> getSource();
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom -> has( '#galerie' ) );
-        Assert::true( $dom -> has( '#top' ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.gallery')) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
     public function testRenderDetail () {
-        $request = new Request( 'Front:Gallery', 'GET', array ( 'action' => 'detail' ) );
+        $request = new Request( 'Front:Gallery', 'GET', array ( 'action' => 'detail', 'id' => 1 ) );
         $response = $this -> presenter -> run( $request );
 
         Assert::type( 'Nette\Application\Responses\TextResponse', $response );
@@ -49,8 +49,8 @@ class GalleryPresenterTest extends TestCase
         $html = (string) $response -> getSource();
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom -> has( '#galerie' ) );
-        Assert::true( $dom -> has( '#top' ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.gallery')) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
 }

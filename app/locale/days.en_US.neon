@@ -1,0 +1,16 @@
+long:
+	monday: Monday
+	tuesday: Tuesday
+	wendesday: Wendesday
+	thursday: Thursday
+	friday: Friday
+	saturday: Saturday
+	sunday: Sunday
+short:
+	monday: Mon
+	tuesday: Tue
+	wendesday: Wen
+	thursday: Thr
+	friday: Fri
+	saturday: Sat
+	sunday: Sun

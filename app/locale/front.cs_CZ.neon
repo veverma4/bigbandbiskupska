@@ -1,0 +1,89 @@
+layout:
+	name: "Big Band Biskupská"
+	description: "Big Band Biskupská patří mezi největší žákovské a studentské hudební kapely v Praze. Vystupoval s Václavem Noidem Bártou, Ondřejem Rumlem, Františkem Zahradníčkem, Tomášem Savkou nebo Michaelou Noskovou. Stálou sólistkou big bandu je Kateřina Tošnarová, absolventka ZUŠ Biskupská."
+	copyright: Tuli
+
+	lang:
+		czech: Čeština
+		english: English
+
+	menu:
+		start: Úvod
+		home: Domů
+		concerts: Koncerty
+		galleries: Galerie
+		contact: Kontakt
+		band: Členové
+		songs: Repertoár
+		history: Historie
+		show: "Zobrazit menu"
+		actual: aktuální
+		top: Nahoru
+
+	hash:
+		top: nahoru
+
+presenters:
+	homepage:
+		default:
+			title: "Úvod"
+			name: "Big Band Biskupská"
+			history: "Historie"
+			zus-biskupska: "ZUŠ Biskupská"
+			no-concerts: "Aktuálně žádné"
+			future-concerts: "Nejbližší koncerty"
+			past-concerts: "Odehrané koncerty"
+			title-concerts: "Big Band Biskupská koncerty"
+
+			netherlands: "Arnhem, Nizozemsko"
+			france: "Nîmes a Basilej, Francie a Švýcarsko"
+			sweden: "Tranås, Švédsko"
+
+			hash:
+				zus-biskupska: zusbiskupska
+				bigband: bigband
+				history: historie
+
+			text:
+				lead:
+					1: "Big Band Biskupská patří mezi největší žákovské a studentské hudební kapely v Praze. Vystupoval s Václavem Noidem Bártou, Ondřejem Rumlem, Františkem Zahradníčkem, Tomášem Savkou nebo Michaelou Noskovou. Stálou sólistkou big bandu je Kateřina Tošnarová, absolventka ZUŠ Biskupská."
+					2: "Pravidelně obnovovaný repertoár obsahuje přes 100 skladeb swingových, populárních, tanečních, jazzových, ale i rockových."
+					3: "Dirigentem big bandu je Milan Tolkner, hudební pedagog a dlouholetý sólista Hudby hradní stráže a Policie ČR."
+				brief:
+					1: "Big Band Biskupská pod taktovkou Milana Tolknera koncertuje již od roku 2010. První vystoupení odehrál na Vánoce roku 2010 v hotelu Barbora na pražské Zbraslavi. Obsazení big bandu tehdy čítalo 15 hráčů převážně ze třídy Milana Tolknera, který působil a dodnes působí na ZUŠ Zbraslav a Biskupská."
+					2: "V následujících letech prošel orchestr významnými změnami. Zásadním způsobem rozšířil svůj repertoár a postupně se rozrostl až do dnešního obsazení, které čítá 35 hráčů a stálou sólistku Kateřinu Tošnarovou."
+				history:
+					1: "Big Band Biskupská za posledních pět let odehrál více než 50 koncertů. Vystupoval na Reprezentačním plese Prahy 1, na Mezinárodním studentském plese v Praze, festivalu Jazz na hradě v Žirovnici, Jazz festivalu Černošice, na pódiích Pražské konzervatoře, Národního domu na Vinohradech, paláce Žofín či České národní banky. Zahrál si i na hudebním festivalu ve francouzském Nîmes a mnoha dalších akcích doma i v zahraničí."
+					2: "Každoročně pořádá vlastní vánoční koncert, na který pravidelně přichází přes 400 diváků."
+				netherlands:
+					1: "V roce 2013 absolvoval Big Band Biskupská a komorní orchestr ZUŠ Biskupská reciproční zájezd do holandského Arnhemu. Big band odehrál v Arnhemu a jeho okolí tři koncerty společně s arnhemským žákovským orchestrem, jeden z nich na letní scéně známého skanzenu Openlucht museum Arnhem."
+				france:
+					1: "V roce 2015 přijala ZUŠ Biskupská pozvání na prestižní pódia národního festivalu hudby do jihofrancouzského Nîmes. Big Band Biskupská a komorní orchestr Biskupská sklidily s repertoárem obsahujícím mj. písně světoznámé francouzské šansoniérky Edith Piaf či soudobé zpěvačky Lary Fabian velkolepý úspěch, za který nejlépe mluví aplaus ve stoje od několika stovek přítomných diváků."
+					2: "Ve stejném roce se orchestry objevily také ve švýcarské Basileji, kde big band koncertoval v rámci spolupráce s místní uměleckou školou."
+				sweden:
+					1: "Sezona 2016 přinesla dosud poslední zahraniční výlet, a to do švédského Tranås. Pětidenní zájezd orámovaly tři koncerty – v centru města Jönköping, u jezera Sommen a v městském parku v Tranås u místní radnice."
+				zus-biskupska:
+					1: "ZUŠ Biskupská vznikla na základech pražské hudební školy, která začala působit v hlavním městě záhy po druhé světové válce. Škola postupně vytvářela jednotlivé pobočky, z nichž později vznikaly samostatné umělecké školy. Do budovy v Biskupské ulici nedaleko Bílé Labutě, ze které se později stala dnešní ZUŠ Biskupská, se škola nastěhovala roku 1947."
+					2: "V současné době má ZUŠ Biskupská tři obory: hudební, výtvarný a literárně dramatický. Vyučuje žáky předškolního věku, základních, středních i vysokých škol a systematicky je připravuje na navazující studium na specializovaných uměleckých školách – konzervatořích, vyšších odborných i vysokých školách. Orientuje se rovněž na přípravu amatérských a poloprofesionálních umělců, pro které je umění koníčkem."
+					3: "V rámci hudební výuky vyučuje ZUŠ Biskupská své žáky hře na klavír, housle, violoncello, kontrabas, háčkovou harfu, akordeon, elektrické klávesy, zobcovou a příčnou flétnu, kytaru, elektrickou kytaru, klarinet, trubku, pozoun, lesní roh a bicí nástroje a rovněž sólovému a sborovému zpěvu. Na škole působí krom Big Bandu Biskupská také dva houslové soubory a pěvecký sbor."
+					4: "Žáci školy se úspěšně umisťují v soutěžích celopražských, celostátních i mezinárodních. Na svou uměleckou dráhu se v ZUŠ Biskupská připravovalo mnoho známých osobností české umělecké scény. Ve školním roce 2015/2016 navštěvovalo školu 750 žáků."
+
+	song:
+		default:
+			hash:
+				filter: filtrovani
+				songs: song
+				author: author
+	contact:
+		default:
+			hash:
+				contact: kontakt
+	concert:
+		default:
+			hash:
+				concerts: koncerty
+	band:
+		default:
+			hash:
+				photo: band-photo
+				members: member-accordion

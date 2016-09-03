@@ -35,10 +35,10 @@ class HomepagePresenterTest extends TestCase
 
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom -> has( '#bigband' ) );
-        Assert::true( $dom -> has( '#historie' ) );
-        Assert::true( $dom -> has( '#zusbiskupska' ) );
-        Assert::true( $dom -> has( '#top' ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.homepage.default.hash.bigband') ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.homepage.default.hash.history')) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.homepage.default.hash.zus-biskupska')) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
 }

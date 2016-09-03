@@ -35,10 +35,10 @@ class SongPresenterTest extends TestCase
 
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom -> has( '#filtrovani' ) );
-        Assert::true( $dom -> has( '#pisen' ) );
-        Assert::true( $dom -> has( '#autor' ) );
-        Assert::true( $dom -> has( '#top' ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.song.default.hash.filter') ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.song.default.hash.songs')) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.song.default.hash.author')) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
 }

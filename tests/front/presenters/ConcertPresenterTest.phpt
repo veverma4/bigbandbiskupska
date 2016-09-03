@@ -35,8 +35,8 @@ class ConcertPresenterTest extends TestCase
 
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom -> has( '#koncerty' ) );
-        Assert::true( $dom -> has( '#top' ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.presenters.concert.default.hash.concerts') ) );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
 }
