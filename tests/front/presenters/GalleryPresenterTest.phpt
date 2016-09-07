@@ -28,6 +28,13 @@ class GalleryPresenterTest extends Tester\TestCase
 
         Assert::type('Nette\Application\Responses\TextResponse', $response);
         Assert::type('Nette\Bridges\ApplicationLatte\Template', $response->getSource());
+
+        $html = (string) $response->getSource();
+        $dom = Tester\DomQuery::fromHtml($html);
+
+        Assert::true( $dom->has('#galerie') );
+        Assert::true( $dom->has('#top') );
+
     }
 
     public function testRenderDetail() {
@@ -36,6 +43,13 @@ class GalleryPresenterTest extends Tester\TestCase
 
         Assert::type('Nette\Application\Responses\TextResponse', $response);
         Assert::type('Nette\Bridges\ApplicationLatte\Template', $response->getSource());
+
+        $html = (string) $response->getSource();
+        $dom = Tester\DomQuery::fromHtml($html);
+
+        Assert::true( $dom->has('#galerie') );
+        Assert::true( $dom->has('#top') );
+
     }
 }
 

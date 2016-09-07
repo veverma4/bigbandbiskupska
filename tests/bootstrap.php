@@ -27,6 +27,7 @@ $configurator->createRobotLoader()
 
 $configurator->addConfig(APP_DIR . '/config/config.neon', Nette\Configurator::AUTO);
 $configurator->addConfig(APP_DIR . '/config/config.local.neon', Nette\Configurator::AUTO);
+$configurator->addParameters(array("wwwDir" => TMP_DIR));
 
 $container = $configurator->createContainer();
 

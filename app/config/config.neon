@@ -36,6 +36,7 @@ common:
 	extensions:
 	    translation: Kdyby\Translation\DI\TranslationExtension
 	    tulinkry: Tulinkry\DI\TulinkryExtension
+	    scripts: Tulinkry\DI\ScriptExtension
 
 
 	translation:

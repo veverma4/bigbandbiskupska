@@ -1,6 +1,7 @@
 app/config/config.local.neon
 log/*
 temp/cache/*
+www/generated
 composer.lock
 /nbproject/private/
 /nbproject/

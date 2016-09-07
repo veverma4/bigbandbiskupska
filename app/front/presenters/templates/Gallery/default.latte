@@ -10,11 +10,14 @@
 	</li>
 {/block}
 
-{block scripts}
-{include parent}
+{block content}
 
-<script type="text/javascript">
-//<![CDATA[
+{script}
+	var linkUrl = {link Gallery:detail, 0}
+	var errorUrl = {link logError!}
+{/script}
+
+{script}
 $(function() {
 	$.nette.ajax({
 		url: 'https://picasaweb.google.com/data/feed/api/user/bigbandbiskupska?alt=json&imgmax=1080u&thumbsize=200u',
@@ -70,19 +73,7 @@ $(function() {
 		$("#galleries").text("Nelze se připojit k seznamu galerií, opakujte akci později.")
 	})
 });
-//]]>
-</script>
-
-{/block}
-
-{block content}
-
-<script>
-//<![CDATA[
-	var linkUrl = {link Gallery:detail, 0}
-	var errorUrl = {link logError!}
-//]]>
-</script>
+{/script}
 
 <div class="row">
 	<div class="col-lg-12" id="galleries">
