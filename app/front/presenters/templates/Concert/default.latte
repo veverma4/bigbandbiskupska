@@ -5,87 +5,87 @@
 {/block}
 
 {block mininav}
-	<li>
-		<a href="#koncerty">Koncerty</a>
-	</li>
+<li>
+    <a href="#koncerty">Koncerty</a>
+</li>
 {/block}
 
 
 {block content}
 
-	{snippet concert}
-	<section class="panel-group" id="band-accordion">
-		{foreach $concerts as $id => $concert}
-			{include concert, "_concert" => $concert}
-		{/foreach}
+{snippet concert}
+    <section class="panel-group" id="band-accordion">
+        {foreach $concerts as $id => $concert}
+            {include concert, "_concert" => $concert}
+        {/foreach}
 
-	</section>
-	{/snippet}
+    </section>
+{/snippet}
 
-	<div class="text-center">
-		{snippet paginator}
-		{control paginator}
-		{/snippet}
-	</div>
+<div class="text-center">
+    {snippet paginator}
+        {control paginator}
+    {/snippet}
+</div>
 {/block}
 
 {block concert}
-	{var $diff = $_concert->date->diff(new \Nette\Utils\DateTime ())}
+{var $diff = $_concert->date->diff(new \Nette\Utils\DateTime ())}
 
-	<article class="panel panel-default panel-concert {if $diff->invert}panel-concert-future{else}panel-concert-past{/if}" role="tab">
-		<div 
-			class="panel-heading clearfix" 
-			data-toggle="collapse" 
-			data-target="#{$_concert->name|webalize}"
-			data-parent="#band-accordion">
+<article class="panel panel-default panel-concert {if $diff->invert}panel-concert-future{else}panel-concert-past{/if}" role="tab">
+    <div 
+        class="panel-heading clearfix" 
+        data-toggle="collapse" 
+        data-target="#{$_concert->name|webalize}"
+        data-parent="#band-accordion">
 
-			<div class="event-date col-lg-3" title="{$_concert->date|weekday}, {$_concert->date|date: 'j. n. Y H:i'}">
-				<div class="panel panel-default">
-					<div class="panel-heading text-center">
-						<span class="glyphicon glyphicon-calendar pull-left"></span>
-						<h4>{$_concert->date|date: 'Y'}</h4>
-					</div>
-					<div class="panel-body text-center">
-						<h3 class="text-nowrap">{$_concert->date|date: 'j. n.'}</h3>
-						<h4>{$_concert->date|date: 'H:i'}</h4>
-					</div>
-				</div>
-			</div>
+        <div class="event-date col-lg-3" title="{$_concert->date|weekday}, {$_concert->date|date: 'j. n. Y H:i'}">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <span class="glyphicon glyphicon-calendar pull-left"></span>
+                    <h4>{$_concert->date|date: 'Y'}</h4>
+                </div>
+                <div class="panel-body text-center">
+                    <h3 class="text-nowrap">{$_concert->date|date: 'j. n.'}</h3>
+                    <h4>{$_concert->date|date: 'H:i'}</h4>
+                </div>
+            </div>
+        </div>
 
-			<div class="event-spec col-lg-9">
-				<div class="event-name">
-				<div class="badge pull-right" n:if="$diff->invert && $diff->days < 32">Již za {$_concert->date|timeLeft}</div>
-					<h2>{$_concert->name}</h2>
-				</div>
-				<div class="event-place">
-					<h3>{$_concert->location_text}</h3>
-				</div>
-			</div>
+        <div class="event-spec col-lg-9">
+            <div class="event-name">
+                <div class="badge pull-right" n:if="$diff->invert && $diff->days < 32">Již za {$_concert->date|timeLeft}</div>
+                <h2>{$_concert->name}</h2>
+            </div>
+            <div class="event-place">
+                <h3>{$_concert->location_text}</h3>
+            </div>
+        </div>
 
-		</div>
+    </div>
 
-		<div class="panel-collapse collapse clearfix" id="{$_concert->name|webalize}">
-			<div class="panel-body">
-					 
-				<div
-					class="col-md-12 google-image text-center"
-					data-photo-id="{$_concert->photo_id}"
-					data-album-id="{$_concert->album_id}"
-					>
-				</div>
+    <div class="panel-collapse collapse clearfix" id="{$_concert->name|webalize}">
+        <div class="panel-body">
 
-				<div class="clearfix"></div>
+            <div
+                class="col-md-12 google-image text-center"
+                data-photo-id="{$_concert->photo_id}"
+                data-album-id="{$_concert->album_id}"
+                >
+            </div>
 
-				<div
-					class="col-md-12"
-					role="tabpanel" 
-					n:if="isset($_concert->description) && !empty($_concert->description)">
-					<div class="panel-body event-description">
-						{$_concert->description|noescape|texy}
-					</div>
-				</div>
-			</div>
-		</div>
+            <div class="clearfix"></div>
 
-	</article>
+            <div
+                class="col-md-12"
+                role="tabpanel" 
+                n:if="isset($_concert->description) && !empty($_concert->description)">
+                <div class="panel-body event-description">
+                    {$_concert->description|noescape|texy}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>
 {/block}

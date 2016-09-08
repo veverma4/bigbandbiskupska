@@ -1,24 +1,24 @@
 {block title}Videa{/block}
 
 {block heading}
-		<h1 id="#videa">Videa <span class="badge">{count($videos)}</span></h1>
-{/block}
+<h1 id="#videa">Videa <span class="badge">{count($videos)}</span></h1>
+    {/block}
 
 {block mininav}
 {/block}
 
 {block content}
 
-	{foreach $videos as $id => $video}
-		{include video, "_video" => $video}
-	{/foreach}
+{foreach $videos as $id => $video}
+    {include video, "_video" => $video}
+{/foreach}
 
 {/block}
 
 
 {block video}
-	<h3 class="text-center">{$_video->name}</h3>
-	<div class="embed-responsive embed-responsive-16by9 img-rounded">
-	  <iframe class="embed-responsive-item" src="{$_video->url}" alt="Big Band Biskupská - {$_video->name}" frameborder="0" allowfullscreen></iframe>
-	</div>
+<h3 class="text-center">{$_video->name}</h3>
+<div class="embed-responsive embed-responsive-16by9 img-rounded">
+    <iframe class="embed-responsive-item" src="{$_video->url}" alt="Big Band Biskupská - {$_video->name}" frameborder="0" allowfullscreen></iframe>
+</div>
 {/block}

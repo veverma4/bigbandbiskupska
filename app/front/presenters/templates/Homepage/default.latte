@@ -4,281 +4,281 @@
 {/block}
 
 {block mininav}
-	<li>
-		<a href="#bigband">Big Band Biskupská</a>
-	</li>
-	<li>
-		<a href="#historie">Historie</a>
-	</li>
-	<li>
-		<a href="#zusbiskupska">ZUŠ Biskupská</a>
-	</li>
+<li>
+    <a href="#bigband">Big Band Biskupská</a>
+</li>
+<li>
+    <a href="#historie">Historie</a>
+</li>
+<li>
+    <a href="#zusbiskupska">ZUŠ Biskupská</a>
+</li>
 {/block}
 
 {block top-content}
 <div class="container" id="bigband">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="panel panel-default panel-content">
-				<div class="panel-heading">
-					<h1>
-						{_presenters.homepage.default.name}
-					</h1>
-				</div>
-				<div class="panel-body">
-					<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default panel-content">
+                <div class="panel-heading">
+                    <h1>
+                        {_presenters.homepage.default.name}
+                    </h1>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
 
-						<div class="col-sm-6 col-md-8">
-							<img src="{$basePath}/img/icons/bbb.ico" 
-										 alt="Logo"
-										 class="main-logo alignleft"
-										 role="logo" />
+                        <div class="col-sm-6 col-md-8">
+                            <img src="{$basePath}/img/icons/bbb.ico" 
+                                 alt="Logo"
+                                 class="main-logo alignleft"
+                                 role="logo" />
 
-							<p class="lead">
-								Big Band Biskupská patří mezi největší žákovské a studentské hudební kapely v Praze. Vystupoval s Václavem Noidem Bártou, Ondřejem Rumlem, Františkem Zahradníčkem, Tomášem Savkou nebo Michaelou Noskovou. Stálou sólistkou big bandu je Kateřina Tošnarová, absolventka ZUŠ Biskupská.
-							</p>
-							<p class="lead">
-								Pravidelně obnovovaný repertoár obsahuje přes 100 skladeb swingových, populárních, tanečních, jazzových, ale i rockových.
-							</p>
-							<p class="lead">
-								Dirigentem big bandu je Milan Tolkner, hudební pedagog a dlouholetý sólista Hudby hradní stráže a Policie ČR.
-							</p>
-						</div>
+                            <p class="lead">
+                                Big Band Biskupská patří mezi největší žákovské a studentské hudební kapely v Praze. Vystupoval s Václavem Noidem Bártou, Ondřejem Rumlem, Františkem Zahradníčkem, Tomášem Savkou nebo Michaelou Noskovou. Stálou sólistkou big bandu je Kateřina Tošnarová, absolventka ZUŠ Biskupská.
+                            </p>
+                            <p class="lead">
+                                Pravidelně obnovovaný repertoár obsahuje přes 100 skladeb swingových, populárních, tanečních, jazzových, ale i rockových.
+                            </p>
+                            <p class="lead">
+                                Dirigentem big bandu je Milan Tolkner, hudební pedagog a dlouholetý sólista Hudby hradní stráže a Policie ČR.
+                            </p>
+                        </div>
 
-						<div class="col-sm-6 col-md-4">
-							<h2>Nejbližší koncerty</h2>
-							{if count($concerts)}
-							<ul class="list-group">
-								<li class="list-group-item" n:foreach="$concerts as $id => $concert">
-									<!-- <span class="badge pull-right">{$concert->date|timeLeft}</span> -->
-									<h5>{$concert->name}</h5>
-									<small>{$concert->date|weekday}, {$concert->date|date: 'd. m. H:i'}</small>
-								</li>
-							</ul>
-							{else}
-							<p>Aktuálně žádné</p>
-							{/if}
-							<a href="{link Concert:default}" title="Big Band Biskupská koncerty">Odehrané koncerty</a>
-						</div>
+                        <div class="col-sm-6 col-md-4">
+                            <h2>Nejbližší koncerty</h2>
+                            {if count($concerts)}
+                                <ul class="list-group">
+                                    <li class="list-group-item" n:foreach="$concerts as $id => $concert">
+                                        <!-- <span class="badge pull-right">{$concert->date|timeLeft}</span> -->
+                                        <h5>{$concert->name}</h5>
+                                        <small>{$concert->date|weekday}, {$concert->date|date: 'd. m. H:i'}</small>
+                                    </li>
+                                </ul>
+                            {else}
+                                <p>Aktuálně žádné</p>
+                            {/if}
+                            <a href="{link Concert:default}" title="Big Band Biskupská koncerty">Odehrané koncerty</a>
+                        </div>
 
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <div class="container-fluid picture">
-	<div class="img-gradient-top"></div>
-	<header class="bg-image clearfix">
-    	<img src="{$basePath}/img/band/{if $isMobile}mobile/{/if}02.jpg" alt="" class="img-responsive" />
-	</header>
-	<div class="img-gradient-bottom"></div>
+    <div class="img-gradient-top"></div>
+    <header class="bg-image clearfix">
+        <img src="{$basePath}/img/band/{if $isMobile}mobile/{/if}02.jpg" alt="" class="img-responsive" />
+    </header>
+    <div class="img-gradient-bottom"></div>
 </div>
 
 
 
 <div class="container" id="historie">
 
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="panel panel-default panel-content">
-				<div class="panel-body">
-					<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default panel-content">
+                <div class="panel-body">
+                    <div class="row">
 
-						<div class="col-lg-12 ">
-							<h2>Historie</h2>
-							
-							<div class="row">
-								<div class="col-md-9">
-									<p>
-										Big Band Biskupská pod taktovkou Milana Tolknera koncertuje již od roku 2010. První vystoupení odehrál na Vánoce roku 2010 v hotelu Barbora na pražské Zbraslavi. Obsazení big bandu tehdy čítalo 15 hráčů převážně ze třídy Milana Tolknera, který působil a dodnes působí na ZUŠ Zbraslav a Biskupská.
-									</p>
-									<p>
-										V následujících letech prošel orchestr významnými změnami. Zásadním způsobem rozšířil svůj repertoár a postupně se rozrostl až do dnešního obsazení, které čítá 35 hráčů a stálou sólistku Kateřinu Tošnarovou.
-									</p>
-								</div>
-								<div class="col-md-3 text-center">
-									<!-- TODO: add gallery -->
-									<a href="{$basePath}/img/homepage/bbb-right.jpg"
-									   title="Big Band Biskupská"
-									   class="album-link"
-									   data-gallery
-									>
-										<img src="{$basePath}/img/homepage/thumbnails/bbb-right.jpg" 
-											 class="img img-rounded img-resp img300x150" 
-											 alt="Big Band Biskupská" />
+                        <div class="col-lg-12 ">
+                            <h2>Historie</h2>
 
-									</a>
-								</div>
-							</div>
-							
-							<hr class="clearfix" />
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>
+                                        Big Band Biskupská pod taktovkou Milana Tolknera koncertuje již od roku 2010. První vystoupení odehrál na Vánoce roku 2010 v hotelu Barbora na pražské Zbraslavi. Obsazení big bandu tehdy čítalo 15 hráčů převážně ze třídy Milana Tolknera, který působil a dodnes působí na ZUŠ Zbraslav a Biskupská.
+                                    </p>
+                                    <p>
+                                        V následujících letech prošel orchestr významnými změnami. Zásadním způsobem rozšířil svůj repertoár a postupně se rozrostl až do dnešního obsazení, které čítá 35 hráčů a stálou sólistku Kateřinu Tošnarovou.
+                                    </p>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <!-- TODO: add gallery -->
+                                    <a href="{$basePath}/img/homepage/bbb-right.jpg"
+                                       title="Big Band Biskupská"
+                                       class="album-link"
+                                       data-gallery
+                                       >
+                                        <img src="{$basePath}/img/homepage/thumbnails/bbb-right.jpg" 
+                                             class="img img-rounded img-resp img300x150" 
+                                             alt="Big Band Biskupská" />
 
-							<div class="row">
-								<div class="col-md-3 text-center">
-									<a href="{$basePath}/img/homepage/bbb-left.jpg"
-									   title="Big Band Biskupská"
-									   class="album-link"
-									   data-gallery
-									>								
-										<img src="{$basePath}/img/homepage/thumbnails/bbb-left.jpg" 
-											 class="img img-rounded img-resp img300x150" 
-											 alt="Big Band Biskupská" />
-									</a>
-								</div>
-								<div class="col-md-9">
-									<p></p>
-									<p>
-										Big Band Biskupská za posledních pět let odehrál více než 50 koncertů. Vystupoval na Reprezentačním plese Prahy 1, na Mezinárodním studentském plese v Praze, festivalu Jazz na hradě v Žirovnici, Jazz festivalu Černošice, na pódiích Pražské konzervatoře, Národního domu na Vinohradech, paláce Žofín či České národní banky. Zahrál si i na hudebním festivalu ve francouzském Nîmes a mnoha dalších akcích doma i v zahraničí.
-									</p>
-									<p>
-										Každoročně pořádá vlastní vánoční koncert, na který pravidelně přichází přes 400 diváků.
-									</p>
-								</div>
-							</div>
-							
-							<hr class="clearfix" />
+                                    </a>
+                                </div>
+                            </div>
 
-							<div class="row">
-								<div class="col-md-9">
-								    <h3>Arnhem, Nizozemsko</h3>
-									<p>
-										V roce 2013 absolvoval Big Band Biskupská a komorní orchestr ZUŠ Biskupská reciproční zájezd do holandského Arnhemu. Big band odehrál v Arnhemu a jeho okolí tři koncerty společně s arnhemským žákovským orchestrem, jeden z nich na letní scéně známého skanzenu Openlucht museum Arnhem.
-									</p>
-								</div>
-								<div class="col-md-3 text-center">
-									<a href="{$basePath}/img/homepage/netherlands.jpg"
-									   title="Arhnem, Nizozemsko" 
-									   class="album-link"
-									   data-gallery
-									>								
-										<img src="{$basePath}/img/homepage/thumbnails/netherlands.jpg" 
-											 class="img img-rounded img-resp img300x150" 
-											 alt="Arhnem, Nizozemsko" />
-									</a>
-								</div>
-							</div>
-							
-							<hr class="clearfix" />
+                            <hr class="clearfix" />
 
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="{$basePath}/img/homepage/bbb-left.jpg"
+                                       title="Big Band Biskupská"
+                                       class="album-link"
+                                       data-gallery
+                                       >                                
+                                        <img src="{$basePath}/img/homepage/thumbnails/bbb-left.jpg" 
+                                             class="img img-rounded img-resp img300x150" 
+                                             alt="Big Band Biskupská" />
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <p></p>
+                                    <p>
+                                        Big Band Biskupská za posledních pět let odehrál více než 50 koncertů. Vystupoval na Reprezentačním plese Prahy 1, na Mezinárodním studentském plese v Praze, festivalu Jazz na hradě v Žirovnici, Jazz festivalu Černošice, na pódiích Pražské konzervatoře, Národního domu na Vinohradech, paláce Žofín či České národní banky. Zahrál si i na hudebním festivalu ve francouzském Nîmes a mnoha dalších akcích doma i v zahraničí.
+                                    </p>
+                                    <p>
+                                        Každoročně pořádá vlastní vánoční koncert, na který pravidelně přichází přes 400 diváků.
+                                    </p>
+                                </div>
+                            </div>
 
+                            <hr class="clearfix" />
 
-							<div class="row">
-								<div class="col-md-3 text-center">
-									<a href="{$basePath}/img/homepage/france.jpg"
-									   title="Nîmes a Basilej, Francie a Švýcarsko" 
-									   class="album-link"
-									   data-gallery
-									>										
-										<img src="{$basePath}/img/homepage/thumbnails/france.jpg" 
-											 class="img img-rounded img-resp img300x150" 
-											 alt="Nîmes a Basilej, Francie a Švýcarsko" />
-									</a>
-								</div>
-								<div class="col-md-9">
-								    <h3>Nîmes a Basilej, Francie a Švýcarsko</h3>
-									<p>
-										V roce 2015 přijala ZUŠ Biskupská pozvání na prestižní pódia národního festivalu hudby do jihofrancouzského Nîmes. Big Band Biskupská a komorní orchestr Biskupská sklidily s repertoárem obsahujícím mj. písně světoznámé francouzské šansoniérky Edith Piaf či soudobé zpěvačky Lary Fabian velkolepý úspěch, za který nejlépe mluví aplaus ve stoje od několika stovek přítomných diváků.
-									</p>
-									<p>
-										Ve stejném roce se orchestry objevily také ve švýcarské Basileji, kde big band koncertoval v rámci spolupráce s místní uměleckou školou.
-									</p>
-								</div>
-							</div>
-							
-							<hr class="clearfix" />
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3>Arnhem, Nizozemsko</h3>
+                                    <p>
+                                        V roce 2013 absolvoval Big Band Biskupská a komorní orchestr ZUŠ Biskupská reciproční zájezd do holandského Arnhemu. Big band odehrál v Arnhemu a jeho okolí tři koncerty společně s arnhemským žákovským orchestrem, jeden z nich na letní scéně známého skanzenu Openlucht museum Arnhem.
+                                    </p>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <a href="{$basePath}/img/homepage/netherlands.jpg"
+                                       title="Arhnem, Nizozemsko" 
+                                       class="album-link"
+                                       data-gallery
+                                       >                                
+                                        <img src="{$basePath}/img/homepage/thumbnails/netherlands.jpg" 
+                                             class="img img-rounded img-resp img300x150" 
+                                             alt="Arhnem, Nizozemsko" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <hr class="clearfix" />
 
 
-							<div class="row">
-								<div class="col-md-9">
-									<h3>Tranås, Švédsko</h3>
-									<p>
-										Sezona 2016 přinesla dosud poslední zahraniční výlet, a to do švédského Tranås. Pětidenní zájezd orámovaly tři koncerty – v centru města Jönköping, u jezera Sommen a v městském parku v Tranås u místní radnice.
-									</p>
-								</div>
-								<div class="col-md-3 text-center">
-									<a href="{$basePath}/img/homepage/sweden.jpg"
-										   title="Tranås, Švédsko" 
-										   class="album-link"
-										   data-gallery
-										>	
-										<img src="{$basePath}/img/homepage/thumbnails/sweden.jpg" 
-											 class="img img-resp img-rounded img300x150" 
-											 alt="Tranås, Švédsko" />
-									</a>
-								</div>
-							</div>
+
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="{$basePath}/img/homepage/france.jpg"
+                                       title="Nîmes a Basilej, Francie a Švýcarsko" 
+                                       class="album-link"
+                                       data-gallery
+                                       >                                        
+                                        <img src="{$basePath}/img/homepage/thumbnails/france.jpg" 
+                                             class="img img-rounded img-resp img300x150" 
+                                             alt="Nîmes a Basilej, Francie a Švýcarsko" />
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <h3>Nîmes a Basilej, Francie a Švýcarsko</h3>
+                                    <p>
+                                        V roce 2015 přijala ZUŠ Biskupská pozvání na prestižní pódia národního festivalu hudby do jihofrancouzského Nîmes. Big Band Biskupská a komorní orchestr Biskupská sklidily s repertoárem obsahujícím mj. písně světoznámé francouzské šansoniérky Edith Piaf či soudobé zpěvačky Lary Fabian velkolepý úspěch, za který nejlépe mluví aplaus ve stoje od několika stovek přítomných diváků.
+                                    </p>
+                                    <p>
+                                        Ve stejném roce se orchestry objevily také ve švýcarské Basileji, kde big band koncertoval v rámci spolupráce s místní uměleckou školou.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <hr class="clearfix" />
 
 
-						</div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3>Tranås, Švédsko</h3>
+                                    <p>
+                                        Sezona 2016 přinesla dosud poslední zahraniční výlet, a to do švédského Tranås. Pětidenní zájezd orámovaly tři koncerty – v centru města Jönköping, u jezera Sommen a v městském parku v Tranås u místní radnice.
+                                    </p>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <a href="{$basePath}/img/homepage/sweden.jpg"
+                                       title="Tranås, Švédsko" 
+                                       class="album-link"
+                                       data-gallery
+                                       >    
+                                        <img src="{$basePath}/img/homepage/thumbnails/sweden.jpg" 
+                                             class="img img-resp img-rounded img300x150" 
+                                             alt="Tranås, Švédsko" />
+                                    </a>
+                                </div>
+                            </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid picture">
-	<div class="img-gradient-top"></div>
-	<header class="bg-image clearfix">
-    	<img src="{$basePath}/img/band/{if $isMobile}mobile/{/if}03.jpg" alt="" class="img-responsive" />
-	</header>
-	<div class="img-gradient-bottom"></div>
+    <div class="img-gradient-top"></div>
+    <header class="bg-image clearfix">
+        <img src="{$basePath}/img/band/{if $isMobile}mobile/{/if}03.jpg" alt="" class="img-responsive" />
+    </header>
+    <div class="img-gradient-bottom"></div>
 </div>
 
 
 <div class="container" id="zusbiskupska">
 
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="panel panel-default panel-content">
-				<div class="panel-body">
-					<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default panel-content">
+                <div class="panel-body">
+                    <div class="row">
 
-						<div class="col-lg-12">
-							<h2><a href="http://www.zus-biskupska.cz" title="ZUŠ Biskupská">ZUŠ Biskupská</a></h2>
+                        <div class="col-lg-12">
+                            <h2><a href="http://www.zus-biskupska.cz" title="ZUŠ Biskupská">ZUŠ Biskupská</a></h2>
 
 
-							<div class="row">
-								<div class="col-lg-8 col-sm-6">
-									<p>								
-										ZUŠ Biskupská vznikla na základech pražské hudební školy, která začala působit v hlavním městě záhy po druhé světové válce. Škola postupně vytvářela jednotlivé pobočky, z nichž později vznikaly samostatné umělecké školy. Do budovy v Biskupské ulici nedaleko Bílé Labutě, ze které se později stala dnešní ZUŠ Biskupská, se škola nastěhovala roku 1947.
-									</p>
-									<p>								
-										V současné době má ZUŠ Biskupská tři obory: hudební, výtvarný a literárně dramatický. Vyučuje žáky předškolního věku, základních, středních i vysokých škol a systematicky je připravuje na navazující studium na specializovaných uměleckých školách – konzervatořích, vyšších odborných i vysokých školách. Orientuje se rovněž na přípravu amatérských a poloprofesionálních umělců, pro které je umění koníčkem.
-									</p>
-									<p>								
-										V rámci hudební výuky vyučuje ZUŠ Biskupská své žáky hře na klavír, housle, violoncello, kontrabas, háčkovou harfu, akordeon, elektrické klávesy, zobcovou a příčnou flétnu, kytaru, elektrickou kytaru, klarinet, trubku, pozoun, lesní roh a bicí nástroje a rovněž sólovému a sborovému zpěvu. Na škole působí krom Big Bandu Biskupská také dva houslové soubory a pěvecký sbor.
-									</p>
-									<p>								
-										Žáci školy se úspěšně umisťují v soutěžích celopražských, celostátních i mezinárodních. Na svou uměleckou dráhu se v ZUŠ Biskupská připravovalo mnoho známých osobností české umělecké scény. Ve školním roce 2015/2016 navštěvovalo školu 750 žáků.
-									</p>
-								</div>
+                            <div class="row">
+                                <div class="col-lg-8 col-sm-6">
+                                    <p>                                
+                                        ZUŠ Biskupská vznikla na základech pražské hudební školy, která začala působit v hlavním městě záhy po druhé světové válce. Škola postupně vytvářela jednotlivé pobočky, z nichž později vznikaly samostatné umělecké školy. Do budovy v Biskupské ulici nedaleko Bílé Labutě, ze které se později stala dnešní ZUŠ Biskupská, se škola nastěhovala roku 1947.
+                                    </p>
+                                    <p>                                
+                                        V současné době má ZUŠ Biskupská tři obory: hudební, výtvarný a literárně dramatický. Vyučuje žáky předškolního věku, základních, středních i vysokých škol a systematicky je připravuje na navazující studium na specializovaných uměleckých školách – konzervatořích, vyšších odborných i vysokých školách. Orientuje se rovněž na přípravu amatérských a poloprofesionálních umělců, pro které je umění koníčkem.
+                                    </p>
+                                    <p>                                
+                                        V rámci hudební výuky vyučuje ZUŠ Biskupská své žáky hře na klavír, housle, violoncello, kontrabas, háčkovou harfu, akordeon, elektrické klávesy, zobcovou a příčnou flétnu, kytaru, elektrickou kytaru, klarinet, trubku, pozoun, lesní roh a bicí nástroje a rovněž sólovému a sborovému zpěvu. Na škole působí krom Big Bandu Biskupská také dva houslové soubory a pěvecký sbor.
+                                    </p>
+                                    <p>                                
+                                        Žáci školy se úspěšně umisťují v soutěžích celopražských, celostátních i mezinárodních. Na svou uměleckou dráhu se v ZUŠ Biskupská připravovalo mnoho známých osobností české umělecké scény. Ve školním roce 2015/2016 navštěvovalo školu 750 žáků.
+                                    </p>
+                                </div>
 
-								<div class="col-lg-4 col-sm-6 text-center">
-									<img src="{$basePath}/img/biskupska.png" class="img img-rounded img300x300" title="ZUŠ Biskupská" alt="ZUŠ Biskupská" />
-								</div>
-							</div>
+                                <div class="col-lg-4 col-sm-6 text-center">
+                                    <img src="{$basePath}/img/biskupska.png" class="img img-rounded img300x300" title="ZUŠ Biskupská" alt="ZUŠ Biskupská" />
+                                </div>
+                            </div>
 
-						</div>
+                        </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid picture">
-	<div class="img-gradient-top"></div>
-	<header class="bg-image clearfix">
-    	<img src="{$basePath}/img/band/{if $isMobile}mobile/{/if}04.jpg" alt="" class="img-responsive" />
-	</header>
-	<div class="img-gradient-bottom"></div>
+    <div class="img-gradient-top"></div>
+    <header class="bg-image clearfix">
+        <img src="{$basePath}/img/band/{if $isMobile}mobile/{/if}04.jpg" alt="" class="img-responsive" />
+    </header>
+    <div class="img-gradient-bottom"></div>
 </div>
 
 

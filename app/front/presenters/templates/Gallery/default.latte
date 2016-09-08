@@ -5,104 +5,104 @@
 {/block}
 
 {block mininav}
-	<li>
-		<a href="#galerie">Galerie</a>
-	</li>
+<li>
+    <a href="#galerie">Galerie</a>
+</li>
 {/block}
 
 {block content}
 
 {script}
-	var linkUrl = {link Gallery:detail, 0}
-	var errorUrl = {link logError!}
+var linkUrl = {link Gallery:detail, 0}
+var errorUrl = {link logError!}
 {/script}
 
 {script}
 $(function() {
-	$.nette.ajax({
-		url: 'https://picasaweb.google.com/data/feed/api/user/bigbandbiskupska?alt=json&imgmax=1080u&thumbsize=200u',
-		timeout: 10000,
-		dataType: 'jsonp'
-	}).done(function (result) {
+$.nette.ajax({
+url: 'https://picasaweb.google.com/data/feed/api/user/bigbandbiskupska?alt=json&imgmax=1080u&thumbsize=200u',
+timeout: 10000,
+dataType: 'jsonp'
+}).done(function (result) {
 
-		if ( ! result.feed || ! result.feed.entry || ! result.feed.entry.length )
-		{
-			// empty (or fail)
-			$("#galleries").text("Litujeme, ale nebyly nalezeny žádné galerie.")
-			return;
-		}
+if ( ! result.feed || ! result.feed.entry || ! result.feed.entry.length )
+{
+// empty (or fail)
+$("#galleries").text("Litujeme, ale nebyly nalezeny žádné galerie.")
+return;
+}
 
-		$("#galleries").html("")
+$("#galleries").html("")
 
-		var linksContainer = $('#galleries')
-		for ( var i = 0; i < result.feed.entry.length; i ++ )
-		{
-			var $node = $(".album-template").clone()
-			var $e = result.feed.entry[i]
-			var $thumbnail = $e.media$group.media$thumbnail[0]
-			var $image = $e.media$group.media$content[0]
-			var title = $e.media$group.media$title.$t
-			title = title.replace ("_public", "").replace("public", "")
+var linksContainer = $('#galleries')
+for ( var i = 0; i < result.feed.entry.length; i ++ )
+{
+var $node = $(".album-template").clone()
+var $e = result.feed.entry[i]
+var $thumbnail = $e.media$group.media$thumbnail[0]
+var $image = $e.media$group.media$content[0]
+var title = $e.media$group.media$title.$t
+title = title.replace ("_public", "").replace("public", "")
 
-			var description = $e.media$group.media$description.$t
-			var id = $e.gphoto$id.$t
+var description = $e.media$group.media$description.$t
+var id = $e.gphoto$id.$t
 
-			$node
-				.removeClass("album-template")
-				.removeClass("hidden")
+$node
+.removeClass("album-template")
+.removeClass("hidden")
 
-			$node.find(".album-title").text(title)
-			$node.find(".album-description").text(description)
-			$node.find(".album-date")
-					.text(new Date($e.published.$t).getFullYear())
-			$node.find(".album-link")
-					.prop("href", linkUrl + id)
-					.prop("title", title)
-			$node.find(".album-cover")
-					.prop("src", $thumbnail.url)
-					.prop("type", $image.type)
-					.prop("alt", title)
+$node.find(".album-title").text(title)
+$node.find(".album-description").text(description)
+$node.find(".album-date")
+.text(new Date($e.published.$t).getFullYear())
+$node.find(".album-link")
+.prop("href", linkUrl + id)
+.prop("title", title)
+$node.find(".album-cover")
+.prop("src", $thumbnail.url)
+.prop("type", $image.type)
+.prop("alt", title)
 
-			if(i > 0 && i % 3 == 0)
-				$("<div class='clearfix'></div>").appendTo(linksContainer)
+if(i > 0 && i % 3 == 0)
+$("<div class='clearfix'></div>").appendTo(linksContainer)
 
-			$node.appendTo(linksContainer)
-		}
+$node.appendTo(linksContainer)
+}
 
-	}).fail(function () {
-		$("#galleries").text("Nelze se připojit k seznamu galerií, opakujte akci později.")
-	})
+}).fail(function () {
+$("#galleries").text("Nelze se připojit k seznamu galerií, opakujte akci později.")
+})
 });
 {/script}
 
 <div class="row">
-	<div class="col-lg-12" id="galleries">
-		Loading ...
-	</div>
+    <div class="col-lg-12" id="galleries">
+        Loading ...
+    </div>
 </div>
 
 
 <div class="col-md-4 col-sm-6 hidden album-template">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h4>
-				<span class="album-title"></span>
-				<small class="album-date"></small>
-			</h4>
-			<small class="album-description"></small>
-		</div>
-		<div class="panel-body">
-			<a href=""
-			   title=""
-			   class="album-link">
-				<img
-					src=""
-					class="img img-responsive img-rounded album-cover"
-					title=""
-					alt="" />
-			</a>
-		</div>
-	</div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>
+                <span class="album-title"></span>
+                <small class="album-date"></small>
+            </h4>
+            <small class="album-description"></small>
+        </div>
+        <div class="panel-body">
+            <a href=""
+               title=""
+               class="album-link">
+                <img
+                    src=""
+                    class="img img-responsive img-rounded album-cover"
+                    title=""
+                    alt="" />
+            </a>
+        </div>
+    </div>
 </div>
 
 {/block}

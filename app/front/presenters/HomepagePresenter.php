@@ -8,15 +8,14 @@ use App;
 class HomepagePresenter extends BasePresenter
 {
 
-	/**
-	 * @var App\Model\ConcertModel
-	 * @inject
-	 */
-	public $concerts;
+    /**
+     * @var App\Model\ConcertModel
+     * @inject
+     */
+    public $concerts;
 
+    public function actionDefault () {
+        $this -> template -> concerts = $this -> concerts -> newest( 3, 0 );
+    }
 
-	public function actionDefault ()
-	{
-		$this -> template -> concerts = $this -> concerts -> newest ( 3, 0 );
-	}
 }

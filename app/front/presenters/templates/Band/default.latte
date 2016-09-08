@@ -1,174 +1,174 @@
 {block title}Členové{/block}
 
 {block heading}
-		<h1>Členové</h1>
+<h1>Členové</h1>
 {/block}
 
 {block mininav}
-	<li>
-		<a href="#fotka">Fotka</a>
-	</li>
-	<li>
-		<a href="#seznam">Seznam</a>
-	</li>
+<li>
+    <a href="#fotka">Fotka</a>
+</li>
+<li>
+    <a href="#seznam">Seznam</a>
+</li>
 {/block}
 
 {block content}
 
-	<h2 id="fotka">Fotka</h2>
+<h2 id="fotka">Fotka</h2>
 
-	<div class="alert alert-info">
-		<p>
-			<span class="glyphicon glyphicon-search"></span>
-			Kliknutím na člena na fotce se přesunete k jeho detailu.
-		</p>
-	</div>
+<div class="alert alert-info">
+    <p>
+        <span class="glyphicon glyphicon-search"></span>
+        Kliknutím na člena na fotce se přesunete k jeho detailu.
+    </p>
+</div>
 
-	<div class="band-photo text-center">
-		<img
-			id="band-photo"
-			src="{$basePath}/img/members/members.jpg" 
-			class="img-rounded"
-			alt="Big Band Biskupská fotka všech členů"
-			width="1100" 
-			height="447" 
-			border="0" 
-			usemap="#map" />
-
-
-		<map name="map">
-		<!-- #$-:Image map file created by GIMP Image Map plug-in -->
-		<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
-		<!-- #$-:Please do not edit lines starting with "#$" -->
-		<!-- #$VERSION:2.3 -->
-		<!-- #$AUTHOR:Kryštof Tulinger - školní  -->
-
-		{foreach $sections as $name => $members}
-			{foreach $members as $id => $member}
-				<area n:if="count($member->coords)" shape="poly" coords="{$member->coords|join}" href="#{$member->name|webalize}" title="{$member->name}" />
-			{/foreach}
-		{/foreach}
-
-		</map>
-
-	</div>
+<div class="band-photo text-center">
+    <img
+        id="band-photo"
+        src="{$basePath}/img/members/members.jpg" 
+        class="img-rounded"
+        alt="Big Band Biskupská fotka všech členů"
+        width="1100" 
+        height="447" 
+        border="0" 
+        usemap="#map" />
 
 
-	<h2 id="seznam">Seznam</h2>
+    <map name="map">
+        <!-- #$-:Image map file created by GIMP Image Map plug-in -->
+        <!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+        <!-- #$-:Please do not edit lines starting with "#$" -->
+        <!-- #$VERSION:2.3 -->
+        <!-- #$AUTHOR:Kryštof Tulinger - školní  -->
 
-	<div id="member-accordion">
-		{foreach $sections as $name => $members}
-			<h3>{$name|capitalize}</h3>
-			<section class="panel-group member-accordion" role="tablist" >
-				{foreach $members as $id => $member}
-					{if isset($member->dirigent) && $member->dirigent}
-						{include conductor, "_member" => $member}
-					{else}
-						{include member, "_member" => $member}
-					{/if}
-				{/foreach}
-			</section>
-		{/foreach}
+        {foreach $sections as $name => $members}
+            {foreach $members as $id => $member}
+                <area n:if="count($member->coords)" shape="poly" coords="{$member->coords|join}" href="#{$member->name|webalize}" title="{$member->name}" />
+            {/foreach}
+        {/foreach}
 
-		<h2>Bývalí členové</h2>
-		<ul class="list-item col-md-6 col-md-offset-3">
-		{foreach $oldmembers as $id => $member}
-			{include old, "_member" => $member}
-		{/foreach}
-		</ul>
+    </map>
 
-	</div>
+</div>
+
+
+<h2 id="seznam">Seznam</h2>
+
+<div id="member-accordion">
+    {foreach $sections as $name => $members}
+        <h3>{$name|capitalize}</h3>
+        <section class="panel-group member-accordion" role="tablist" >
+            {foreach $members as $id => $member}
+                {if isset($member->dirigent) && $member->dirigent}
+                    {include conductor, "_member" => $member}
+                {else}
+                    {include member, "_member" => $member}
+                {/if}
+            {/foreach}
+        </section>
+    {/foreach}
+
+    <h2>Bývalí členové</h2>
+    <ul class="list-item col-md-6 col-md-offset-3">
+        {foreach $oldmembers as $id => $member}
+            {include old, "_member" => $member}
+        {/foreach}
+    </ul>
+
+</div>
 {/block}
 
 
 {block member}
-	<article id="{$_member->name|webalize}" class="panel panel-default band-member" role="tabpanel">
-		<div 
-			class="panel-heading clearfix"
-			data-toggle="collapse" 
-			data-target="#{$_member->name|webalize}-description"
-			data-parent=".member-accordion">
+<article id="{$_member->name|webalize}" class="panel panel-default band-member" role="tabpanel">
+    <div 
+        class="panel-heading clearfix"
+        data-toggle="collapse" 
+        data-target="#{$_member->name|webalize}-description"
+        data-parent=".member-accordion">
 
-			<div class="col-lg-2">
-				<img class="img img-rounded img100x100" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
-			</div>
+        <div class="col-lg-2">
+            <img class="img img-rounded img100x100" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
+        </div>
 
-			<div class="col-lg-10">
-				<div class="player-name">
-					<h4>
-						<span n:if="$_member->flash" class="glyphicon glyphicon-flash"></span>
-						{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
-					</h4>
-				</div>
-				<div class="player-description" n:if="! isset($_old) || ! $_old">
-					{if isset($_member->description) && !empty($_member->description)}
-						{var $description = $_member->description}
-					{else}
-						{var $description = $presenter->generateDescription($_member)}
-					{/if}
-					{$description|noescape|activate|texy|truncateHtml: 400}
-				</div>
-			</div>
-		</div>
-		<div 
-			n:if="(!isset($_old) || !$_old) && $template->length($description) >= 400"
-			class="panel-collapse collapse" 
-			id="{$_member->name|webalize}-description">
-			<div class="panel-body">
-				<div class="player-description">
-					{$description|noescape|activate|texy}
-				</div>
-			</div>
-		</div>
-	</article>
+        <div class="col-lg-10">
+            <div class="player-name">
+                <h4>
+                    <span n:if="$_member->flash" class="glyphicon glyphicon-flash"></span>
+                    {$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
+                </h4>
+            </div>
+            <div class="player-description" n:if="! isset($_old) || ! $_old">
+                {if isset($_member->description) && !empty($_member->description)}
+                    {var $description = $_member->description}
+                {else}
+                    {var $description = $presenter->generateDescription($_member)}
+                {/if}
+                {$description|noescape|activate|texy|truncateHtml: 400}
+            </div>
+        </div>
+    </div>
+    <div 
+        n:if="(!isset($_old) || !$_old) && $template->length($description) >= 400"
+        class="panel-collapse collapse" 
+        id="{$_member->name|webalize}-description">
+        <div class="panel-body">
+            <div class="player-description">
+                {$description|noescape|activate|texy}
+            </div>
+        </div>
+    </div>
+</article>
 {/block}
 
 
 {block old}
-	<li id="{$_member->name|webalize}" class="list-group-item band-member clearfix">
-		<span class="player-name text-center">
-			<h5>
-				<img class="img img-rounded img50x50" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
+<li id="{$_member->name|webalize}" class="list-group-item band-member clearfix">
+    <span class="player-name text-center">
+        <h5>
+            <img class="img img-rounded img50x50" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
 
-				{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
-			</h5>
-		</span>
-	</li>
+            {$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
+        </h5>
+    </span>
+</li>
 {/block}
 
 {block conductor}
-		<article id="{$_member->name|webalize}" class="panel panel-default band-member row">
-			<div 
-				class="panel-heading clearfix"
-				data-toggle="collapse" 
-				data-target="#{$_member->name|webalize}-description"
-				data-parent=".member-accordion">
+<article id="{$_member->name|webalize}" class="panel panel-default band-member row">
+    <div 
+        class="panel-heading clearfix"
+        data-toggle="collapse" 
+        data-target="#{$_member->name|webalize}-description"
+        data-parent=".member-accordion">
 
-				<div class="col-md-4 col-sm-6">
-					<img class="img img-rounded img300x300" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
-				</div>
+        <div class="col-md-4 col-sm-6">
+            <img class="img img-rounded img300x300" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
+        </div>
 
-				<div class="col-md-8 col-sm-6">
-					<div class="player-name">
-						<h4>{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small></h4>
-					</div>
-					<div class="player-description">
-						{if isset($_member->description) && !empty($_member->description)}
-							{$_member->description|noescape|activate|texy}
-						{/if}
-					</div>
-				</div>
-			</div>
-			<div 
-				n:if="isset($_member->description) && !empty($_member->description) &&  $template->length($_member->description) >= 400" 
-				class="panel-collapse collapse" 
-				id="{$_member->name|webalize}-description">
-				<div class="panel-body">
-					<div class="player-description">
-						{$_member->description|noescape|activate|texy}
-					</div>
-				</div>
-			</div>
+        <div class="col-md-8 col-sm-6">
+            <div class="player-name">
+                <h4>{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small></h4>
+            </div>
+            <div class="player-description">
+                {if isset($_member->description) && !empty($_member->description)}
+                    {$_member->description|noescape|activate|texy}
+                {/if}
+            </div>
+        </div>
+    </div>
+    <div 
+        n:if="isset($_member->description) && !empty($_member->description) &&  $template->length($_member->description) >= 400" 
+        class="panel-collapse collapse" 
+        id="{$_member->name|webalize}-description">
+        <div class="panel-body">
+            <div class="player-description">
+                {$_member->description|noescape|activate|texy}
+            </div>
+        </div>
+    </div>
 
-		</article>	
+</article>    
 {/block}

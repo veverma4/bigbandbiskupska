@@ -8,15 +8,14 @@ use App;
 class VideoPresenter extends BasePresenter
 {
 
-	/**
-	 * @var App\Model\VideoModel
-	 * @inject
-	 */
-	public $videos;
+    /**
+     * @var App\Model\VideoModel
+     * @inject
+     */
+    public $videos;
 
+    public function actionDefault () {
+        $this -> template -> videos = $this -> videos -> by( [ ], [ "name" => "ASC" ] );
+    }
 
-	public function actionDefault ()
-	{
-		$this -> template -> videos = $this -> videos -> by ( [], [ "name" => "ASC" ] );
-	}
 }

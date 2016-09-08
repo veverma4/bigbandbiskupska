@@ -1,48 +1,53 @@
 {
-	"name": "nette/bigbandbiskupska",
-	"description": "Web presentation of Big Band Biskupská band",
-	"type": "project",
-	"license": ["MIT", "BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "git@github.com:tulinkry/tulinkry.git"
-		},
-		{
-			"type": "vcs",
-			"url": "git@github.com:tulinkry/script.git"
-		},
-		{
-			"type": "vcs",
-			"url": "git@github.com:tulinkry/git.git"
-		}
-	],
-	"require": {
-		"php": ">= 5.3",
-		"nette/application": "~2.3.0",
-		"nette/bootstrap": "~2.3.0",
-		"nette/caching": "~2.3.0",
-		"nette/database": "~2.3.0",
-		"nette/di": "~2.3.0",
-		"nette/finder": "~2.3.0",
-		"nette/forms": "~2.3.0",
-		"nette/http": "~2.3.0",
-		"nette/mail": "~2.3.0",
-		"nette/neon": "~2.3.0",
-		"nette/robot-loader": "~2.3.0",
-		"nette/safe-stream": "~2.3.0",
-		"nette/security": "~2.3.0",
-		"nette/utils": "~2.3.0",
-		"latte/latte": "~2.3.0",
-		"tracy/tracy": "~2.3.0",
-		"texy/texy": "~2.9.0",
-		"kdyby/translation": "^2.3.0",
-		"tulinkry/tulinkry": "dev-master",
-		"tulinkry/script": "dev-master",
-		"tulinkry/git": "dev-master",
-	},
-	"require-dev": {
-		"nette/tester": "@dev",
-		"kdyby/console": "^2.6"
-	}
+    "name": "nette/bigbandbiskupska",
+    "description": "Web presentation of Big Band Biskupská band",
+    "authors": [
+        {
+            "name": "Kryštof Tulinger"
+        }
+    ],
+    "type": "project",
+    "license": ["MIT", "BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:tulinkry/tulinkry.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tulinkry/script.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tulinkry/git.git"
+        }
+    ],
+    "require": {
+        "php": ">= 5.3",
+        "nette/application": "~2.3.0",
+        "nette/bootstrap": "~2.3.0",
+        "nette/caching": "~2.3.0",
+        "nette/database": "~2.3.0",
+        "nette/di": "~2.3.0",
+        "nette/finder": "~2.3.0",
+        "nette/forms": "~2.3.0",
+        "nette/http": "~2.3.0",
+        "nette/mail": "~2.3.0",
+        "nette/neon": "~2.3.0",
+        "nette/robot-loader": "~2.3.0",
+        "nette/safe-stream": "~2.3.0",
+        "nette/security": "~2.3.0",
+        "nette/utils": "~2.3.0",
+        "latte/latte": "~2.3.0",
+        "tracy/tracy": "~2.3.0",
+        "texy/texy": "~2.9.0",
+        "kdyby/translation": "^2.3.0",
+        "tulinkry/tulinkry": "dev-master",
+        "tulinkry/script": "dev-master",
+        "tulinkry/git": "dev-master"
+    },
+    "require-dev": {
+        "nette/tester": "@dev",
+        "kdyby/console": "^2.6"
+    }
 }

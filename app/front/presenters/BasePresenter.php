@@ -1,163 +1,160 @@
 <?php
 
-
 namespace App\FrontModule\Presenters;
 
+use Kdyby\Translation\Translator;
 use Nette;
+use Nette\Application\ForbiddenRequestException;
+use Nette\Utils\DateTime;
 use Texy;
 use Tracy;
-use Tulinkry;
+use Tulinkry\Application\UI\Presenter;
+use Tulinkry\Http\Browser;
 
-class BasePresenter extends Tulinkry\Application\UI\Presenter
+class BasePresenter extends Presenter
 {
 
-    /** @var \Kdyby\Translation\Translator @inject */
+    /** @var Translator @inject */
     public $translator;
 
-	protected function notFoundException ( $message = NULL )
-	{
-		$this -> error ( $message );
-	}
+    protected function notFoundException ( $message = NULL ) {
+        $this -> error( $message );
+    }
 
-	protected function forbiddenException ( $message = NULL )
-	{
-		throw new Nette\Application\ForbiddenRequestException;
-	}
+    protected function forbiddenException ( $message = NULL ) {
+        throw new ForbiddenRequestException;
+    }
 
-	public function startup() {
-		parent::startup();
-		$this->template->productionMode = Tracy\Debugger::$productionMode;
-		$this->template->isMobile = Tulinkry\Http\Browser::isMobile();
-	}
+    public function startup () {
+        parent::startup();
+        $this -> template -> productionMode = Tracy\Debugger::$productionMode;
+        $this -> template -> isMobile = Browser::isMobile();
+    }
 
-	protected function createTemplate($class = NULL)
-	{
-	    $template = parent::createTemplate($class);
+    protected function createTemplate ( $class = NULL ) {
+        $template = parent::createTemplate( $class );
 
-	    $template->addFilter('metres', function ($s) {
-	        
-	        if ( $s < 1000 )
-	        	return round ( $s, 1 ) . " m";
-	        else
-	        	return round ( $s / 1000, 1 ) . " km";
-	    });
+        $template -> addFilter( 'metres', function ($s) {
 
-	    $template->addFilter('degree', function ($s) use ($template) {
-	        return $s . html_entity_decode('&deg;', ENT_NOQUOTES,'UTF-8');
-	    });
+            if ( $s < 1000 )
+                return round( $s, 1 ) . " m";
+            else
+                return round( $s / 1000, 1 ) . " km";
+        } );
 
-	    $template->addFilter('timeleft', function ($s, $round = 1) use ($template) {
-	    	if( ! $s instanceof \DateTime )
-	    		return $s;
-	    	$diff = $s->diff(new Nette\Utils\DateTime());
-	    	$r = "";
-	    	foreach ( [ 'r' => (object) [ 'part' => 'y', 'next' => 'm', 'ratio' => 12 ], 
-	    				'měs.' => (object) [ 'part' => 'm', 'next' => 'd', 'ratio' => 30 ], 
-	    				'd' => (object) [ 'part' => 'd', 'next' => 'h', 'ratio' => 24 ], 
-	    				'h' => (object) [ 'part' => 'h', 'next' => 'i', 'ratio' => 60 ], 
-	    				'min.' => (object) [ 'part' => 'i', 'next' => 's', 'ratio' => 60 ], 
-	    				'sec.' => (object) [ 'part' => 's', 'next' => NULL, 'ratio' => 100 ] ] as $val => $type )
-	    		if ($diff->{$type->part}) {
-	    			$r = ceil($diff->{$type->part} + ($type->next ? $diff->{$type->next} / $type->ratio : 0)) . ' ' . $val;
-	    			break;
-	    		}
-	    	// TODO: Handle correctly when diff is negative (invert === false)
-	        return $diff -> invert ? ( $r === "" ? "0 s" : $r ) : "0 s";
-	    });
+        $template -> addFilter( 'degree', function ($s) use ($template) {
+            return $s . html_entity_decode( '&deg;', ENT_NOQUOTES, 'UTF-8' );
+        } );
 
-	    $template->addFilter('activate', function($s) use ($template) {
-			return preg_replace_callback ( "|\{since:\s*(\d+)\}|" , function($matches) {
-				$diff = date('Y') - $matches[1] > 0 ? date('Y') - $matches[1] : 0;
-				switch($diff) {
-					case 0: return "několik měsíců";
-					case 1: return "1 rok";
-					case 2:
-					case 3:
-					case 4: return $diff . " roky";
-					default: return $diff . " let";
-				}
-			}, $s );
-	    });
+        $template -> addFilter( 'timeleft', function ($s, $round = 1) use ($template) {
+            if ( ! $s instanceof DateTime )
+                return $s;
+            $diff = $s -> diff( new DateTime() );
+            $r = "";
+            foreach ( [ 'r' => (object) [ 'part' => 'y', 'next' => 'm', 'ratio' => 12 ],
+        'měs.' => (object) [ 'part' => 'm', 'next' => 'd', 'ratio' => 30 ],
+        'd' => (object) [ 'part' => 'd', 'next' => 'h', 'ratio' => 24 ],
+        'h' => (object) [ 'part' => 'h', 'next' => 'i', 'ratio' => 60 ],
+        'min.' => (object) [ 'part' => 'i', 'next' => 's', 'ratio' => 60 ],
+        'sec.' => (object) [ 'part' => 's', 'next' => NULL, 'ratio' => 100 ] ] as $val => $type )
+                if ( $diff -> {$type -> part} ) {
+                    $r = ceil( $diff -> {$type -> part} + ($type -> next ? $diff -> {$type -> next} / $type -> ratio : 0) ) . ' ' . $val;
+                    break;
+                }
+            // TODO: Handle correctly when diff is negative (invert === false)
+            return $diff -> invert ? ( $r === "" ? "0 s" : $r ) : "0 s";
+        } );
 
-	    $template->addFilter('weekday', function($s) use ($template) {
-	    	// TODO: Implement proper weekday handling
-	    	$weekday = $s->format("w");
-	    	$weekdays = [
-	    		"cs" => [
-	    			"long" => [ "Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota" ],
-	    			"short" => [ "Ne", "Po", "Út", "St", "Čt", "Pá", "So" ],
-	    		]
-	    	];
-	    	return $weekdays [ "cs" ] [ "long" ] [ $weekday ];
-	    });
+        $template -> addFilter( 'activate', function($s) use ($template) {
+            return preg_replace_callback( "|\{since:\s*(\d+)\}|", function($matches) {
+                $diff = date( 'Y' ) - $matches[ 1 ] > 0 ? date( 'Y' ) - $matches[ 1 ] : 0;
+                switch ( $diff ) {
+                    case 0: return "několik měsíců";
+                    case 1: return "1 rok";
+                    case 2:
+                    case 3:
+                    case 4: return $diff . " roky";
+                    default: return $diff . " let";
+                }
+            }, $s );
+        } );
 
-	    $template->addFilter('join', function($s) use ($template) {
-	    	return implode ( ",", $s );
-	    });
+        $template -> addFilter( 'weekday', function($s) use ($template) {
+            // TODO: Implement proper weekday handling
+            $weekday = $s -> format( "w" );
+            $weekdays = [
+                "cs" => [
+                    "long" => [ "Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota" ],
+                    "short" => [ "Ne", "Po", "Út", "St", "Čt", "Pá", "So" ],
+                ]
+            ];
+            return $weekdays [ "cs" ] [ "long" ] [ $weekday ];
+        } );
+
+        $template -> addFilter( 'join', function($s) use ($template) {
+            return implode( ",", $s );
+        } );
 
 
-	    $template->addFilter('truncateHtml', function ($string, $limit, $break=" ", $pad="  ...") {
-	    		$v = function ($string, $pad = " ...")
-			    {
-			        //zkotrolujeme ze jsou vsechny tagy ukoncene (cele) pokud ne tak je odstranime
-			        $prereg = "#((<[a-z1-9]+(?:\n| ).*)((?:>|$))|(<[a-z](?:>|$)))#miU";
-			        preg_match_all($prereg, $string, $match);
-			        $uncomplete = $match[0];
-			        $uncomplete = array_reverse($uncomplete);
-			        if(!Nette\Utils\Strings::endsWith($uncomplete[0],">"))
-			        {
-			            $re = "#(".$uncomplete[0].")$#miU";
-			            $string = preg_replace($re, $pad, $string, -1, $count);
-			        }
-			        // najdeme všechny otevřené tagy
-			        $re = "#<(?!meta|img|br|hr|input\b)\b([a-z1-9]+)((\n| ).*)?(?<![\/|\/ ])>#imU";
-			        preg_match_all($re, $string, $match);
-			        $openedtags = $match[1];
-			        // najdeme všechny uzavřené tagy
-			        preg_match_all("#<\/([a-z1-9]+)>#iU", $string, $match);
-			        $closedtags = $match[1];
-			        $len_opened = count($openedtags);
-			        // pokud jsou všechny tagy uzavřeny vrátime $string
-			        if (count($closedtags) == $len_opened) {
-			            return $string;
-			        }
-			        $openedtags = array_reverse($openedtags);
-			        // zavřeme tagy
-			        for ($i = 0; $i < $len_opened; $i++) {
-			            if (!in_array($openedtags[$i], $closedtags)) {
-			                $string .= "</" . $openedtags[$i] . ">";
-			            }
-			            else {
-			                unset ($closedtags[array_search($openedtags[$i], $closedtags)]);
-			            }
-			        }
-			        return $string;
-			    };
+        $template -> addFilter( 'truncateHtml', function ($string, $limit, $break = " ", $pad = "  ...") {
+            $v = function ($string, $pad = " ...") {
+                //zkotrolujeme ze jsou vsechny tagy ukoncene (cele) pokud ne tak je odstranime
+                $prereg = "#((<[a-z1-9]+(?:\n| ).*)((?:>|$))|(<[a-z](?:>|$)))#miU";
+                preg_match_all( $prereg, $string, $match );
+                $uncomplete = $match[ 0 ];
+                $uncomplete = array_reverse( $uncomplete );
+                if ( ! Nette\Utils\Strings::endsWith( $uncomplete[ 0 ], ">" ) ) {
+                    $re = "#(" . $uncomplete[ 0 ] . ")$#miU";
+                    $string = preg_replace( $re, $pad, $string, -1, $count );
+                }
+                // najdeme všechny otevřené tagy
+                $re = "#<(?!meta|img|br|hr|input\b)\b([a-z1-9]+)((\n| ).*)?(?<![\/|\/ ])>#imU";
+                preg_match_all( $re, $string, $match );
+                $openedtags = $match[ 1 ];
+                // najdeme všechny uzavřené tagy
+                preg_match_all( "#<\/([a-z1-9]+)>#iU", $string, $match );
+                $closedtags = $match[ 1 ];
+                $len_opened = count( $openedtags );
+                // pokud jsou všechny tagy uzavřeny vrátime $string
+                if ( count( $closedtags ) == $len_opened ) {
+                    return $string;
+                }
+                $openedtags = array_reverse( $openedtags );
+                // zavřeme tagy
+                for ( $i = 0; $i < $len_opened; $i ++ ) {
+                    if ( ! in_array( $openedtags[ $i ], $closedtags ) ) {
+                        $string .= "</" . $openedtags[ $i ] . ">";
+                    }
+                    else {
+                        unset( $closedtags[ array_search( $openedtags[ $i ], $closedtags ) ] );
+                    }
+                }
+                return $string;
+            };
 
-		        // pokud je text kratší než je požadováno vrátíme celý $string
-		        if(mb_strlen($string, 'UTF-8') <= $limit) return $string;
-		        // existuje $break mezi $limit a koncem $string?
-		        if(false !== ($breakpoint = mb_strpos($string, $break, $limit, "UTF-8")))
-		        {
-		            if($breakpoint < mb_strlen($string, 'UTF-8') - 1)
-		            {
-		                $string = mb_substr($string, 0, $breakpoint, "UTF-8") . $pad;
-		            }
-		        }
-		        return $v($string, $pad);
+            // pokud je text kratší než je požadováno vrátíme celý $string
+            if ( mb_strlen( $string, 'UTF-8' ) <= $limit )
+                return $string;
+            // existuje $break mezi $limit a koncem $string?
+            if ( false !== ($breakpoint = mb_strpos( $string, $break, $limit, "UTF-8" )) ) {
+                if ( $breakpoint < mb_strlen( $string, 'UTF-8' ) - 1 ) {
+                    $string = mb_substr( $string, 0, $breakpoint, "UTF-8" ) . $pad;
+                }
+            }
+            return $v( $string, $pad );
 
-	            // abychom nemuseli používat makro |noescape vrátíme jako objekt html
-	            //$html = new Nette\Utils\Html();
-	            //return $html::el()->setHtml(Text::truncateHtmlText($string, $limit, $break, $pad));
-        });
+            // abychom nemuseli používat makro |noescape vrátíme jako objekt html
+            //$html = new Nette\Utils\Html();
+            //return $html::el()->setHtml(Text::truncateHtmlText($string, $limit, $break, $pad));
+        } );
 
-		$texy = new Texy\Texy();
-		// ...a jeho konfigurace
-
-		//$template->registerFilter(new Nette\Templates\LatteFilter);
-		$template->registerHelper('texy', array($texy, 'process'));
+        $texy = new Texy\Texy();
+        // ...a jeho konfigurace
+        //$template->registerFilter(new Nette\Templates\LatteFilter);
+        $template -> registerHelper( 'texy', array ( $texy, 'process' ) );
 
 
-	    return $template;
-	}
+        return $template;
+    }
+
 }
