@@ -1,4 +1,3 @@
-$.nette.init();
 
 if (!String.prototype.format) {
   String.prototype.format = function() {
@@ -13,6 +12,8 @@ if (!String.prototype.format) {
 }
 
 $(function() {
+	$.nette.init();
+
 	var userId = "bigbandbiskupska"
 	var authKey = "Gv1sRgCPjusPOarbzhYw"
 	var imageSize = 1080
@@ -25,7 +26,7 @@ $(function() {
 			$("#mini-nav-menu").collapse("toggle");
 	});
 
-	$("#mini-nav-menu ul li a[href^='#'], map area").click(function(e) {
+	$("a[href^='#'], map area").click(function(e) {
 	   e.preventDefault()
 
 	   var hash = this.hash
@@ -37,6 +38,44 @@ $(function() {
 	     })
 	});
 
+	// to the top button
+
+	$("#top-button").each(function() {
+		var $that = $(this)
+		var scroll = function($el, y) {
+			if (y === 0) { // at the top
+				$el
+				.filter(":visible")
+				.animate({
+					right: -$el.width() - 10
+				}, 500, function() {
+					$el.hide()
+				})
+			} else if(y > 0) { // scrolled a bit
+				$el
+				.not(":visible")
+				.show()
+				.animate({
+					right: '3%'
+				})
+			}
+		}
+
+		$(window).load(function(e) {
+			scroll($that, $("html").scrollTop())
+		});
+
+		var timeout = null;
+		$(window).scroll(function(e) {
+			if(e.originalEvent &&
+				(!$that.is(":visible") || e.originalEvent.pageY === 0)) {
+				if(timeout) {
+					clearTimeout(timeout);
+				}
+				timeout = setTimeout(scroll, 200, $that, e.originalEvent.pageY)
+			}
+		});
+	})
 
 	/*
 		$('#mini-nav-menu .navbar-nav li a, area').click(function(e) {

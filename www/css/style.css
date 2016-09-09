@@ -9,6 +9,26 @@
     z-index: 123456;
 }
 
+#top-button {
+	border-radius: 50%;
+	border: 3px solid #555;
+	background-color: #F8F8F8;
+	box-shadow: 0 0 10px 10px #F8F8F8;
+
+	height: 50px;
+	width: 50px;
+
+	position: fixed;
+	z-index: 25000;
+	right: -60px;
+	bottom: 8%;
+
+	text-align: center;
+	padding-top: 13px;
+
+	display: none;
+}
+
 img.icon {
 	max-width: 25px;
 	max-height: 25px;
