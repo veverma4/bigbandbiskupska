@@ -1,13 +1,13 @@
 
 if (!String.prototype.format) {
   String.prototype.format = function() {
-    var args = arguments;
-    return this.replace(/{(\d+)}/g, function(match, number) { 
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match
-      ;
-    });
+	var args = arguments;
+	return this.replace(/{(\d+)}/g, function(match, number) {
+	  return typeof args[number] != 'undefined'
+		? args[number]
+		: match
+	  ;
+	});
   };
 }
 
@@ -19,24 +19,61 @@ $(function() {
 	var imageSize = 1080
 	var thumbnailSize = 100
 
-	var offset = 80;
-
 	$("#mini-nav-menu ul li a[href^='#']").click(function(e) {
 		if($(".navbar-toggle:visible").length)
 			$("#mini-nav-menu").collapse("toggle");
 	});
 
+	// #target handling
+
 	$("a[href^='#'], map area").click(function(e) {
-	   e.preventDefault()
+		e.preventDefault()
 
-	   var hash = this.hash
+		var removeHash = function() {
+			if(history.replaceState) {
+				history.replaceState(null, null, window.location.pathname + window.location.search)
+			} else {
+				var offset = $('html').offset()
+				window.location.hash = ''
+				$('html').offset(offset)
+			}
+		};
 
-	   $('html, body').stop().animate({
-	       scrollTop: $(this.hash).offset().top - offset
-	     }, 1000, function(){
-	       //window.location.hash = hash
-	     })
+		var changeHash = function(hash) {
+			if(history.pushState) {
+				history.pushState(null, null, hash)
+			} else {
+				window.location.hash = hash
+			}
+		}
+
+		var hash = this.hash
+		var $that = $(this)
+
+		$('html').stop().animate({
+			scrollTop: $(this.hash).offset().top
+		}, 1000, function(){
+			if(['#top', '#nahoru'].indexOf($that.attr('href')) >= 0) {
+				removeHash();
+			} else {
+				changeHash(hash);
+			}
+		})
 	});
+
+
+	$(window).load(function() {
+		// smooth scroll to the anchor id
+		if(window.location.hash) {
+			setTimeout( function() {
+				scroll(0,0);
+				$('html').animate({
+					scrollTop: $(window.location.hash).offset().top + 'px'
+				}, 1000);
+			}, 1);
+
+		}
+	})
 
 	// to the top button
 
@@ -80,9 +117,9 @@ $(function() {
 	/*
 		$('#mini-nav-menu .navbar-nav li a, area').click(function(e) {
 			if(!$(this).attr('href').startsWith('#')) return true;
-		    e.preventDefault();
-		    $($(this).attr('href'))[0].scrollIntoView();
-		    scrollBy(0, -offset);
+			e.preventDefault();
+			$($(this).attr('href'))[0].scrollIntoView();
+			scrollBy(0, -offset);
 		});
 	*/
 	var timeout = null;
@@ -171,7 +208,7 @@ $(function() {
 
 		window['loadPhotos'] = function(result) {
 			for ( var i = 0; i < result.feed.entry.length; i ++ ) {
-			      var $e = result.feed.entry[i];
+				  var $e = result.feed.entry[i];
 				  albums [ $e.gphoto$albumid.$t ] [ $e.gphoto$id.$t ] = $e;
 			}
 		};

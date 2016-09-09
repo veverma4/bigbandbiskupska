@@ -41,10 +41,19 @@ img.icon {
 }
 
 body {
+	/* margin-top: 80px; -- not neccessary because the top is static */
 	/* bottom fixed navbar */
 	margin-bottom: 30px;
 	background: #DDD;
 
+}
+
+.link-target:before {
+  display: block;
+  content: " ";
+  margin-top: -80px; /* top navbar height */
+  height: 80px; /* top navbar height */
+  visibility: hidden;
 }
 
 .navbar {

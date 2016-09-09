@@ -15,7 +15,7 @@
 
 {block content}
 
-<h2 id="fotka">Fotka</h2>
+<h2 id="fotka" class="link-target">Fotka</h2>
 
 <div class="alert alert-info">
     <p>
@@ -41,7 +41,7 @@
         <!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
         <!-- #$-:Please do not edit lines starting with "#$" -->
         <!-- #$VERSION:2.3 -->
-        <!-- #$AUTHOR:Kryštof Tulinger - školní  -->
+        <!-- #$AUTHOR:Kryštof Tulinger -->
 
         {foreach $sections as $name => $members}
             {foreach $members as $id => $member}
@@ -54,7 +54,7 @@
 </div>
 
 
-<h2 id="seznam">Seznam</h2>
+<h2 id="seznam" class="link-target">Seznam</h2>
 
 <div id="member-accordion">
     {foreach $sections as $name => $members}
@@ -82,31 +82,33 @@
 
 
 {block member}
-<article id="{$_member->name|webalize}" class="panel panel-default band-member" role="tabpanel">
+<article class="panel panel-default band-member" role="tabpanel">
     <div 
         class="panel-heading clearfix"
         data-toggle="collapse" 
         data-target="#{$_member->name|webalize}-description"
         data-parent=".member-accordion">
 
-        <div class="col-lg-2">
-            <img class="img img-rounded img100x100" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
-        </div>
-
-        <div class="col-lg-10">
-            <div class="player-name">
-                <h4>
-                    <span n:if="$_member->flash" class="glyphicon glyphicon-flash"></span>
-                    {$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
-                </h4>
+        <div class="link-target" id="{$_member->name|webalize}">
+            <div class="col-lg-2">
+                <img class="img img-rounded img100x100" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
             </div>
-            <div class="player-description" n:if="! isset($_old) || ! $_old">
-                {if isset($_member->description) && !empty($_member->description)}
-                    {var $description = $_member->description}
-                {else}
-                    {var $description = $presenter->generateDescription($_member)}
-                {/if}
-                {$description|noescape|activate|texy|truncateHtml: 400}
+
+            <div class="col-lg-10 link-target">
+                <div class="player-name">
+                    <h4>
+                        <span n:if="$_member->flash" class="glyphicon glyphicon-flash"></span>
+                        {$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
+                    </h4>
+                </div>
+                <div class="player-description" n:if="! isset($_old) || ! $_old">
+                    {if isset($_member->description) && !empty($_member->description)}
+                        {var $description = $_member->description}
+                    {else}
+                        {var $description = $presenter->generateDescription($_member)}
+                    {/if}
+                    {$description|noescape|activate|texy|truncateHtml: 400}
+                </div>
             </div>
         </div>
     </div>
@@ -137,25 +139,27 @@
 {/block}
 
 {block conductor}
-<article id="{$_member->name|webalize}" class="panel panel-default band-member row">
+<article class="panel panel-default band-member row">
     <div 
         class="panel-heading clearfix"
         data-toggle="collapse" 
         data-target="#{$_member->name|webalize}-description"
         data-parent=".member-accordion">
 
-        <div class="col-md-4 col-sm-6">
-            <img class="img img-rounded img300x300" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
-        </div>
-
-        <div class="col-md-8 col-sm-6">
-            <div class="player-name">
-                <h4>{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small></h4>
+        <div class="link-target" id="{$_member->name|webalize}">
+            <div class="col-md-4 col-sm-6">
+                <img class="img img-rounded img300x300" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
             </div>
-            <div class="player-description">
-                {if isset($_member->description) && !empty($_member->description)}
-                    {$_member->description|noescape|activate|texy}
-                {/if}
+
+            <div class="col-md-8 col-sm-6">
+                <div class="player-name">
+                    <h4>{$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small></h4>
+                </div>
+                <div class="player-description">
+                    {if isset($_member->description) && !empty($_member->description)}
+                        {$_member->description|noescape|activate|texy}
+                    {/if}
+                </div>
             </div>
         </div>
     </div>
