@@ -174,14 +174,6 @@ class MemberModel extends BaseModel
                     "coords" => [ 922, 179, 934, 173, 931, 144, 943, 133, 959, 137, 968, 157, 964, 174, 985, 188, 991, 213, 989, 277, 979, 278, 979, 380, 984, 397, 932, 390, 939, 373, 930, 301, 916, 270, 926, 224, 927, 201 ],
                     "flash" => false,
                 ],
-                (object) [
-                    "name" => "Irena Eichlerová",
-                    "instrument" => "saxofon",
-                    "description" => $lorem,
-                    "male" => false,
-                    "coords" => [ ],
-                    "flash" => false,
-                ],
             ],
             "trumpety" => [
                 (object) [
@@ -380,6 +372,13 @@ class MemberModel extends BaseModel
             (object) [
                 "name" => "Eliška Raiterová",
                 "instrument" => "flétna",
+                "description" => $lorem,
+                "male" => false,
+                "flash" => false,
+            ],
+            (object) [
+                "name" => "Irena Eichlerová",
+                "instrument" => "saxofon",
                 "description" => $lorem,
                 "male" => false,
                 "flash" => false,
