@@ -13,7 +13,7 @@
 {block content}
 
 {script}
-var linkUrl = {link Gallery:detail, 0}
+var linkUrl = {link Gallery:detail, '<insert id value here>'}
 var errorUrl = {link logError!}
 {/script}
 
@@ -57,7 +57,7 @@ $(function() {
             $node.find(".album-date")
                 .text(new Date($e.published.$t).getFullYear())
             $node.find(".album-link")
-                .prop("href", linkUrl + id)
+                .prop("href", linkUrl.replace(new RegExp(encodeURI('<insert id value here>')), id))
                 .prop("title", title)
             $node.find(".album-cover")
                 .prop("src", $thumbnail.url)
@@ -80,7 +80,6 @@ $(function() {
         <div class="progress">Loading ...</div>
     </div>
 </div>
-
 
 <div class="col-md-4 col-sm-6 hidden album-template">
     <div class="panel panel-default">
