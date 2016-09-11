@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Tulinkry\Model\BaseModel;
+use Nette\DateTime;
 
 class VideoModel extends BaseModel
 {
@@ -13,11 +14,13 @@ class VideoModel extends BaseModel
         $this -> videos = array (
             (object) [
                 "name" => "Vánoční koncert 2015",
+                "date" => DateTime::from("2015-12-20 20:00:00"),
                 "url" => "https://www.youtube.com/embed/p5VvFPVF4sc",
                 "link" => "https://www.youtube.com/watch?v=p5VvFPVF4sc",
             ],
             (object) [
                 "name" => "Vánoční koncert 2014",
+                "date" => DateTime::from("2014-12-20 20:00:00"),
                 "url" => "https://www.youtube.com/embed/YyMEaS-o2e0",
                 "link" => "https://www.youtube.com/watch?v=YyMEaS-o2e0",
             ],
