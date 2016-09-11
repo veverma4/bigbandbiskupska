@@ -125,10 +125,17 @@ Těšíme se na vás. V Žirovnici to žije!",
     }
 
     public function limit ( $limit = 10, $offset = 0, $by = array (), $order = array () ) {
-        $limited = [ ];
-        for ( $i = $offset; $i < $limit + $offset; $i ++ )
-            if ( isset( $this -> concerts[ $i ] ) )
-                $limited [] = $this -> concerts[ $i ];
+        uasort($this -> concerts, function($a, $b) {
+            return $b->date->getTimestamp() - $a->date->getTimestamp();
+        });
+
+        $limited = [];
+        $it = 0;
+        foreach ($this->concerts as $key => $concert) {
+            if($it >= $offset && $it < $offset + $limit)
+                $limited [] = $concert;
+            $it ++;
+        }
         return $limited;
     }
 
@@ -137,22 +144,53 @@ Těšíme se na vás. V Žirovnici to žije!",
     }
 
     public function all () {
+        uasort($this -> concerts, function($a, $b) {
+            return $b->date->getTimestamp() - $a->date->getTimestamp();
+        });
         return $this -> concerts;
     }
 
     public function newest ( $limit, $offset = 0 ) {
-        $filtered = [ ];
+        uasort($this -> concerts, function($a, $b) {
+            return $b->date->getTimestamp() - $a->date->getTimestamp();
+        });
+
+        $filtered = [];
         foreach ( $this -> concerts as $concert )
             if ( $concert -> date > new DateTime )
                 $filtered [] = $concert;
 
-        $limited = [ ];
+        $limited = [];
         for ( $i = $offset; $i < $limit + $offset; $i ++ )
             if ( isset( $filtered[ $i ] ) )
                 $limited [] = $filtered[ $i ];
         return $limited;
     }
 
-}
+    public function groupByMonth ($limit, $offset = 0, $by = array (), $order = array ()) {
+        $myconcerts = $this->limit($limit, $offset, $by, $order);
+        $concerts = array ();
+        $actuals = array ();
+        $previous = null;
+        foreach ($myconcerts as $key => $concert) {
+            if(!$previous) {
+                $actuals [] = $previous = $concert;
+                continue;
+            }
 
-;
+            if($previous->date->format('Y:n') !== $concert->date->format('Y:n')) {
+                if($actuals && count($actuals)) {
+                    $concerts [] = $actuals;
+                }
+                $actuals = array ();
+            }
+            $actuals [] = $concert;
+            $previous = $concert;
+        }
+        if($actuals && count($actuals)) {
+            $concerts [] = $actuals;
+        }
+        return $concerts;
+    }
+
+}

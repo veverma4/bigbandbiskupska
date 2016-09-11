@@ -91,6 +91,18 @@ class BasePresenter extends Presenter
             return $weekdays [ "cs" ] [ "long" ] [ $weekday ];
         } );
 
+        $template -> addFilter( 'month', function($s) use ($template) {
+            // TODO: Implement proper month handling
+            $monthday = $s -> format( "n" ) - 1;
+            $monthdays = [
+                "cs" => [
+                    "long" => [ "Leden", "Únor", "Březen", "Duben", "Květen", "Červen",
+                                "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec" ],
+                ]
+            ];
+            return $monthdays [ "cs" ] [ "long" ] [ $monthday ];
+        } );
+
         $template -> addFilter( 'join', function($s) use ($template) {
             return implode( ",", $s );
         } );

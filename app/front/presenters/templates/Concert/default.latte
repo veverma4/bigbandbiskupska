@@ -13,13 +13,54 @@
 
 {block content}
 
+
 {snippet concert}
-    <section class="panel-group" id="band-accordion">
-        {foreach $concerts as $id => $concert}
-            {include concert, "_concert" => $concert}
+
+{if isset($concerts) && count($concerts) > 0}
+
+    {foreach $concerts as $month}
+        {continueIf count($month) === 0}
+
+        {if $iterator->isFirst() || $firstConcertInTheMonth->date->format('Y') !== $month[0]->date->format('Y')}
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <hr />
+                    <h2>{$month[0]->date|date: 'Y'}</h2>
+                    <hr />
+                </div>
+            </div>
+        {else}
+            <div class="row">
+                <div class="col-md-12">
+                    <hr />
+                </div>
+            </div>
+        {/if}
+
+        {var $firstConcertInTheMonth = $month[0]}
+
+        {foreach $month as $concert}
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    {first}
+                        <div class="hidden-xs" style="margin-top: 40%"></div>
+                        <h3>{$concert->date|month}</h3>
+                    {else}
+                        <div style="margin-top: 40%" class="glyphicon glyphicon-unchecked hidden-xs"></div>
+                    {/first}
+                </div>
+                <div class="col-md-10">
+                    <section class="panel-group band-accordion">
+                        {include concert, '_concert' => $concert}
+                    </section>
+                </div>
+            </div>
         {/foreach}
 
-    </section>
+
+
+    {/foreach}
+{/if}
 {/snippet}
 
 <div class="text-center">
@@ -37,9 +78,9 @@
         class="panel-heading clearfix" 
         data-toggle="collapse" 
         data-target="#{$_concert->name|webalize}"
-        data-parent="#band-accordion">
+        data-parent=".band-accordion">
 
-        <div class="event-date col-lg-3" title="{$_concert->date|weekday}, {$_concert->date|date: 'j. n. Y H:i'}">
+        <div class="event-date col-md-3" title="{$_concert->date|weekday}, {$_concert->date|date: 'j. n. Y H:i'}">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
                     <span class="glyphicon glyphicon-calendar pull-left"></span>
@@ -52,7 +93,7 @@
             </div>
         </div>
 
-        <div class="event-spec col-lg-9">
+        <div class="event-spec col-md-9">
             <div class="event-name">
                 <div class="badge pull-right" n:if="$diff->invert && $diff->days < 32">Již za {$_concert->date|timeLeft}</div>
                 <h2>{$_concert->name}</h2>
