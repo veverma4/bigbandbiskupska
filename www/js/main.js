@@ -98,6 +98,12 @@ $(function() {
 			}
 		}
 
+		$that.click(function(e) {
+			if ($(e.target).is($that)) {
+				$that.find("a").click()
+			}
+		})
+
 		$(window).load(function(e) {
 			scroll($that, $("html").scrollTop())
 		});

@@ -5,19 +5,22 @@
 {/block}
 
 {block mininav}
+	{foreach $videos as $id => $video}
+		<li>
+		    <a href="#{$video->name|webalize}">{$video->date|date: 'Y'}</a>
+		</li>
+	{/foreach}
 {/block}
 
 {block content}
-
-{foreach $videos as $id => $video}
-    {include video, "_video" => $video}
-{/foreach}
-
+	{foreach $videos as $id => $video}
+	    {include video, "_video" => $video}
+	{/foreach}
 {/block}
 
 
 {block video}
-<h3 class="text-center">{$_video->name}</h3>
+<h3 id="{$_video->name|webalize}" class="text-center link-target">{$_video->name}</h3>
 <div class="embed-responsive embed-responsive-16by9 img-rounded">
     <iframe class="embed-responsive-item" src="{$_video->url}" alt="Big Band Biskupská - {$_video->name}" frameborder="0" allowfullscreen></iframe>
 </div>
