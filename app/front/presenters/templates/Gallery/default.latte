@@ -65,7 +65,7 @@ $(function() {
                 .prop("alt", title)
 
             if(i > 0 && i % 3 == 0)
-                $("<div class='clearfix'></div>").appendTo(linksContainer)
+                $("<div>").addClass('clearfix').appendTo(linksContainer)
 
             $node.appendTo(linksContainer)
         }
