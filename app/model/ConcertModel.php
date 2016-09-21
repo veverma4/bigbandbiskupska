@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     public function __construct () {
         $this -> concerts = array (
             (object) [
-                "date" => DateTime::from( "2016-10-04 18:00:00" ),
+                "date" => DateTime::from( "2016-10-04 18:30:00" ),
                 "name" => "Big Band Biskupská na HAMU",
                 "location_text" => "Sál Bohuslava Martinů, Malostranské náměstí, Praha",
                 "photo_id" => "6297830529003997106",
