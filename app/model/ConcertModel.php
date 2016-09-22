@@ -24,7 +24,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "location_text" => "Sál Bohuslava Martinů, Malostranské náměstí, Praha",
                 "photo_id" => "6297830529003997106",
                 "album_id" => self::ALBUM_ID,
-                "description" => "Koncert k příležitosti imatrikulace studentů III. generace.
+                "description" => "Základní umělecká škola v Biskupské ulici je od nového školního roku součástí projektu Akademie umění a kultury pro seniory v hlavním městě, který má nabídnout možnost aktivního trávení volného času a umělecké seberealizace.
+
+Jako slavnostní uvedení nových studentů v ZUŠ Biskupské se pořádá koncert, jehož součástí bude i kratší (než jste zvyklí) vystoupení Big Bandu Biskupská s dirigentem Milanem Tolknerem.
+
+Těšit se můžete na stálou sólistku big bandu Kateřinu Tošnarovou, při jejímž zpěvu tuhne krev v žilách, a také na některé starší kousky z našeho repertoáru, které v minulé sezóně nedostaly tolik prostoru.
+
+Koncert se uskuteční v nádherném sále Hudební a taneční fakulty AMU v Praze, který již byl svědkem mnoha vyjímečných vystoupení různorodých umělců. Koncert začíná v 18:30.
 
 Těšíme se na vás!",
             ],
