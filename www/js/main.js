@@ -11,6 +11,15 @@ if (!String.prototype.format) {
   };
 }
 
+$(window).load(function() {
+	// smooth scroll to the anchor id
+	if(window.location.hash && $(window.location.hash).length) {
+		$('html, body').animate({
+				scrollTop: $(window.location.hash).offset().top + 'px'
+			}, 1000);
+	}
+})
+
 $(function() {
 	$.nette.init();
 
@@ -33,9 +42,9 @@ $(function() {
 			if(history.replaceState) {
 				history.replaceState(null, null, window.location.pathname + window.location.search)
 			} else {
-				var offset = $('html').offset()
+				var offset = $('body').offset()
 				window.location.hash = ''
-				$('html').offset(offset)
+				$('body').offset(offset)
 			}
 		};
 
@@ -50,8 +59,8 @@ $(function() {
 		var hash = this.hash
 		var $that = $(this)
 
-		$('html').stop().animate({
-			scrollTop: $(this.hash).offset().top
+		$('html, body').stop().animate({
+			scrollTop: $(this.hash).offset().top + 'px'
 		}, 1000, function(){
 			if(['#top', '#nahoru'].indexOf($that.attr('href')) >= 0) {
 				removeHash();
@@ -61,19 +70,6 @@ $(function() {
 		})
 	});
 
-
-	$(window).load(function() {
-		// smooth scroll to the anchor id
-		if(window.location.hash) {
-			setTimeout( function() {
-				scroll(0,0);
-				$('html').animate({
-					scrollTop: $(window.location.hash).offset().top + 'px'
-				}, 1000);
-			}, 1);
-
-		}
-	})
 
 	// to the top button
 
