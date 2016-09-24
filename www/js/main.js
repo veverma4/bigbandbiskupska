@@ -42,9 +42,9 @@ $(function() {
 			if(history.replaceState) {
 				history.replaceState(null, null, window.location.pathname + window.location.search)
 			} else {
-				var offset = $('body').offset()
+				var offset = $(window).scrollTop()
 				window.location.hash = ''
-				$('body').offset(offset)
+				$(window).scrollTop(offset)
 			}
 		};
 
@@ -101,17 +101,16 @@ $(function() {
 		})
 
 		$(window).load(function(e) {
-			scroll($that, $("html").scrollTop())
+			scroll($that, $(window).scrollTop())
 		});
 
 		var timeout = null;
 		$(window).scroll(function(e) {
-			if(e.originalEvent &&
-				(!$that.is(":visible") || e.originalEvent.pageY === 0)) {
+			if(!$that.is(":visible") || $(window).scrollTop() === 0) {
 				if(timeout) {
 					clearTimeout(timeout);
 				}
-				timeout = setTimeout(scroll, 200, $that, e.originalEvent.pageY)
+				timeout = setTimeout(scroll, 200, $that, $(window).scrollTop())
 			}
 		});
 	})
