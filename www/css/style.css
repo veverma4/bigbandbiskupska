@@ -38,7 +38,7 @@ img.icon {
 
 .copyright {
 	/* bottom fixed navbar */
-	min-height: unset;
+	min-height: 25px;
 	max-height: 30px;
 }
 
