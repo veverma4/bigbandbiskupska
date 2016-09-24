@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-define ( "APP_DIR", __DIR__ . "/../app");
+define ('APP_DIR', __DIR__ . "/../app");
 define ('TMP_DIR', __DIR__ . "/temp/" . getmypid() );
 
 register_shutdown_function(function() {
@@ -28,6 +28,8 @@ $configurator->createRobotLoader()
 $configurator->addConfig(APP_DIR . '/config/config.neon', Nette\Configurator::AUTO);
 $configurator->addConfig(APP_DIR . '/config/config.local.neon', Nette\Configurator::AUTO);
 $configurator->addParameters(array("wwwDir" => TMP_DIR));
+$configurator->addParameters(array("appDir" => APP_DIR));
+$configurator->addParameters(array("testDir" => __DIR__));
 
 $container = $configurator->createContainer();
 
