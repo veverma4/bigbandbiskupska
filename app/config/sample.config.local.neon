@@ -1,12 +1,6 @@
 common:
     parameters:
 
-    extensions:
-        git: Tulinkry\DI\GitExtension
-
-    git:
-        repository: "null"
-
 development < common:
 
 production < common:
