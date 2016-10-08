@@ -15,14 +15,14 @@ class VideoModel extends BaseModel
             (object) [
                 "name" => "Vánoční koncert 2015",
                 "date" => DateTime::from("2015-12-20 20:00:00"),
-                "url" => "https://www.youtube.com/embed/p5VvFPVF4sc",
-                "link" => "https://www.youtube.com/watch?v=p5VvFPVF4sc",
+                "url" => "https://www.youtube.com/embed/HyTUZ_jC0bk",
+                "link" => "https://www.youtube.com/watch?v=HyTUZ_jC0bk",
             ],
             (object) [
                 "name" => "Vánoční koncert 2014",
                 "date" => DateTime::from("2014-12-20 20:00:00"),
-                "url" => "https://www.youtube.com/embed/YyMEaS-o2e0",
-                "link" => "https://www.youtube.com/watch?v=YyMEaS-o2e0",
+                "url" => "https://www.youtube.com/embed/sDD11ZJUQfU",
+                "link" => "https://www.youtube.com/watch?v=sDD11ZJUQfU",
             ],
         );
     }
