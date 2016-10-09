@@ -1,6 +1,6 @@
 layout:
 	name: "Big Band Biskupská"
-	description: "Big Band Biskupská patří mezi největší žákovské a studentské hudební kapely v Praze. Vystupoval s Václavem Noidem Bártou, Ondřejem Rumlem, Františkem Zahradníčkem, Tomášem Savkou nebo Michaelou Noskovou. Stálou sólistkou big bandu je Kateřina Tošnarová, absolventka ZUŠ Biskupská."
+	description: "Big band Biskupská is one of the largest student music orchestras in Prague. It has performed with Václav Noid Bárta, Ondřej Ruml, František Zahradníček, Tomáš Savka, or Micheala Nosková. A permanent singer soloist of the band is Kateřina Tošnarová, ZUŠ Biskupská’s absolvent."
 	copyright: Tuli
 
 	lang:
@@ -46,7 +46,7 @@ presenters:
 
 			text:
 				lead:
-					1: "Big band Biskupská is one of the largest student music orchestras in Prague. It has performed with Václav Noid Bárta, Ondřej Ruml, František Zahradníček, Tomáš Savka, or Micheala Nosková. A permanent singer soloist of the band is Kateřina Tošnarová, ZUŠ Biskupská’s absolvent."
+					1: "Big band Biskupská is one of the largest student music orchestras in Prague. It has performed with Václav Noid Bárta, Ondřej Ruml, František Zahradníček, Tomáš Savka, or Micheala Nosková - famous Czech musicians. A permanent singer soloist of the band is Kateřina Tošnarová, ZUŠ Biskupská’s absolvent."
 					2: "Big band Biskupská’s frequently rearranged repertoire contains more than 100 pieces of swing, pop, dance, jazz or rock music."
 					3: "The conductor of the band is Milan Tolkner, a music teacher and a longtime soloist of The Band of the Castle Guards and Police of the Czech Republic."
 				brief:
