@@ -47,7 +47,7 @@ presenters:
 			text:
 				lead:
 					1: "Big Band Biskupská patří mezi největší žákovské a studentské hudební kapely v Praze. Vystupoval s Václavem Noidem Bártou, Ondřejem Rumlem, Františkem Zahradníčkem, Tomášem Savkou nebo Michaelou Noskovou. Stálou sólistkou big bandu je Kateřina Tošnarová, absolventka ZUŠ Biskupská."
-					2: "Pravidelně obnovovaný repertoár obsahuje přes 100 skladeb swingových, populárních, tanečních, jazzových, ale i rockových."
+					2: "Pravidelně obnovovaný <a href=\"%repertoire_link%\" target=\"_blank\" title=\"Repertoár Big Bandu Biskupská\">repertoár</a> obsahuje přes 100 skladeb swingových, populárních, tanečních, jazzových, ale i rockových."
 					3: "Dirigentem big bandu je Milan Tolkner, hudební pedagog a dlouholetý sólista Hudby hradní stráže a Policie ČR."
 				brief:
 					1: "Big Band Biskupská pod taktovkou Milana Tolknera koncertuje již od roku 2010. První vystoupení odehrál na Vánoce roku 2010 v hotelu Barbora na pražské Zbraslavi. Obsazení big bandu tehdy čítalo 15 hráčů převážně ze třídy Milana Tolknera, který působil a dodnes působí na ZUŠ Zbraslav a Biskupská."
