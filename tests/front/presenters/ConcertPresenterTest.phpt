@@ -39,6 +39,19 @@ class ConcertPresenterTest extends TestCase
         Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 
+    public function testRenderDetail () {
+        $request = new Request( 'Front:Concert', 'GET', array ( 'action' => 'detail', 'id' => 1 ) );
+        $response = $this -> presenter -> run( $request );
+
+        Assert::type( 'Nette\Application\Responses\TextResponse', $response );
+        Assert::type( 'Nette\Bridges\ApplicationLatte\Template', $response -> getSource() );
+
+        $html = (string) $response -> getSource();
+        $dom = DomQuery::fromHtml( $html );
+
+        Assert::true( $dom->has('#koncert') );
+        Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
+    }
 }
 
 # Spuštění testovacích metod
