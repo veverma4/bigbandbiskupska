@@ -20,6 +20,44 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     public function __construct () {
         $this -> concerts = array (
             (object) [
+                "id" => 9,
+                "lattitude" => 50.0907589,
+                "longitude" => 14.4155197,
+                "date" => DateTime::from( "2016-12-18 18:00:00" ),
+                "name" => "Big Band Biskupská - Vánoční koncert",
+                "location_text" => "Pražská konzervatoř, Na rejdišti 77/1, 110 00 Praha, Staré Město, Praha",
+                "photo_id" => "6350741639442648642",
+                "album_id" => self::ALBUM_ID,
+                "description" => "Rok 2016 s sebou přinesl osvěžení repertoáru, nový náboj a drobné personální změny v řadách big bandu. Avšak to neubírá na hudební síle, kterou do vás vpustí v adventním období 18. 12. v nádherném sále Pražské konzervatoře (vchod do koncertního sálu je z Dvořákova nábřeží). 
+
+Tradiční pěveckou sólistkou je Kateřina Tošnarová, která si pro vás opět připravila nové dechberoucí kousky a hostem koncertu je zpěvák Václav Noid Bárta, kterého můžete znát například z muzikálových rolí: Vortinger (Excalibur), Ďábel (Elixír života), Baron (Dáma s kaméliemi), James Wayne (Obraz Doriana Graye), Josef Němec (Němcová!), Robin z Loxley (Robin Hood), Hamlet (Hamlet), na scéně Hudebního divadla Karlín zazářil již v roli Garcii v Carmen, v rolích Jidáše Iškariotského a Piláta Pontského v Jesus Christ Superstar, jako Radames v muzikálu Aida a Daniel v muzikálu Lucie.
+
+Kromě sólistů se na vás těší celý (více jak 30 členný) big band v čele s kapelníkem Milanem Tolknerem.
+
+Big Band Biskupská koncertuje již od roku 2010 a za léta své činnosti má za sebou vystoupení s známými českými zpěváky - Ondřej Ruml, Tomáš Savka, Michaela Nosková, František Zahradníček a vystoupení na prestižních akcích - Ples Prahy 1 nebo Mezinárodní studentský ples, obojí v komplexu na Žofíně v Praze.
+
+Rezervace vstupenek je možná na bigbandbiskupska@gmail.com",
+            ],
+            (object) [
+                "id" => 8,
+                "lattitude" => 49.9750042,
+                "longitude" => 14.3946925,
+                "date" => DateTime::from( "2016-12-09 20:00:00" ),
+                "name" => "Big Band Biskupská - Vánoční koncert na Zbraslavi",
+                "location_text" => "Černé divadlo Jiřího Srnce, U Lékárny 597, 156 00 Praha-Zbraslav",
+                "photo_id" => "6350741639950639810",
+                "album_id" => self::ALBUM_ID,
+                "description" => "Big Band Biskupská vystoupí na Zbraslavi v Černém divadle Jiřího Srnce, za přispění městké části Praha Zbraslav.
+
+Tento koncert vám přinese již prověřené aranže z minulých let, ale také nově občerstvený repertoár připravený právě pro příležitost vánočních koncertů. Stálou sólistkou big bandu je Kateřina Tošnarová, která vás i v nové sezóně nenechá na pochybách, a připravila si pro vás několik nových známých fláků. Ovšem to není jediné, další sólistkou, která vás v tento adventní večer jistě potěší, je Ester Kubátová, rodačka ze Středních Čech. A trio sólistů uzavírá Slava Korsak, zpěvák, kterého na Zbraslavi jistě pamatují z letních koncertů, ale vystupoval s big bandem i v Praze, např. v roce 2014 na vánočním koncertu.
+
+Kromě sólistů se na vás těší celý (více jak 30 členný) big band v čele s kapelníkem Milanem Tolknerem.
+
+Big Band Biskupská koncertuje již od roku 2010 a za léta své činnosti má za sebou vystoupení s známými českými zpěváky - Ondřej Ruml, Tomáš Savka, Michaela Nosková, František Zahradníček a vystoupení na prestižních akcích - Ples Prahy 1 nebo Mezinárodní studentský ples, obojí v komplexu na Žofíně v Praze.
+
+Rezervace vstupenek je možná přes Městský dům Zbraslav.",
+            ],
+            (object) [
                 "id" => 1,
                 "lattitude" => 50.0875476,
                 "longitude" => 14.3999416,
