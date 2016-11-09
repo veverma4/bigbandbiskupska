@@ -32,7 +32,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 Tradiční pěveckou sólistkou je Kateřina Tošnarová, která si pro vás opět připravila nové dechberoucí kousky a hostem koncertu je zpěvák Václav Noid Bárta, kterého můžete znát například z muzikálových rolí: Vortinger (Excalibur), Ďábel (Elixír života), Baron (Dáma s kaméliemi), James Wayne (Obraz Doriana Graye), Josef Němec (Němcová!), Robin z Loxley (Robin Hood), Hamlet (Hamlet), na scéně Hudebního divadla Karlín zazářil již v roli Garcii v Carmen, v rolích Jidáše Iškariotského a Piláta Pontského v Jesus Christ Superstar, jako Radames v muzikálu Aida a Daniel v muzikálu Lucie.
 
-Kromě sólistů se na vás těší celý (více jak 30 členný) big band v čele s kapelníkem Milanem Tolknerem.
+Kromě sólistů se na vás těší celý (více jak 30členný) big band v čele s kapelníkem Milanem Tolknerem.
 
 Big Band Biskupská koncertuje již od roku 2010 a za léta své činnosti má za sebou vystoupení s známými českými zpěváky - Ondřej Ruml, Tomáš Savka, Michaela Nosková, František Zahradníček a vystoupení na prestižních akcích - Ples Prahy 1 nebo Mezinárodní studentský ples, obojí v komplexu na Žofíně v Praze.
 
@@ -51,7 +51,7 @@ Rezervace vstupenek je možná na bigbandbiskupska@gmail.com",
 
 Tento koncert vám přinese již prověřené aranže z minulých let, ale také nově občerstvený repertoár připravený právě pro příležitost vánočních koncertů. Stálou sólistkou big bandu je Kateřina Tošnarová, která vás i v nové sezóně nenechá na pochybách, a připravila si pro vás několik nových známých fláků. Ovšem to není jediné, další sólistkou, která vás v tento adventní večer jistě potěší, je Ester Kubátová, rodačka ze Středních Čech. A trio sólistů uzavírá Slava Korsak, zpěvák, kterého na Zbraslavi jistě pamatují z letních koncertů, ale vystupoval s big bandem i v Praze, např. v roce 2014 na vánočním koncertu.
 
-Kromě sólistů se na vás těší celý (více jak 30 členný) big band v čele s kapelníkem Milanem Tolknerem.
+Kromě sólistů se na vás těší celý (více jak 30členný) big band v čele s kapelníkem Milanem Tolknerem.
 
 Big Band Biskupská koncertuje již od roku 2010 a za léta své činnosti má za sebou vystoupení s známými českými zpěváky - Ondřej Ruml, Tomáš Savka, Michaela Nosková, František Zahradníček a vystoupení na prestižních akcích - Ples Prahy 1 nebo Mezinárodní studentský ples, obojí v komplexu na Žofíně v Praze.
 
