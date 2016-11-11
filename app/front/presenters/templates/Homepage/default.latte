@@ -51,7 +51,10 @@
 							<ul class="list-group">
 								<li class="list-group-item" n:foreach="$concerts as $id => $concert">
 									<!-- <span class="badge pull-right">{$concert->date|timeLeft}</span> -->
-									<h5>{$concert->name}</h5>
+									<a 	href="{link :Front:Concert:detail $concert -> id}" 
+										title="{$concert->name}">
+										<h5>{$concert->name}</h5>
+									</a>
 									<small>{$concert->date|weekday}, {$concert->date|date: 'd. m. H:i'}</small>
 								</li>
 							</ul>
