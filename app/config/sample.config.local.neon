@@ -1,6 +1,8 @@
 common:
     parameters:
-
+        google:
+            maps:
+                APIkey: apikey
 development < common:
 
 production < common:
@@ -11,5 +13,4 @@ production < common:
             user: root
             password:
             dsn: 'mysql:host=%database.host%;dbname=%database.dbname%'
-
-    
+parameters:

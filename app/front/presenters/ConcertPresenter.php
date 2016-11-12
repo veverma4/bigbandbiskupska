@@ -23,6 +23,10 @@ class ConcertPresenter extends BasePresenter
     }
 
     public function actionDetail ( $id ) {
+        if ( isset ( $this -> parameters -> params['google']['maps']['APIkey'] ) )
+            $this -> template -> APIkey = $this -> parameters -> params['google']['maps']['APIkey'];
+        else
+            $this -> template -> APIkey = NULL;
         if ( ! $this -> template -> concert = $this -> concerts -> item ( $id ) )
             $this -> notFoundException ( "Trying to access detail of concert with id ".$id );
     }
