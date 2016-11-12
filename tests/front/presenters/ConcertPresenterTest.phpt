@@ -49,7 +49,7 @@ class ConcertPresenterTest extends TestCase
         $html = (string) $response -> getSource();
         $dom = DomQuery::fromHtml( $html );
 
-        Assert::true( $dom->has('#koncert') );
+        Assert::true( $dom->has('#big-band-biskupska-na-hamu') );
         Assert::true( $dom->has('#' + $this->presenter->translator->translate('front.layout.hash.top')) );
     }
 }

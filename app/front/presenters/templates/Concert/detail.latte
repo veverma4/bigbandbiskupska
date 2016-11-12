@@ -1,15 +1,23 @@
 {block title}Koncert{/block}
 
 {block heading}
-<h1 id="koncert" class="link-target">{$concert->name}</h1>
+
+<div class="row">
+    <a href="{link Concert:default}" title="Zpět na výběr koncertů">
+        <button class="btn btn-default btn-back pull-right">Všechny koncerty</button>
+    </a>
+    <h1 id="{$concert->name|webalize}" class="link-target">{$concert->name}</h1>
+</div>
+
 {/block}
 
 {block mininav}
-<li>
-    <a href="{link :Front:Concert:default}">Všechny koncerty</a>
-</li>
-{/block}
 
+<li>
+    <a href="#{$concert->name|webalize}">{$concert->name}</a>
+</li>
+
+{/block}
 
 {block content}
 
