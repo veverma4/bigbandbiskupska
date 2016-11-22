@@ -115,9 +115,8 @@
                 n:if="isset($_concert->description) && !empty($_concert->description)">
                 <div class="panel-body event-description">
                     {$_concert->description|noescape|texy|truncateHtml: 250}
-                    <a  href="{link :Front:Concert:detail $_concert->id}"
-                        title="Detail koncertu">
-                        Detail koncertu
+                    <a href="{link :Front:Concert:detail $_concert->id}" title="Další informace">
+                        <button class="btn btn-default btn-back pull-right">Další informace</button>
                     </a>
                 </div>
             </div>
