@@ -50,14 +50,6 @@ class MemberModel extends BaseModel
                     "male" => false,
                     "flash" => false,
                 ],
-                (object) [
-                    "name" => "Eva Pelikánová",
-                    "instrument" => "flétna",
-                    "description" => "Hře na příčnou flétnu se věnuje od 12 let, kdy po letech ukončila mučení zvané hra na housle. Do ZUŠ Biskupská přestoupila v roce 2014 ze ZUŠ Dobřichovice. Mezi své záliby řadí divadlo, výtvarné umění a cestování. Nejspíš zůstane věčným studentem.",
-                    "coords" => [ 606, 157, 592, 161, 594, 178, 578, 208, 571, 228, 575, 276, 600, 302, 603, 314, 605, 382, 629, 389, 618, 227, 631, 196, 618, 184, 614, 157 ],
-                    "male" => false,
-                    "flash" => false,
-                ],
             ],
             "klarinety" => [
                 (object) [
@@ -209,22 +201,6 @@ class MemberModel extends BaseModel
                     "flash" => false,
                 ],
                 (object) [
-                    "name" => "Václav Doležal",
-                    "instrument" => "trumpeta",
-                    "description" => $lorem,
-                    "male" => true,
-                    "coords" => [ ],
-                    "flash" => false,
-                ],
-                (object) [
-                    "name" => "Filip Matějka",
-                    "instrument" => "trumpeta",
-                    "description" => "Sedmým rokem studuje na Gymnáziu Christiana Dopplera. Členem big bandu je od ledna 2010. Hře na trumpetu se věnuje {since: 2008}, v roce 2016 absolvoval v ZUŠ Štefánikova, kde studoval u Kamila Brož a Martina Novotného. Hraje Frisbee Ultimate a podílí se na tvorbě her, aplikací a webů.",
-                    "male" => true,
-                    "coords" => [ 320, 141, 308, 147, 313, 167, 304, 184, 299, 262, 306, 329, 318, 349, 326, 374, 342, 381, 336, 253, 332, 198, 342, 183, 330, 174, 334, 159, 326, 143 ],
-                    "flash" => false,
-                ],
-                (object) [
                     "name" => "Antonín Bolardt",
                     "instrument" => "trumpeta",
                     "description" => "Od svých pěti let hrál na flétnu. Ve druhé třídě začal s trumpetou, které se věnuje dodnes. V big bandu působí s roční pauzou od úplného začátku v roce 2010. Mezi jeho koníčky patří sport (hraje závodně tenis), posilovna a poslouchání hudby. Chodí na SZŠ Ruská.",
@@ -250,14 +226,6 @@ class MemberModel extends BaseModel
                     "description" => "Hře na pozoun se věnuje od svých 11 let. Je bývalým žákem Jana Jakubce a v současnosti studuje na KJJ ve třídě Přemka Tomšíčka. Kromě Big Bandu Biskupská je členem kapely J.J. BigBand. V big bandu hraje od roku 2011, kdy svým příchodem rozšířil pozounovou sekci na celkový počet jednoho člena. Mezi jeho záliby patří sóložroutství a vyhřívání se na výsluní kapelníkovy přízně.",
                     "male" => true,
                     "coords" => [ 391, 271, 390, 294, 388, 298, 378, 308, 359, 330, 354, 368, 385, 395, 445, 396, 458, 363, 448, 328, 438, 308, 415, 296, 423, 280, 413, 266, 404, 262 ],
-                    "flash" => false,
-                ],
-                (object) [
-                    "name" => "Leo Lukáš",
-                    "instrument" => "trombón",
-                    "description" => $lorem,
-                    "male" => true,
-                    "coords" => [ 198, 164, 188, 151, 194, 131, 214, 132, 222, 151, 215, 162 ],
                     "flash" => false,
                 ],
                 (object) [
@@ -343,18 +311,50 @@ class MemberModel extends BaseModel
                     "coords" => [ 577, 162, 571, 138, 588, 124, 606, 133, 609, 146, 604, 153, 592, 160, 591, 172, 574, 205, 568, 174 ],
                     "flash" => false,
                 ],
-                (object) [
-                    "name" => "Josef Krůšek",
-                    "instrument" => "bicí",
-                    "description" => "Na bicí hraje od 12. ledna roku 2009, po roce vstoupil do začínajícího big bandu a podílel se na založení jazz-metalové kapely Fon Hönneberg. Dříve hrál 10 let na housle, 8 let zpíval ve sboru a 5 let i sólově, dále je samouk na klavír a na kytaru. Vedle rozvíjení zhoubné závislosti na hudebních nástrojích je také zvukařem rockového klubu Kain.",
-                    "male" => true,
-                    "coords" => [ 386, 189, 392, 165, 406, 124, 417, 123, 426, 142, 429, 167, 425, 177, 408, 182, 397, 208, 396, 206 ],
-                    "flash" => false,
-                ],
             ],
         );
 
         $this -> oldmembers = array (
+            (object) [
+                "name" => "Eva Pelikánová",
+                "instrument" => "flétna",
+                "description" => "Hře na příčnou flétnu se věnuje od 12 let, kdy po letech ukončila mučení zvané hra na housle. Do ZUŠ Biskupská přestoupila v roce 2014 ze ZUŠ Dobřichovice. Mezi své záliby řadí divadlo, výtvarné umění a cestování. Nejspíš zůstane věčným studentem.",
+                "coords" => [ 606, 157, 592, 161, 594, 178, 578, 208, 571, 228, 575, 276, 600, 302, 603, 314, 605, 382, 629, 389, 618, 227, 631, 196, 618, 184, 614, 157 ],
+                "male" => false,
+                "flash" => false,
+            ],
+            (object) [
+                "name" => "Filip Matějka",
+                "instrument" => "trumpeta",
+                "description" => "Sedmým rokem studuje na Gymnáziu Christiana Dopplera. Členem big bandu je od ledna 2010. Hře na trumpetu se věnuje {since: 2008}, v roce 2016 absolvoval v ZUŠ Štefánikova, kde studoval u Kamila Brož a Martina Novotného. Hraje Frisbee Ultimate a podílí se na tvorbě her, aplikací a webů.",
+                "male" => true,
+                "coords" => [ 320, 141, 308, 147, 313, 167, 304, 184, 299, 262, 306, 329, 318, 349, 326, 374, 342, 381, 336, 253, 332, 198, 342, 183, 330, 174, 334, 159, 326, 143 ],
+                "flash" => false,
+            ],
+            (object) [
+                "name" => "Josef Krůšek",
+                "instrument" => "bicí",
+                "description" => "Na bicí hraje od 12. ledna roku 2009, po roce vstoupil do začínajícího big bandu a podílel se na založení jazz-metalové kapely Fon Hönneberg. Dříve hrál 10 let na housle, 8 let zpíval ve sboru a 5 let i sólově, dále je samouk na klavír a na kytaru. Vedle rozvíjení zhoubné závislosti na hudebních nástrojích je také zvukařem rockového klubu Kain.",
+                "male" => true,
+                "coords" => [ 386, 189, 392, 165, 406, 124, 417, 123, 426, 142, 429, 167, 425, 177, 408, 182, 397, 208, 396, 206 ],
+                "flash" => false,
+            ],
+            (object) [
+                "name" => "Leo Lukáš",
+                "instrument" => "trombón",
+                "description" => $lorem,
+                "male" => true,
+                "coords" => [ 198, 164, 188, 151, 194, 131, 214, 132, 222, 151, 215, 162 ],
+                "flash" => false,
+            ],
+            (object) [
+                "name" => "Václav Doležal",
+                "instrument" => "trumpeta",
+                "description" => $lorem,
+                "male" => true,
+                "coords" => [ ],
+                "flash" => false,
+            ],
             (object) [
                 "name" => "Jakub Marek",
                 "instrument" => "trumpeta",
