@@ -13,6 +13,12 @@ class VideoModel extends BaseModel
     public function __construct () {
         $this -> videos = array (
             (object) [
+                "name" => "Vánoční koncert 2016",
+                "date" => DateTime::from("2016-12-18 20:00:00"),
+                "url" => "https://www.youtube.com/embed/vLD3zqgyRpg",
+                "link" => "https://www.youtube.com/watch?v=vLD3zqgyRpg",
+            ],
+            (object) [
                 "name" => "Vánoční koncert 2015",
                 "date" => DateTime::from("2015-12-20 20:00:00"),
                 "url" => "https://www.youtube.com/embed/HyTUZ_jC0bk",
