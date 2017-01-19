@@ -127,6 +127,14 @@ class MemberModel extends BaseModel
                     "flash" => false,
                 ],
                 (object) [
+                    "name" => "Daniela Kořánová",
+                    "instrument" => "saxofon",
+                    "description" => "Nejprve začala hrát na flétnu, poté přestoupila na klarinet a od 14 let hraje na saxofon. Mimo hudbu patří mezi její koníčky výtvarka, čtení a cestování.",
+                    "male" => false,
+                    "coords" => [],
+                    "flash" => false,
+                ],
+                (object) [
                     "name" => "Klára Tužilová",
                     "instrument" => "saxofon",
                     "description" => $lorem,
