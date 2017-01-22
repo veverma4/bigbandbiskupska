@@ -95,6 +95,14 @@ class MemberModel extends BaseModel
             ],
             "saxofony" => [
                 (object) [
+                    "name" => "Ludmila Magalhaesová",
+                    "instrument" => "sopránový saxofon",
+                    "description" => "Hraje odmalička a stále ji to baví. Začínala na flétničku, poté hrála několik let na klarinet, housle a klavír. Klarinet vyměnila za saxofon a cítí, že tohle rozhodnutí byla trefa do černého. Kromě hudby ji baví literatura a tanec.",
+                    "male" => false,
+                    "coords" => [ ],
+                    "flash" => false,
+                ],
+                (object) [
                     "name" => "Matyáš Starý",
                     "instrument" => "saxofon",
                     "description" => "Sluníčkář, idealista, kavárenský povaleč, Pražák, cinefil, bibliofil, keplerák, filmovědec, volnočasový filozof, saxofonista, amatérský broukač, fotbalový analytik, příležitostný squashista, pohodlný běžec, návštěvník posilovny, přeborník v Bangu, osadník z Katanu, popíječ piva, DEZEnazi a latentní bavič.",
