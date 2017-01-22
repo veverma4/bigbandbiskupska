@@ -71,11 +71,11 @@
     {/foreach}
 
     <h2>Bývalí členové</h2>
-    <ul class="list-item col-md-6 col-md-offset-3">
+    <div class="row">
         {foreach $oldmembers as $id => $member}
             {include old, "_member" => $member}
         {/foreach}
-    </ul>
+    </div>
 
 </div>
 {/block}
@@ -127,15 +127,15 @@
 
 
 {block old}
-<li id="{$_member->name|webalize}" class="list-group-item band-member clearfix">
-    <span class="player-name text-center">
+<div id="{$_member->name|webalize}" class="col-md-3 band-member clearfix">
+    <span class="player-name">
         <h5>
             <img class="img img-rounded img50x50" title="{$_member->name|capitalize}" alt="{$_member->name|capitalize}" src="{$basePath}/img/members/{$_member->name|webalize}.jpg" />
 
             {$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
         </h5>
     </span>
-</li>
+</div>
 {/block}
 
 {block conductor}
