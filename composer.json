@@ -46,8 +46,10 @@
         "tulinkry/script": "dev-master",
         "tulinkry/git": "dev-master"
     },
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
     "require-dev": {
-        "nette/tester": "@dev",
+        "nette/tester": "dev-master",
         "kdyby/console": "^2.6"
     }
 }
