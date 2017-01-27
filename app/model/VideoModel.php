@@ -15,8 +15,8 @@ class VideoModel extends BaseModel
             (object) [
                 "name" => "Vánoční koncert 2016",
                 "date" => DateTime::from("2016-12-18 20:00:00"),
-                "url" => "https://www.youtube.com/embed/vLD3zqgyRpg",
-                "link" => "https://www.youtube.com/watch?v=vLD3zqgyRpg",
+                "url" => "https://www.youtube.com/embed/Ow3VgMDlvbo",
+                "link" => "https://www.youtube.com/watch?v=Ow3VgMDlvbo",
             ],
             (object) [
                 "name" => "Vánoční koncert 2015",
