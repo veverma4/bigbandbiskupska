@@ -20,6 +20,17 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     public function __construct () {
         $this -> concerts = array (
             (object) [
+                "id" => 10,
+                "lattitude" => 49.2548602,
+                "longitude" => 15.1875094,
+                "date" => DateTime::from( "2017-05-19 19:00:00" ),
+                "name" => "Jazz na hradě v Žirovnici 2017",
+                "location_text" => "Tyršova 456, 394 68 Žirovnice, Česká Republika",
+                "photo_id" => "6297830530208318354",
+                "album_id" => self::ALBUM_ID,
+                "description" => "",
+            ],
+            (object) [
                 "id" => 9,
                 "lattitude" => 50.0907589,
                 "longitude" => 14.4155197,
