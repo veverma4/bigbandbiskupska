@@ -95,7 +95,7 @@
 
         <div class="event-spec col-md-9">
             <div class="event-name">
-                <div class="badge pull-right" n:if="$diff->invert && $diff->days < 32">Již za {$_concert->date|timeLeft}</div>
+                <div class="badge pull-right" n:if="$diff->invert">Již za {$_concert->date|timeLeft}</div>
                 <h2>{$_concert->name}</h2>
             </div>
             <div class="event-place">

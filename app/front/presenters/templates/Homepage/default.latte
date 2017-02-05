@@ -50,7 +50,7 @@
 							{if count($concerts)}
 							<ul class="list-group">
 								<li class="list-group-item" n:foreach="$concerts as $id => $concert">
-									<!-- <span class="badge pull-right">{$concert->date|timeLeft}</span> -->
+									<span class="badge pull-right">{$concert->date|timeLeft}</span>
 									<a 	href="{link :Front:Concert:detail $concert -> id}" 
 										title="{$concert->name}">
 										<h5>{$concert->name}</h5>
