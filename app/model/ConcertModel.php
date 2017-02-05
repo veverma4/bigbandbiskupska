@@ -57,7 +57,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "lattitude" => 50.0907589,
                 "longitude" => 14.4155197,
                 "date" => DateTime::from( "2017-04-11 17:00:00" ),
-                "name" => "Koncert se svýcarským big bandem",
+                "name" => "Koncert se švýcarským big bandem",
                 "location_text" => "Pražská konzervatoř, Na rejdišti 77/1, 110 00 Praha, Staré Město, Praha",
                 "photo_id" => "",
                 "album_id" => self::ALBUM_ID,
@@ -284,7 +284,7 @@ Těšíme se na vás. V Žirovnici to žije!",
         $filtered = [];
         foreach ( $this -> concerts as $concert )
             if ( $concert -> date > new DateTime )
-                $filtered [] = $concert;
+                array_unshift ( $filtered, $concert );
 
         $limited = [];
         for ( $i = $offset; $i < $limit + $offset; $i ++ )
