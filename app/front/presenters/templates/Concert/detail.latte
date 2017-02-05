@@ -61,6 +61,14 @@
                 {$concert->description|noescape|texy}
             </div>
         </div>
+        <div
+            class="col-md-12"
+            role="tabpanel" 
+            n:if="!isset($concert->description) || empty($concert->description)">
+            <div class="panel-body event-description">
+                Podrobnosti připravujeme...
+            </div>
+        </div>
 
         <div id="map" style="width:100%;height:500px"></div>
 
