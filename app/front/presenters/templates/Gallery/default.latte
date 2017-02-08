@@ -19,6 +19,7 @@ var errorUrl = {link logError!}
 
 {script}
 $(function() {
+    var ignoredTitles = [ 'Profile Photos' ];
     $.nette.ajax({
         url: 'https://picasaweb.google.com/data/feed/api/user/bigbandbiskupska?alt=json&imgmax=1080u&thumbsize=200u',
         timeout: 10000,
@@ -36,7 +37,7 @@ $(function() {
         $("#galleries").html("")
 
         var linksContainer = $('#galleries')
-        for ( var i = 0; i < result.feed.entry.length; i ++ )
+        for ( var i = 0, cnt = 0; i < result.feed.entry.length; i ++, cnt ++ )
         {
             var $node = $(".album-template").clone()
             var $e = result.feed.entry[i]
@@ -44,6 +45,11 @@ $(function() {
             var $image = $e.media$group.media$content[0]
             var title = $e.media$group.media$title.$t
             title = title.replace ("_public", "").replace("public", "")
+
+            if(ignoredTitles.indexOf(title) != -1) {
+                cnt --;
+                continue;
+            }
 
             var description = $e.media$group.media$description.$t
             var id = $e.gphoto$id.$t
@@ -64,7 +70,7 @@ $(function() {
                 .prop("type", $image.type)
                 .prop("alt", title)
 
-            if(i > 0 && i % 3 == 0)
+            if(cnt > 0 && cnt % 3 == 0)
                 $("<div>").addClass('clearfix').appendTo(linksContainer)
 
             $node.appendTo(linksContainer)
