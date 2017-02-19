@@ -28,7 +28,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "location_text" => "Bowling Zbraslav U Stromečku, Elišky Přemyslovny 433, 15600 Zbraslav",
                 "photo_id" => "6297830529784674802",
                 "album_id" => self::ALBUM_ID,
-                "description" => "",
+                "description" => "Vrchol letní sezony Big Bandu Biskupská přijde opět na konci června v zbraslavském Bowlingu U stromečku. Na venkovním pódiu zahraje Big Band Biskupská to nejlepší ze sezony a přidá nejoblíbenější sklady z let minulých. Na programu tedy budou hity Nikki Yanofski, Michaela Bublého, Adéle, Big Phat Bandu či o něco starší kousky od Arethy Franklin nebo Elvise Presleyho.
+
+                Host koncertu bude oznámen během jara.",
             ],
             (object) [
                 "id" => 13,
@@ -61,7 +63,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "location_text" => "Pražská konzervatoř, Na rejdišti 77/1, 110 00 Praha, Staré Město, Praha",
                 "photo_id" => "",
                 "album_id" => self::ALBUM_ID,
-                "description" => "",
+                "description" => "Sál Pražské konzervatoře v Praze (vchod do koncertního sálu je z Dvořákova nábřeží) v dubnu rozezní hned několik hudebních těles naráz v jeden večer. Krom Big Bandu Biskupská zahraje švýcarský big band z Basileje, se kterým BBB hrál již před dvěma lety v jejich domovském městě. Na programu bude i společné vystoupení obou těles.
+
+                Vstupné je zdarma, čekáme vás v 17 hodin!",
             ],
             (object) [
                 "id" => 10,
@@ -72,7 +76,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "location_text" => "Tyršova 456, 394 68 Žirovnice, Česká Republika",
                 "photo_id" => "6297830530208318354",
                 "album_id" => self::ALBUM_ID,
-                "description" => "",
+                "description" => "Již pošesté za sebou se Big Band Biskupská zúčastní festivalu Jazz Na Hradě v Žirovnici nedaleko Pelhřimova. Parkety místní sokolovny, jež hostily i Karla Gotta, obsadí více než 30členný orchestr big bandu.
+
+Exkluzivní hostem koncertu bude sólista opery Národního divadla František Zahradníček, který zazpívá klasické „hálovky“, ale i moderní hity například z pera Michaela Bublého.
+
+I tento rok očekáváme, že sál o kapacitě přes 300 míst bude vyprodán dlouho dopředu.
+
+Večerem se ponese hlas stálé sólistka big bandu Kateřiny Tošnarové.",
             ],
             (object) [
                 "id" => 9,
