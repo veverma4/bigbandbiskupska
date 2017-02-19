@@ -303,6 +303,9 @@ img.alignleft {
 	cursor: hand;
 }
 
+.event-description {
+	font-size: 21px;
+}
 
 /* ------------------ nation flag --------- */
 
