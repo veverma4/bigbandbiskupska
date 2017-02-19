@@ -4,6 +4,8 @@ use Nette\DI\Container;
 use Tester\Assert;
 use Tester\TestCase;
 
+use Nette\Utils\Strings;
+
 $container = require __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "bootstrap.php";
 
 class ConcertModelTest extends TestCase {
@@ -26,7 +28,6 @@ class ConcertModelTest extends TestCase {
     public function testAll() {
         Assert::true(count($this->model->all()) > 0);
     }
-
 }
 
 # Spuštění testovacích metod

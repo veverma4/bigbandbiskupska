@@ -3,7 +3,9 @@
 namespace App\Model;
 
 use Nette\Utils\DateTime;
+use Nette\Utils\Strings;
 use Tulinkry\Model\BaseModel;
+
 
 class ConcertModel extends BaseModel
 {
@@ -24,7 +26,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "lattitude" => 49.9733874,
                 "longitude" => 14.3899573,
                 "date" => DateTime::from( "2017-06-29 18:00:00" ),
-                "name" => "Swing pro Zbraslav 2017",
+                "name" => "Swing pro Zbraslav",
                 "location_text" => "Bowling Zbraslav U Stromečku, Elišky Přemyslovny 433, 15600 Zbraslav",
                 "photo_id" => "6297830529784674802",
                 "album_id" => self::ALBUM_ID,
@@ -37,7 +39,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "lattitude" => 50.0875476,
                 "longitude" => 14.3999416,
                 "date" => DateTime::from( "2017-06-16 12:00:00" ),
-                "name" => "Festival v Děčíně 2017",
+                "name" => "Festival v Děčíně",
                 "location_text" => "Děčín",
                 "photo_id" => "",
                 "album_id" => self::ALBUM_ID,
@@ -48,7 +50,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "lattitude" => 50.0875476,
                 "longitude" => 14.3999416,
                 "date" => DateTime::from( "2017-05-25 19:00:00" ),
-                "name" => "Závěrečný koncert ZUŠ Biskupská 2017",
+                "name" => "Závěrečný koncert ZUŠ Biskupská",
                 "location_text" => "Sál Bohuslava Martinů, Malostranské náměstí, Praha",
                 "photo_id" => "6297830529003997106",
                 "album_id" => self::ALBUM_ID,
@@ -72,7 +74,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "lattitude" => 49.2548602,
                 "longitude" => 15.1875094,
                 "date" => DateTime::from( "2017-05-19 19:00:00" ),
-                "name" => "Jazz na hradě v Žirovnici 2017",
+                "name" => "Jazz na hradě v Žirovnici",
                 "location_text" => "Tyršova 456, 394 68 Žirovnice, Česká Republika",
                 "photo_id" => "6297830530208318354",
                 "album_id" => self::ALBUM_ID,
@@ -329,4 +331,12 @@ Těšíme se na vás. V Žirovnici to žije!",
         return $concerts;
     }
 
+    public function findBySlug($slug) {
+        foreach($this->concerts as $concert) {
+            if (isset($concert->slug) && $concert->slug === $slug)
+                return $concert;
+            if(Strings::webalize($concert->name) === $slug)
+                return $concert;
+        }
+    }
 }
