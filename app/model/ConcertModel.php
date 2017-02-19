@@ -41,7 +41,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "date" => DateTime::from( "2017-06-16 12:00:00" ),
                 "name" => "Festival v Děčíně",
                 "location_text" => "Děčín",
-                "photo_id" => "",
+                "photo_id" => "6388966290308299618",
                 "album_id" => self::ALBUM_ID,
                 "description" => "",
             ],
@@ -63,7 +63,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "date" => DateTime::from( "2017-04-11 17:00:00" ),
                 "name" => "Koncert se švýcarským big bandem",
                 "location_text" => "Pražská konzervatoř, Na rejdišti 77/1, 110 00 Praha, Staré Město, Praha",
-                "photo_id" => "",
+                "photo_id" => "6388966290308299618",
                 "album_id" => self::ALBUM_ID,
                 "description" => "Sál Pražské konzervatoře v Praze (vchod do koncertního sálu je z Dvořákova nábřeží) v dubnu rozezní hned několik hudebních těles naráz v jeden večer. Krom Big Bandu Biskupská zahraje švýcarský big band z Basileje, se kterým BBB hrál již před dvěma lety v jejich domovském městě. Na programu bude i společné vystoupení obou těles.
 

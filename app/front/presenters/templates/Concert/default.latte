@@ -108,29 +108,28 @@
     <div class="panel-collapse collapse clearfix" id="{$_concert->name|webalize}">
         <div class="panel-body">
             <div class="clearfix"></div>
+            <div
+                class="col-md-12 google-image text-center"
+                data-photo-id="{$_concert->photo_id}"
+                data-album-id="{$_concert->album_id}"
+                >
+            </div>
 
             <div
                 class="col-md-12"
-                role="tabpanel" 
-                n:if="isset($_concert->description) && !empty($_concert->description)">
+                role="tabpanel">
                 <div class="panel-body event-description">
-                    {$_concert->description|noescape|texy|truncateHtml: 250}
-                    <a href="{link :Front:Concert:detail $_concert->id}" title="Další informace">
-                        <button class="btn btn-default btn-back pull-right">Další informace</button>
-                    </a>
+                    {if isset($_concert->description) && !empty($_concert->description)}
+                        {$_concert->description|noescape|texy|truncateHtml: 250}
+                    {else}
+                        Podrobnosti připravujeme...
+                    {/if}
                 </div>
             </div>
-            <div 
-                class="col-md-12"
-                role="tabpanel" 
-                n:if="!isset($_concert->description) || empty($_concert->description)">
-                <div class="panel-body event-description">
-                    Podrobnosti připravujeme...
-                    <a href="{link :Front:Concert:detail $_concert->id}" title="Další informace">
-                        <button class="btn btn-default btn-back pull-right">Další informace</button>
-                    </a>
-                </div>
-            </div>
+
+            <a href="{link :Front:Concert:detail $_concert->id}" title="Další informace">
+                <button class="btn btn-default btn-back pull-right">Další informace</button>
+            </a>
         </div>
     </div>
 
