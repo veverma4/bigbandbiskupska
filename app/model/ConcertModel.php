@@ -22,6 +22,46 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     public function __construct () {
         $this -> concerts = array (
             (object) [
+                "id" => 15,
+                "lattitude" => 50.10402,
+                "longitude" => 14.38807,
+                "date" => DateTime::from( "2017-03-08 18:00:00" ),
+                "name" => "Reunion No.1 - Párty FSv - s Big Band Biskupská",
+                "location_text" => "ČVUT Fakulta stavební, Thákurova 7, 166 29 Praha",
+                "photo_id" => "6390724361930688946",
+                "album_id" => self::ALBUM_ID,
+                "description" => "REUNION - Rozlučka s diplomanty je první párty fakulty stavební, která, při příležitosti výročí 25 let oboru A+S, pojí všechny studenty spjaté se současným ročníkem diplomantů oboru A+S. Je to možnost setkat se se spolužáky z prváku, kteří se nakonec rozhodli studovat jinde či s těmi, kteří už odevzdali diplomku dříve nebo pro ty, kteří mají prostě jen rádi diplomanty nebo večírky.
+/---html
+<h3>Program</h3>
+\---
+- 17:30 - Zahájení
+- 18:00 - Big Band Biskupská
+- 19:30 - Lekce tancování swingu
+- 20:00 - Electro swing dance party
+
+Pokud vás nedostanou do varu zahajovací proslovy, pak se to určitě podaří Big Bandu Biskupská se speciálním playlistem přímo pro tuto příležitost. Více o těchto mladých, krásných a neméně talentovaných muzikantech zde: http://bigbandbiskupska.cz/
+nebo tady: https://www.facebook.com/bigbandbiskupska/?fref=ts
+
+Kdo by si nebyl jistý svými tanečními kreacemi, může pochytit základy swingu, charlestonu anebo lindy hopu od sympatických tanečních koučů - Anastázie Chalupové a Kryštofa Peřestého.
+
+Pak už nebude stát nic v cestě užívání si rytmu electro swingu až po dosažení absolutní nirvany.
+/---html
+<h3>Občerstvení</h3>
+\---
+Pivo bude k dostání na \"Chalupa baru\", další nápoje na RedBull baru.
+/---html
+<h3>Místo konání</h3>
+\---
+ČVUT Fakulta stavební - ateliér D
+/---html
+<h3>Jak se k nám dostanete</h3>
+\---
+Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavním vchodem Fakulty stavební, za turnikety vlevo za cca 5 schůdky schodištěm nahoru do druhého patra, spojovacím tunelem po pravé straně projdete do budovy. Sestoupením na úroveň 1NP se ocitnete na místě.
+/---html
+<h3>VSTUP ZDARMA</h3>
+\---",
+            ],
+            (object) [
                 "id" => 14,
                 "lattitude" => 49.9733874,
                 "longitude" => 14.3899573,
