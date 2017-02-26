@@ -138,17 +138,17 @@
 
                 {ifset $_concert->price}
                     <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                        <meta itemprop="availability" href="http://schema.org/{if isset($_concert->price) && $_concert->price >= 0}InStock{else}SoldOut{/if}" />
+                        <link itemprop="availability" href="http://schema.org/{if isset($_concert->price) && $_concert->price >= 0}InStock{else}SoldOut{/if}" />
                         <meta itemprop="price" content="{$_concert->price}"/>
                         <meta itemprop="priceCurrency" content="CZK" />
-                        <meta itemprop="url" href="{link //:Front:Concert:detail $_concert->id}" />
+                        <link itemprop="url" href="{link //:Front:Concert:detail $_concert->id}" />
                     </div>
                 {else}
                     <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                        <meta itemprop="availability" href="http://schema.org/InStock" />
+                        <link itemprop="availability" href="http://schema.org/InStock" />
                         <meta itemprop="price" content="0"/>
                         <meta itemprop="priceCurrency" content="CZK" />
-                        <meta itemprop="url" href="{link //:Front:Concert:detail $_concert->id}" />
+                        <link itemprop="url" href="{link //:Front:Concert:detail $_concert->id}" />
                     </div>
                 {/ifset}
             </div>

@@ -24,14 +24,20 @@
 
 {snippet concert}
 
-    <div class="row">
+    <div class="row" itemscope itemtype="http://schema.org/MusicEvent">
+        <meta itemprop="name" content="{$concert->name}" />
         <div class="event-spec col-md-9">
             <div class="event-place">
+                <div itemprop="location" itemscope="" itemtype="http://schema.org/MusicVenue">
+                    <meta itemprop="name" n:if="isset($concert->location_text)" content="{$concert->location_text}">
+                    <meta itemprop="address" n:if="isset($concert->location_text)" content="{$concert->location_text}">
+                </div>
                 <h3>{$concert->location_text}</h3>
             </div>
         </div>
 
         <div class="event-date col-md-2" title="{$concert->date|weekday}, {$concert->date|date: 'j. n. Y H:i'}">
+            <meta itemprop="startDate" content="{$concert->date|date: 'Y-m-dTH:i:sP'}" />
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
                     <span class="glyphicon glyphicon-calendar pull-left"></span>
@@ -57,7 +63,7 @@
             class="col-md-12"
             role="tabpanel" 
             n:if="isset($concert->description) && !empty($concert->description)">
-            <div class="panel-body event-description">
+            <div class="panel-body event-description" itemprop="description">
                 {$concert->description|noescape|texy}
             </div>
         </div>
@@ -92,6 +98,23 @@
         </script>
 
         <script n:if="$APIkey" src="https://maps.googleapis.com/maps/api/js?callback=map&amp;key={$APIkey}"></script>
+
+        <meta itemprop="url" content="{link //:Front:Concert:detail $concert->id}">
+        {ifset $concert->price}
+            <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <link itemprop="availability" href="http://schema.org/{if isset($concert->price) && $concert->price >= 0}InStock{else}SoldOut{/if}" />
+                <meta itemprop="price" content="{$concert->price}"/>
+                <meta itemprop="priceCurrency" content="CZK" />
+                <link itemprop="url" href="{link //:Front:Concert:detail $concert->id}" />
+            </div>
+        {else}
+            <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <link itemprop="availability" href="http://schema.org/InStock" />
+                <meta itemprop="price" content="0"/>
+                <meta itemprop="priceCurrency" content="CZK" />
+                <link itemprop="url" href="{link //:Front:Concert:detail $concert->id}" />
+            </div>
+        {/ifset}
     </div>
 {/snippet}
 
