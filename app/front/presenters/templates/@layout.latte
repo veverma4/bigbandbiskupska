@@ -45,6 +45,7 @@
     <![endif]-->
 
 	<title>{ifset title}{include title|striptags} | {/ifset}{_front.layout.name}</title>
+	<meta property="og:title" content="{ifset title}{include title|striptags} | {/ifset}{_front.layout.name}" />
 </head>
 
 <body data-spy="scroll" data-target="#mini-nav-menu" data-offset="90" id="{_front.layout.hash.top}" class="link-target">

@@ -135,6 +135,7 @@ Večerem se ponese hlas stálé sólistka big bandu Kateřiny Tošnarové.",
                 "date" => DateTime::from( "2016-12-18 18:00:00" ),
                 "name" => "Big Band Biskupská - Vánoční koncert",
                 "location_text" => "Pražská konzervatoř, Na rejdišti 77/1, 110 00 Praha, Staré Město, Praha",
+                "price" => 100,
                 "photo_id" => "6350741639442648642",
                 "album_id" => self::ALBUM_ID,
                 "description" => "Rok 2016 s sebou přinesl osvěžení repertoáru, nový náboj a drobné personální změny v řadách big bandu. Avšak to neubírá na hudební síle, kterou do vás vpustí v adventním období 18. 12. v nádherném sále Pražské konzervatoře (vchod do koncertního sálu je z Dvořákova nábřeží). 

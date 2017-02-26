@@ -73,7 +73,7 @@
 {block concert}
 {var $diff = $_concert->date->diff(new \Nette\Utils\DateTime ())}
 
-<article class="panel panel-default panel-concert {if $diff->invert}panel-concert-future{else}panel-concert-past{/if}" role="tab">
+<article class="panel panel-default panel-concert {if $diff->invert}panel-concert-future{else}panel-concert-past{/if}" role="tab" itemscope itemtype="http://schema.org/MusicEvent">
     <div 
         class="panel-heading clearfix" 
         data-toggle="collapse" 
@@ -81,6 +81,7 @@
         data-parent=".band-accordion">
 
         <div class="event-date col-md-3" title="{$_concert->date|weekday}, {$_concert->date|date: 'j. n. Y H:i'}">
+            <meta itemprop="startDate" content="{$_concert->date|date: 'Y-m-dTH:i:sP'}" />
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
                     <span class="glyphicon glyphicon-calendar pull-left"></span>
@@ -96,7 +97,7 @@
         <div class="event-spec col-md-9">
             <div class="event-name">
                 <div class="badge pull-right" n:if="$diff->invert">Již za {$_concert->date|timeLeft}</div>
-                <h2>{$_concert->name}</h2>
+                <h2 itemprop="name">{$_concert->name}</h2>
             </div>
             <div class="event-place">
                 <h3>{$_concert->location_text}</h3>
@@ -125,6 +126,31 @@
                         Podrobnosti připravujeme...
                     {/if}
                 </div>
+
+                <div itemprop="description" class="hidden">
+                    {$_concert->description|noescape|texy}
+                </div>
+                <meta itemprop="url" content="{link //:Front:Concert:detail $_concert->id}">
+                <div itemprop="location" itemscope="" itemtype="http://schema.org/MusicVenue">
+                    <meta itemprop="name" n:if="isset($_concert->location_text)" content="{$_concert->location_text}">
+                    <meta itemprop="address" n:if="isset($_concert->location_text)" content="{$_concert->location_text}">
+                </div>
+
+                {ifset $_concert->price}
+                    <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                        <meta itemprop="availability" href="http://schema.org/{if isset($_concert->price) && $_concert->price >= 0}InStock{else}SoldOut{/if}" />
+                        <meta itemprop="price" content="{$_concert->price}"/>
+                        <meta itemprop="priceCurrency" content="CZK" />
+                        <meta itemprop="url" href="{link //:Front:Concert:detail $_concert->id}" />
+                    </div>
+                {else}
+                    <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                        <meta itemprop="availability" href="http://schema.org/InStock" />
+                        <meta itemprop="price" content="0"/>
+                        <meta itemprop="priceCurrency" content="CZK" />
+                        <meta itemprop="url" href="{link //:Front:Concert:detail $_concert->id}" />
+                    </div>
+                {/ifset}
             </div>
 
             <a href="{link :Front:Concert:detail $_concert->id}" title="Další informace">
