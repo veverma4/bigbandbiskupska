@@ -94,7 +94,9 @@ Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavn�
                 "location_text" => "Sál Bohuslava Martinů, Malostranské náměstí, Praha",
                 "photo_id" => "6297830529003997106",
                 "album_id" => self::ALBUM_ID,
-                "description" => "",
+                "description" => "Vystoupení Big Bandu Biskupská bude jako každý rok součástí i závěrečného koncertu ZUŠ Biskupská, jež se tradičně odehrává v prestižních prostorách sálu Bohuslava Martinů na pražské HAMU. Před koncertem big bandu odehrají svá individuální i skupinová čísla žáci a studenti ZUŠ Biskupská.
+
+                Vstupné je zdarma.",
             ],
             (object) [
                 "id" => 11,
