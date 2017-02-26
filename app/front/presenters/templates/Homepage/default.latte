@@ -49,13 +49,34 @@
 							<h2>{_front.presenters.homepage.default.future-concerts}</h2>
 							{if count($concerts)}
 							<ul class="list-group">
-								<li class="list-group-item" n:foreach="$concerts as $id => $concert">
+								<li class="list-group-item" n:foreach="$concerts as $id => $concert" itemscope itemtype="http://schema.org/MusicEvent">
+									<meta itemprop="startDate" content="{$concert->date|date: 'Y-m-dTH:i:sP'}" />
 									<span class="badge pull-right">{$concert->date|timeLeft}</span>
 									<a 	href="{link :Front:Concert:detail $concert -> id}" 
 										title="{$concert->name}">
-										<h5>{$concert->name}</h5>
+										<h5 itemprop="name">{$concert->name}</h5>
 									</a>
 									<small>{$concert->date|weekday}, {$concert->date|date: 'd. m. H:i'}</small>
+					                <meta itemprop="url" content="{link //:Front:Concert:detail $concert->id}">
+					                <div itemprop="location" itemscope="" itemtype="http://schema.org/MusicVenue">
+					                    <meta itemprop="name" n:if="isset($concert->location_text)" content="{$concert->location_text}">
+					                    <meta itemprop="address" n:if="isset($concert->location_text)" content="{$concert->location_text}">
+					                </div>
+							        {ifset $concert->price}
+							            <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+							                <link itemprop="availability" href="http://schema.org/{if isset($concert->price) && $concert->price >= 0}InStock{else}SoldOut{/if}" />
+							                <meta itemprop="price" content="{$concert->price}"/>
+							                <meta itemprop="priceCurrency" content="CZK" />
+							                <link itemprop="url" href="{link //:Front:Concert:detail $concert->id}" />
+							            </div>
+							        {else}
+							            <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+							                <link itemprop="availability" href="http://schema.org/InStock" />
+							                <meta itemprop="price" content="0"/>
+							                <meta itemprop="priceCurrency" content="CZK" />
+							                <link itemprop="url" href="{link //:Front:Concert:detail $concert->id}" />
+							            </div>
+							        {/ifset}
 								</li>
 							</ul>
 							{else}
