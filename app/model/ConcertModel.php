@@ -26,7 +26,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "lattitude" => 50.10402,
                 "longitude" => 14.38807,
                 "date" => DateTime::from( "2017-03-08 18:00:00" ),
-                "name" => "Reunion No.1 - Párty FSv - s Big Band Biskupská",
+                "name" => "Reunion No.1 - Párty FSv - host Big Band Biskupská",
                 "location_text" => "ČVUT Fakulta stavební, Thákurova 7, 166 29 Praha",
                 "photo_id" => "6390724361930688946",
                 "album_id" => self::ALBUM_ID,
