@@ -5,3 +5,7 @@ www/generated
 composer.lock
 /nbproject/private/
 /nbproject/
+
+Repertoar_BBB.csv
+extract_repertoar.php
+polls/*
