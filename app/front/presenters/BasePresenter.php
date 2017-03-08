@@ -7,6 +7,7 @@ use Nette;
 use Nette\Application\ForbiddenRequestException;
 use Nette\Utils\DateTime;
 use Texy;
+use Texy\Modules\HeadingModule;
 use Tracy;
 use Tulinkry\Application\UI\Presenter;
 use Tulinkry\Http\Browser;
@@ -162,8 +163,24 @@ class BasePresenter extends Presenter
 
         $texy = new Texy\Texy();
         // ...a jeho konfigurace
+        $texy->addHandler('script', function ($invocation, $cmd, $args, $raw) {
+            switch ($cmd) {
+            case 'heading':
+                if(is_int($args[0]) && $args[0] >= 1 && $args[0] <= 7) {
+                    $invocation->getTexy()->headingModule->top = (int) $args[0];
+                } else if ($args[0] === 'fixed') {
+                    $invocation->getTexy()->headingModule->balancing = HeadingModule::FIXED;
+                } else if ($args[0] === 'dynamic') {
+                    $invocation->getTexy()->headingModule->balancing = HeadingModule::DYNAMIC;
+                }
+                return '';
+            default: // neumime zpracovat, zavolame dalsi handler v rade
+                return $invocation->proceed();
+            }
+        });
+
         //$template->registerFilter(new Nette\Templates\LatteFilter);
-        $template -> registerHelper( 'texy', array ( $texy, 'process' ) );
+        $template->registerHelper( 'texy', array ( $texy, 'process' ) );
 
 
         return $template;
