@@ -1,12 +1,14 @@
-{block title}Kontakt{/block}
+{block title}
+{_front.presenters.contact.default.title}
+{/block}
 
 {block heading}
-<h1 id="kontakt" class="link-target">Kontakt</h1>
+<h1 id="kontakt" class="link-target">{_front.presenters.contact.default.name}</h1>
 {/block}
 
 {block mininav}
 <li>
-    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt">{_front.presenters.contact.default.name}</a>
 </li>
 {/block}
 
@@ -37,9 +39,9 @@
     <!-- TODO: Facebook -->
 
     <dl class="conductor">
-        <dt><span class="name">Dirigent</span></dt>
+        <dt><span class="name">{_front.presenters.contact.default.conductor}</span></dt>
         <dd>Milan Tolkner</dd>
-        <dt>Email</dt>
+        <dt>{_front.presenters.contact.default.email}</dt>
         <dd><a href="mailto:bigbandbiskupska@gmail.com" class="url">bigbandbiskupska@gmail.com</a></dd>
     </dl>
 
@@ -74,15 +76,15 @@
     <h2>ZUŠ Biskupská</h2>
 
     <dl>
-        <dt class="director">Ředitel</dt>
+        <dt class="director">{_front.presenters.contact.default.headmaster}</dt>
         <dd>Aleš Chalupský</dd>
-        <dt>Adresa</dt>
+        <dt>{_front.presenters.contact.default.address}</dt>
         <dd class="address">Biskupská 12, Praha 1</dd>
-        <dt>Telefon</dt>
+        <dt>{_front.presenters.contact.default.phone}</dt>
         <dd class="phone">+420 222 319 507</dd>
-        <dt>Email</dt>
+        <dt>{_front.presenters.contact.default.email}</dt>
         <dd><a href="mailto:info@zus-biskupska.cz" class="email">info@zus-biskupska.cz</a></dd>
-        <dt>Stránky</dt>
+        <dt>{_front.presenters.contact.default.website}</dt>
         <dd><a href="http://www.zus-biskupska.cz" class="url">http://www.zus-biskupska.cz</a></dd>
     </dl>
 

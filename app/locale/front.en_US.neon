@@ -75,6 +75,14 @@ presenters:
 				author: author
 	contact:
 		default:
+			title: "Contact"
+			name: "Contact"
+			conductor: "Conductor"
+			headmaster: "Headmaster"
+			address: "Address"
+			phone: "Phone"
+			email: "Email address"
+			website: "Website"
 			hash:
 				contact: contact
 	concert:
