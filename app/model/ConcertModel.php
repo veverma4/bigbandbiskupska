@@ -30,10 +30,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 "location_text" => "ČVUT Fakulta stavební, Thákurova 7, 166 29 Praha",
                 "photo_id" => "6390724361930688946",
                 "album_id" => self::ALBUM_ID,
-                "description" => "REUNION - Rozlučka s diplomanty je první párty fakulty stavební, která, při příležitosti výročí 25 let oboru A+S, pojí všechny studenty spjaté se současným ročníkem diplomantů oboru A+S. Je to možnost setkat se se spolužáky z prváku, kteří se nakonec rozhodli studovat jinde či s těmi, kteří už odevzdali diplomku dříve nebo pro ty, kteří mají prostě jen rádi diplomanty nebo večírky.
-/---html
-<h3>Program</h3>
-\---
+                "description" => "{{heading: fixed}}**REUNION** - Rozlučka s diplomanty je první párty fakulty stavební, která, při příležitosti výročí 25 let oboru A+S, pojí všechny studenty spjaté se současným ročníkem diplomantů oboru A+S. Je to možnost setkat se se spolužáky z prváku, kteří se nakonec rozhodli studovat jinde či s těmi, kteří už odevzdali diplomku dříve nebo pro ty, kteří mají prostě jen rádi diplomanty nebo večírky.
+###### Program
+
 - 17:30 - Zahájení
 - 18:00 - Big Band Biskupská
 - 19:30 - Lekce tancování swingu
@@ -45,20 +44,24 @@ nebo tady: https://www.facebook.com/bigbandbiskupska/?fref=ts
 Kdo by si nebyl jistý svými tanečními kreacemi, může pochytit základy swingu, charlestonu anebo lindy hopu od sympatických tanečních koučů - Anastázie Chalupové a Kryštofa Peřestého.
 
 Pak už nebude stát nic v cestě užívání si rytmu electro swingu až po dosažení absolutní nirvany.
-/---html
-<h3>Občerstvení</h3>
-\---
+
+###### Občerstvení
+
 Pivo bude k dostání na \"Chalupa baru\", další nápoje na RedBull baru.
-/---html
-<h3>Místo konání</h3>
-\---
+
+###### Místo konání
+
 ČVUT Fakulta stavební - ateliér D
-/---html
-<h3>Jak se k nám dostanete</h3>
-\---
+
+###### Jak se k nám dostanete
+
 Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavním vchodem Fakulty stavební, za turnikety vlevo za cca 5 schůdky schodištěm nahoru do druhého patra, spojovacím tunelem po pravé straně projdete do budovy. Sestoupením na úroveň 1NP se ocitnete na místě.
+###### VSTUP ZDARMA
+
 /---html
-<h3>VSTUP ZDARMA</h3>
+<div class=\"embed-responsive embed-responsive-16by9 img-rounded\">
+    <iframe class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/Vet6AHmq3_s\" alt=\"Aretha Franklin - Think\" frameborder=\"0\" allowfullscreen></iframe>
+</div>
 \---",
             ],
             (object) [
