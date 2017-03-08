@@ -11,9 +11,9 @@ class SongModel extends BaseModel
     private $songs;
 
     public function __construct () {
-        $this -> songs = array (
+        $this->songs = array (
             (object) [
-                "name" => "S' Wonderful",
+                "name" => "'S Wonderful",
                 "interpreter" => "George Gershwin",
                 "visible" => true,
                 "link" => "https://www.youtube.com/watch?v=EDxrKlQPZ2M",
@@ -34,7 +34,7 @@ class SongModel extends BaseModel
                 "tags" => [ ],
             ],
             (object) [
-                "name" => "Hello dolly",
+                "name" => "Hello Dolly",
                 "interpreter" => "Jerry Herman",
                 "visible" => true,
                 "link" => "https://www.youtube.com/watch?v=6Tnfi49zJ_k",
@@ -426,7 +426,7 @@ class SongModel extends BaseModel
                 "tags" => [ ],
             ],
             (object) [
-                "name" => "Slunečníce",
+                "name" => "Slunečnice",
                 "interpreter" => "Eman Nováček",
                 "visible" => true,
                 "link" => "https://www.youtube.com/watch?v=G6JQhz_deWU",
@@ -608,7 +608,7 @@ class SongModel extends BaseModel
                 "tags" => [ ],
             ],
             (object) [
-                "name" => "Bei mir bist du schön",
+                "name" => "Bei Mir Bist Du Schön",
                 "interpreter" => "Sholom Sekunda",
                 "visible" => true,
                 "link" => "https://www.youtube.com/watch?v=gQHXR8h4woQ",
@@ -769,7 +769,7 @@ class SongModel extends BaseModel
                 "tags" => [ ],
             ],
             (object) [
-                "name" => "Švihák Lázeňský",
+                "name" => "Švihák lázeňský",
                 "interpreter" => "Václav Zahradník",
                 "visible" => true,
                 "link" => "https://www.youtube.com/watch?v=RcIe26APRRQ",
@@ -810,22 +810,337 @@ class SongModel extends BaseModel
                 "link" => "https://www.youtube.com/watch?v=8bKr_XE0MsA",
                 "tags" => [ ],
             ],
+
+
+            // new added 2017-03-08
+            (object) [
+                "name" => "20th Century Fox Fanfare",
+                "interpreter" => "Alfred Newman",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "One O'Clock Jump",
+                "interpreter" => "Count Basie",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Chattanooga Choo Choo",
+                "interpreter" => "Harry Warren",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Blonďák s červenou bugatkou",
+                "interpreter" => "Ch.Downden",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "The Pink Panther",
+                "interpreter" => "Henry Mancini",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "The Jazz Police",
+                "interpreter" => "Gordon Goodwin",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Píseň osamělého pastevce",
+                "interpreter" => "Georgie Zamphire",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "El Gato Gordo",
+                "interpreter" => "Roy Phillippe",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "This Will Be",
+                "interpreter" => "Chuck Jackson",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Život je jen náhoda",
+                "interpreter" => "Jaroslav Ježek",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Směs vánočních písní",
+                "interpreter" => "Karel Šperk",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Mission Impossible Theme",
+                "interpreter" => "Lalo Schifrin",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Když se načančám",
+                "interpreter" => "Jiří Zmožek",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Cabaret",
+                "interpreter" => "John Kander",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Hey, Good Lookin'",
+                "interpreter" => "Hank Williams",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Falling In Love With Love",
+                "interpreter" => "Richard Rodgers",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Jingle Bells GVB",
+                "interpreter" => "",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Pirates Of The Caribben",
+                "interpreter" => "Klaus Badelt",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Mistletoe and wine",
+                "interpreter" => "Keite Strackan",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Babičko nauč mě charleston",
+                "interpreter" => "Ludvík Podéšť",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Gonna Fly Now",
+                "interpreter" => "Bill Conti",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Souvenir",
+                "interpreter" => "C. Coben",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Putin On The Ritz",
+                "interpreter" => "Irving Berlin",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Breaking Up Is Hard To Do",
+                "interpreter" => "Neil Sedaka",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Jada",
+                "interpreter" => "Boby Carleton",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Can't Help Falling In Love With You",
+                "interpreter" => "Hugo Peretti",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Směs evergreenů",
+                "interpreter" => "Koudelka",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Think",
+                "interpreter" => "T. White",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Trumpet Blues",
+                "interpreter" => "Harry James",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Dělání",
+                "interpreter" => "Jaroslav Uhlíř",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "S láskou má svět naději",
+                "interpreter" => "Karel Svoboda",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Something stupid",
+                "interpreter" => "Frank Sinatra",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Pretty Woman",
+                "interpreter" => "Roy Orbison",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Mackie Messer",
+                "interpreter" => "Kurt Weill",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Amoráda",
+                "interpreter" => "Waldir de Azevedo",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Tico Tico",
+                "interpreter" => "Z. Abreu",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Na sedm strun budu hrát",
+                "interpreter" => "Bob Crewe",
+                "visible" => false,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Filmové melodie",
+                "interpreter" => "Karel Svoboda",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Swingin On The Moon",
+                "interpreter" => "Melvin H. Tormé",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Směs pomáda",
+                "interpreter" => "",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Dívka v modrém",
+                "interpreter" => "S.Eman Nováček",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Swing čardáš",
+                "interpreter" => "Ferdinand Havlík",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Bugatti step",
+                "interpreter" => "Jaroslav Ježek",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
+            (object) [
+                "name" => "Take The A Train",
+                "interpreter" => "B.Strayhorn",
+                "visible" => true,
+                "link" => null,
+                "tags" => [  ],
+            ],
         );
     }
 
     public function all ( $order = [ ] ) {
-        uasort( $this -> songs, function($a, $b) {
+        uasort( $this->songs, function($a, $b) {
             return Strings::toAscii( $a -> name ) > Strings::toAscii( $b -> name );
         } );
-        return $this -> songs;
+        return array_filter($this->songs, function($song) {
+            return $song->visible;
+        });
     }
 
     public function by ( $by = array (), $order = array () ) {
         $order = array_keys( $order )[ 0 ];
-        uasort( $this -> songs, function($a, $b) use ($order) {
+        uasort( $this->songs, function($a, $b) use ($order) {
             return Strings::toAscii( $a -> $order ) > Strings::toAscii( $b -> $order );
         } );
-        return $this -> songs;
+        return array_filter($this->songs, function($song) {
+            return $song->visible;
+        });
     }
 
 }
