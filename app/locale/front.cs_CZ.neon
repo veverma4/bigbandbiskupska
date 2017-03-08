@@ -76,6 +76,14 @@ presenters:
 				author: author
 	contact:
 		default:
+			title: "Kontakt"
+			name: "Kontakt"
+			conductor: "Dirigent"
+			headmaster: "Ředitel"
+			address: "Adresa"
+			phone: "Telefon"
+			email: "Email"
+			website: "Stránky"
 			hash:
 				contact: kontakt
 	concert:
