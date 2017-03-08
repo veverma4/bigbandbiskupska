@@ -21,6 +21,15 @@ $(window).load(function() {
 })
 
 $(function() {
+	// support $this->redirect()
+	$.nette.ext('paginator', {
+		success: function (x, y, z, settings) {
+			if(settings.url) {
+				window.history.pushState({}, "", settings.url)
+			}
+		}
+	});
+
 	$.nette.init();
 
 	var userId = "bigbandbiskupska"
@@ -36,6 +45,9 @@ $(function() {
 	// #target handling
 
 	$("a[href^='#'], map area").click(function(e) {
+		if($(this.hash).length === 0) // it does not exist
+			return true
+
 		e.preventDefault()
 
 		var removeHash = function() {
@@ -255,5 +267,4 @@ $(function() {
 		}
 
 	}
-})					
-;
+});
