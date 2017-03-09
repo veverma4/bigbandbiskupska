@@ -71,7 +71,7 @@ Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavn�
                 "date" => DateTime::from( "2017-06-29 18:00:00" ),
                 "name" => "Swing pro Zbraslav",
                 "location_text" => "Bowling Zbraslav U Stromečku, Elišky Přemyslovny 433, 15600 Zbraslav",
-                "photo_id" => "6297830529784674802",
+                "photo_id" => "6395599560115818498",
                 "album_id" => self::ALBUM_ID,
                 "description" => "Vrchol letní sezony Big Bandu Biskupská přijde opět na konci června v zbraslavském Bowlingu U stromečku. Na venkovním pódiu zahraje Big Band Biskupská to nejlepší ze sezony a přidá nejoblíbenější sklady z let minulých. Na programu tedy budou hity Nikki Yanofski, Michaela Bublého, Adéle, Big Phat Bandu či o něco starší kousky od Arethy Franklin nebo Elvise Presleyho.
 
