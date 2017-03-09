@@ -836,7 +836,7 @@ class SongModel extends BaseModel
             ],
             (object) [
                 "name" => "Blonďák s červenou bugatkou",
-                "interpreter" => "Ch.Downden",
+                "interpreter" => "Ch. Downden",
                 "visible" => true,
                 "link" => null,
                 "tags" => [  ],
@@ -1095,7 +1095,7 @@ class SongModel extends BaseModel
             ],
             (object) [
                 "name" => "Dívka v modrém",
-                "interpreter" => "S.Eman Nováček",
+                "interpreter" => "S. Eman Nováček",
                 "visible" => true,
                 "link" => null,
                 "tags" => [  ],
@@ -1116,7 +1116,7 @@ class SongModel extends BaseModel
             ],
             (object) [
                 "name" => "Take The A Train",
-                "interpreter" => "B.Strayhorn",
+                "interpreter" => "B. Strayhorn",
                 "visible" => true,
                 "link" => null,
                 "tags" => [  ],
