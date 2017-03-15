@@ -21,14 +21,22 @@ $(window).load(function() {
 })
 
 $(function() {
-	// support $this->redirect()
-	$.nette.ext('paginator', {
-		success: function (x, y, z, settings) {
-			if(settings.url) {
-				window.history.pushState({}, "", settings.url)
+	if(jQuery.nette && window.history && window.history.pushState) {
+		jQuery.nette.ext('paginator', {
+			success: function (x, y, z, settings) {
+				if(settings &&
+				   settings.url &&
+				   settings.url.startsWith(window.location.protocol + '//' + window.location.hostname) && // local
+				   settings.nette &&
+				   settings.nette.e &&
+				   settings.nette.el &&
+				   settings.nette.e.type === 'click' && // click event
+				   settings.nette.el.is('a.ajax')) { // preferable on an anchor
+						window.history.pushState({}, "", settings.url)
+				}
 			}
-		}
-	});
+		});
+	}
 
 	$.nette.init();
 
@@ -253,7 +261,7 @@ $(function() {
 
 		for(var key in albums)
 		{
-			$ .ajax({
+			$.ajax({
 				url: 'https://picasaweb.google.com/data/feed/api/user/' + userId + '/albumid/' + key + '?alt=json&authkey=' + authKey + '&imgmax=' + imageSize + 'u&thumbsize=720',
 				timeout: 5000,
 				jsonpCallback: 'loadPhotos',
