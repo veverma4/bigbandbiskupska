@@ -17,11 +17,12 @@ date_default_timezone_set('Europe/Prague');
 
 @mkdir(__DIR__."/temp");
 Tester\Helpers::purge(TMP_DIR);
-
+Tester\Helpers::purge(TMP_DIR . '/log');
 
 $configurator = new Nette\Configurator;
 
 $configurator->setDebugMode(FALSE);
+$configurator->enableDebugger(TMP_DIR . '/log');
 $configurator->setTempDirectory(TMP_DIR);
 
 $configurator->createRobotLoader()

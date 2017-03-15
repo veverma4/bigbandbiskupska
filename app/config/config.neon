@@ -32,6 +32,7 @@ common:
         members: App\Model\MemberModel()
         songs: App\Model\SongModel()
         videos: App\Model\VideoModel()
+        - Tulinkry\Poll\Services\NeonPollProvider(%appDir%/../polls/polls.neon)
 
     extensions:
         translation: Kdyby\Translation\DI\TranslationExtension
