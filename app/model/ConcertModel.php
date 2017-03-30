@@ -105,14 +105,18 @@ Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavn�
                 "id" => 11,
                 "lattitude" => 50.0907589,
                 "longitude" => 14.4155197,
-                "date" => DateTime::from( "2017-04-11 17:00:00" ),
-                "name" => "Koncert se švýcarským big bandem",
+                "date" => DateTime::from( "2017-04-11 18:30:00" ),
+                "name" => "Společný koncert ZUŠ Biskupská, host MusiCool Big Band Basilej",
                 "location_text" => "Pražská konzervatoř, Na rejdišti 77/1, 110 00 Praha, Staré Město, Praha",
                 "photo_id" => "6388966290308299618",
                 "album_id" => self::ALBUM_ID,
-                "description" => "Sál Pražské konzervatoře v Praze (vchod do koncertního sálu je z Dvořákova nábřeží) v dubnu rozezní hned několik hudebních těles naráz v jeden večer. Krom Big Bandu Biskupská zahraje švýcarský big band z Basileje, se kterým BBB hrál již před dvěma lety v jejich domovském městě. Na programu bude i společné vystoupení obou těles.
+                "description" => "V dubnu pro vás ZUŠ Biskupská připravila nevšední koncert, který má uvést na pražské pódium naše hostitele z Basileje - MusiCool Big Band Basel, se kterými se orchestr potkal v roce 2014 na zájezdu do Švýcarska a Francie.
 
-                Vstupné je zdarma, čekáme vás v 17 hodin!",
+Dalšími vystupujícími na společném koncertu budou Komorní soubor Giocoso, Komorní orchestr ZUŠ Biskupská a Pěvecký sbor.
+
+Pestrý a vícežánrový koncert uzavře svým blokem také vystoupení Big Bandu Biskupská, který svoji část natřískal takovými fláky jako je Jazz Police, Take an A Train nebo Trumpet blues.
+
+Těšíme se na viděnou!",
             ],
             (object) [
                 "id" => 10,
