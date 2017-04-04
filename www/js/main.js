@@ -45,14 +45,14 @@ $(function() {
 	var imageSize = 1080
 	var thumbnailSize = 100
 
-	$("#mini-nav-menu ul li a[href^='#']").click(function(e) {
+	$("#mini-nav-menu ul li a[href^='#']").filter(':not(.lang)').click(function(e) {
 		if($(".navbar-toggle:visible").length)
 			$("#mini-nav-menu").collapse("toggle");
 	});
 
 	// #target handling
 
-	$("a[href^='#'], map area").click(function(e) {
+	$("a[href^='#'], map area").filter(':not(.lang)').click(function(e) {
 		if($(this.hash).length === 0) // it does not exist
 			return true
 
