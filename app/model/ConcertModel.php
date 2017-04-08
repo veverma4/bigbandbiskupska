@@ -22,6 +22,17 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     public function __construct () {
         $this -> concerts = array (
             (object) [
+                "id" => 16,
+                "lattitude" => 49.4707622,
+                "longitude" => 15.0016789,
+                "date" => DateTime::from( "2017-05-20 19:00:00" ),
+                "name" => "Charitativní koncert pro dětský domov - Big Band Biskupská",
+                "location_text" => "Pacov, Česká Republika",
+                "photo_id" => "6406562687644697234",
+                "album_id" => self::ALBUM_ID,
+                "description" => "",
+            ],
+            (object) [
                 "id" => 15,
                 "lattitude" => 50.10402,
                 "longitude" => 14.38807,
@@ -69,9 +80,9 @@ Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavn�
                 "lattitude" => 49.9733874,
                 "longitude" => 14.3899573,
                 "date" => DateTime::from( "2017-06-29 18:00:00" ),
-                "name" => "Swing pro Zbraslav",
+                "name" => "Swing pro Zbraslav - Big Band Biskupská",
                 "location_text" => "Bowling Zbraslav U Stromečku, Elišky Přemyslovny 433, 15600 Zbraslav",
-                "photo_id" => "6395599560115818498",
+                "photo_id" => "6406745087755768738",
                 "album_id" => self::ALBUM_ID,
                 "description" => "Vrchol letní sezony Big Bandu Biskupská přijde opět na konci června v zbraslavském Bowlingu U stromečku. Na venkovním pódiu zahraje Big Band Biskupská to nejlepší ze sezony a přidá nejoblíbenější sklady z let minulých. Na programu tedy budou hity Nikki Yanofski, Michaela Bublého, Adéle, Big Phat Bandu či o něco starší kousky od Arethy Franklin nebo Elvise Presleyho.
 
@@ -79,14 +90,16 @@ Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavn�
             ],
             (object) [
                 "id" => 13,
-                "lattitude" => 50.0875476,
-                "longitude" => 14.3999416,
-                "date" => DateTime::from( "2017-06-16 12:00:00" ),
-                "name" => "Festival v Děčíně",
-                "location_text" => "Děčín",
-                "photo_id" => "6388966290308299618",
+                "lattitude" => 50.0830039,
+                "longitude" => 14.4098664,
+                "date" => DateTime::from( "2017-06-26 16:00:00" ),
+                "name" => "Koncert na Střeleckém ostrově - Big Band Biskupská",
+                "location_text" => "Střelecký ostrov",
+                "photo_id" => "6406570081217017426",
                 "album_id" => self::ALBUM_ID,
-                "description" => "",
+                "description" => "Za nádherného počasi rozhýbáme i Vltavu u Střeleckého ostrova. Do prázdnin už moc nechybí, tak se nezapomeňte zastavit a poslechnout si naposledy v této sezóně náš pestrý repertoár.
+
+Těšíme se na vás!",
             ],
             (object) [
                 "id" => 12,
@@ -106,15 +119,24 @@ Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavn�
                 "lattitude" => 50.0907589,
                 "longitude" => 14.4155197,
                 "date" => DateTime::from( "2017-04-11 18:30:00" ),
-                "name" => "Společný koncert ZUŠ Biskupská, host MusiCool Big Band Basilej",
+                "name" => "Společný koncert ZUŠ Biskupská a host MusiCool Big Band Basilej",
                 "location_text" => "Pražská konzervatoř, Na rejdišti 77/1, 110 00 Praha, Staré Město, Praha",
                 "photo_id" => "6388966290308299618",
                 "album_id" => self::ALBUM_ID,
-                "description" => "V dubnu pro vás ZUŠ Biskupská připravila nevšední koncert, který má uvést na pražské pódium naše hostitele z Basileje - MusiCool Big Band Basel, se kterými se orchestr potkal v roce 2014 na zájezdu do Švýcarska a Francie.
+                "description" => "V dubnu pro vás ZUŠ Biskupská připravila nevšední koncert, který má uvést na pražské pódium naše hostitele z Basileje - MusiCool Big Band Basel, se kterými se orchestr potkal v roce 2014 na zájezdu do Švýcarska a Francie. Big Band se představí povedenými aranžemi známých písní jak z jazzového okruhu, tak z řad populární hudby. Těšit se můžete například na bondovku Goldfinger nebo na Let Me Entertain You od R. Williamse.
 
 Dalšími vystupujícími na společném koncertu budou Komorní soubor Giocoso, Komorní orchestr ZUŠ Biskupská a Pěvecký sbor.
 
-Pestrý a vícežánrový koncert uzavře svým blokem také vystoupení Big Bandu Biskupská, který svoji část natřískal takovými fláky jako je Jazz Police, Take an A Train nebo Trumpet blues.
+/---html
+<div class=\"text-center\">
+\---
+[* https://lh3.googleusercontent.com/-Rlj5Y47f-to/WOiu0qWjqRI/AAAAAAAACeg/enaVAGjuMggeXfhLzXwfpMtM3apRu7nRQCHM/s720/1465583726-IMG_1998.JPG .(Komorní orchestr ZUŠ Biskupská)[img img-rounded img-resp img-responsive] *] *** Komorní orchestr ZUŠ Biskupská
+/---html
+</div>
+\---
+Pestrý a vícežánrový koncert uzavře svým blokem také vystoupení Big Bandu Biskupská, který svoji část natřískal takovými fláky jako je Jazz Police, Take The \"A\" Train nebo Trumpet blues.
+
+**Vstup do sálu je z Dvořákova nábřeží průchodem označeným tučným písmem \"Divadlo Na Rejdišti\".**
 
 Těšíme se na viděnou!",
             ],
@@ -123,17 +145,32 @@ Těšíme se na viděnou!",
                 "lattitude" => 49.2548602,
                 "longitude" => 15.1875094,
                 "date" => DateTime::from( "2017-05-19 19:00:00" ),
-                "name" => "Jazz na hradě v Žirovnici",
+                "name" => "Jazz na hradě v Žirovnici - Big Band Biskupská a Arietta",
                 "location_text" => "Tyršova 456, 394 68 Žirovnice, Česká Republika",
-                "photo_id" => "6297830530208318354",
+                "photo_id" => "6406574402663490770",
                 "album_id" => self::ALBUM_ID,
-                "description" => "Již pošesté za sebou se Big Band Biskupská zúčastní festivalu Jazz Na Hradě v Žirovnici nedaleko Pelhřimova. Parkety místní sokolovny, jež hostily i Karla Gotta, obsadí více než 30členný orchestr big bandu.
+                "description" => "Již pošesté za sebou se Big Band Biskupská zúčastní koncertu Jazz Na Hradě v Žirovnici nedaleko Pelhřimova. Parkety místní sokolovny, jež hostily i Karla Gotta, obsadí více než 30členný orchestr big bandu spolu se sborem Arietta.
 
-Exkluzivní hostem koncertu bude sólista opery Národního divadla František Zahradníček, který zazpívá klasické „hálovky“, ale i moderní hity například z pera Michaela Bublého.
+Exkluzivní hostem koncertu bude sólista opery Národního divadla František Zahradníček, který zazpívá klasické „hálovky“, ale i moderní hity například z pera Michaela Bublého.
 
-I tento rok očekáváme, že sál o kapacitě přes 300 míst bude vyprodán dlouho dopředu.
+/---html
+<div class=\"text-center\">
+\---
+[* http://www.ndm.cz/userfiles/archiv_priloh/clanky/fotografie/zivotopisy/opera/zahradnicek-1479455164.jpg .(František Zahradníček)[img img-rounded img-resp img-responsive] *] *** František Zahradníček
+zdroj: http://www.ndm.cz/cz/osoba/5697-zahradnicek-frantisek.html
+/---html
+</div>
+\---
 
-Večerem se ponese hlas stálé sólistka big bandu Kateřiny Tošnarové.",
+Večerem se ponese také hlas stálé sólistky big bandu Kateřiny Tošnarové.
+
+Big Band Biskupská koncertuje již od roku 2010 a za léta své činnosti má za sebou vystoupení s známými českými zpěváky - Ondřej Ruml, Tomáš Savka, Michaela Nosková, František Zahradníček a vystoupení na prestižních akcích - Ples Prahy 1 nebo Mezinárodní studentský ples, obojí v komplexu na Žofíně v Praze.
+
+Pěvecký sbor Arietta, vedený zkušenou sbormistryní Ludmilou Zadražilovou, patří k ZUŠ v Žirovnici a pracuje s dětmi ze širokého okolí. Tento sbor, kromě akcí ve svém domovském kraji, vystoupil i například v sále České národní banky, v Úněticích u Prahy nebo na hradě Karlštejn.
+
+Kombinaci obou těles zařídilo dlouholeté přátelství kapelníka big bandu Milana Tolknera, který z blízkosti Žirovnice pochází, a ředitele žirovnické ZUŠ Zdeňka Zadražila, který pochází také pochopitelně z blízkosti Žirovnice.
+
+Těšíme se na vás. V Žirovnici to žije!",
             ],
             (object) [
                 "id" => 9,
