@@ -99,7 +99,7 @@
         }
         </script>
 
-        <script n:if="$APIkey" src="https://maps.googleapis.com/maps/api/js?callback=map&amp;key={$APIkey}"></script>
+        <script n:if="$APIkey" src="https://maps.googleapis.com/maps/api/js?callback=map&amp;key={$APIkey}&amp;language=cs"></script>
 
         <meta itemprop="url" content="{link //:Front:Concert:detail $concert->id}">
         {ifset $concert->price}
