@@ -3,42 +3,48 @@
 namespace App\Model;
 
 use Tulinkry\Poll\Services\NeonPollProvider;
+use Tulinkry\Services\ParameterService;
+use Nette\DI\Container;
 
 class UpdateModel
 {
     /**
-     * @var SongModel
+     * @var ParameterService
      */
-    private $songs;
+    private $parameters;
     /**
      * @var NeonPollProvider
      */
     private $polls;
 
-    public function __construct (SongModel $songs, NeonPollProvider $polls) {
-        $this->songs = $songs;
+    public function __construct (ParameterService $parameters, NeonPollProvider $polls) {
+        $this->parameters = $parameters;
         $this->polls = $polls;
     }
 
     public function __invoke () {
         $poll = null;
         foreach($this->polls->all() as $p) {
-            if($p->question->text === 'Anketa o divácky nejoblíbenější píseň') {
+            if($p->question->text === 'Anketa o divácky aktuálně nejoblíbenější píseň') {
                 $poll = $p;
             }
         }
 
         if(!$poll) {
-            $poll = $this->polls->create('Anketa o divácky nejoblíbenější píseň');
+            $poll = $this->polls->create('Anketa o divácky aktuálně nejoblíbenější píseň');
         }
 
-        $songs = $this->songs->by( [ ], [ "name" => "ASC" ] );
+        if(!isset($this->parameters->params['poll'])) {
+            return;
+        }
+
+        $songs = $this->parameters->params['poll'];
         $answers = $this->polls->getAnswers($poll->id);
         if(count($answers) !== count($songs)) {
             foreach($songs as $song) {
                 $skip = false;
                 foreach($answers as $answer) {
-                    if($answer->getText() === $song->name) {
+                    if($answer->getText() === $song) {
                         $skip = true;
                         break;
                     }
@@ -46,7 +52,7 @@ class UpdateModel
                 if($skip) {
                     continue;
                 }
-                $this->polls->addAnswer($poll->id, $song->name);
+                $this->polls->addAnswer($poll->id, $song);
             }
         }
     }
