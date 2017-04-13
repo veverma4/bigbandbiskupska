@@ -468,13 +468,6 @@ class SongModel extends BaseModel
                 "tags" => [ ],
             ],
             (object) [
-                "name" => "Čardáš swing",
-                "interpreter" => "Ferdinand Havlík",
-                "visible" => true,
-                "link" => "https://www.youtube.com/watch?v=7motL4NlTZ8",
-                "tags" => [ ],
-            ],
-            (object) [
                 "name" => "New York",
                 "interpreter" => "John Kander",
                 "visible" => true,
