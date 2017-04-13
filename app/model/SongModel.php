@@ -964,7 +964,7 @@ class SongModel extends BaseModel
                 "name" => "Putin On The Ritz",
                 "interpreter" => "Irving Berlin",
                 "visible" => true,
-                "link" => "https://www.youtube.com/watch?v=GKPMk5_gStk",
+                "link" => "https://www.youtube.com/watch?v=jLMTMK-mp7w",
                 "tags" => [  ],
             ],
             (object) [
