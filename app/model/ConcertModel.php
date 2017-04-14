@@ -22,6 +22,63 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     public function __construct () {
         $this -> concerts = array (
             (object) [
+                "id" => 18,
+                "lattitude" => 49.9780750,
+                "longitude" => 14.3922092,
+                "date" => DateTime::from( "2017-05-30 17:00:00" ),
+                "name" => "ZUŠ Open Zbraslav - Big Band Biskupská",
+                "location_text" => "Zámek Zbraslav, Praha",
+                "photo_id" => "6297830529784674802",
+                "album_id" => self::ALBUM_ID,
+                "description" => "Big Band Biskupská se letos zúčastní akce \"ZUŠ Open\" na Zbraslavi.
+ŽUŠ Open je setkání a prezentace základních uměckých škol z celé republiky, kde se představí zejména školní tělesa. Celá akce proběhne v nádherném prostoru
+Sala terrena Zbraslavského zámku, jehož dominanta je viditelná již z dálky při výjezdu z Prahy směrem na jih.
+
+
+
+/---html
+<div class=\"text-center\">
+\---
+[* http://www.zuszbraslav.cz/images/fotky/Sala_terrena.jpg .(Zbraslavský zámek)[img img-rounded img-resp img-responsive text-center] *] *** Prostory Zbraslavského zámku
+/---html
+</div>
+\---
+
+Lokalita je velmi jednodušše přístupná městkými linkami a z autobusové zastávky je to do zámku jen pár minut chůze.
+Proto věříme, že při krásném letním počasí najdete cestu na tento jedinečný zážitek.
+
+Začátek akce je plánován na 17h."
+            ],
+            (object) [
+                "id" => 17,
+                "lattitude" => 50.0685447,
+                "longitude" => 14.4065544,
+                "date" => DateTime::from( "2017-05-23 18:00:00" ),
+                "name" => "P. E. Trudeau High School Orchestra feat. Big Band Biskupská",
+                "location_text" => "Paspův sál, Smíchovský pivovar",
+                "photo_id" => "6297830529784674802",
+                "album_id" => self::ALBUM_ID,
+                "description" => "Anglický text následuje/English text follows.
+
+------
+
+Máme tu čest v Praze přivítat hudební kolegy až z dalekého zámoří, konkrétně z střední školy Pierre Elliotta Trudeaua, která se nachází v okolí kanadského Toronta.
+Více než pádesátičlenné uskupení přijede, aby vás potěšilo svými melodiemi v Paspově sále, který je součástí Smíchovského pivovaru.
+
+Neopomenutelnou součástí tohoto koncertu bude také vystoupení Big Bandu Biskupská s naší sóliskou Kateřinou Tošnarovou. Na predikce repertoáru na tento koncert je
+ještě brzy, nicméně jisté je, že největší hity letošní sezóny, jako jsou The Jazz Police nebo Trumpet Blues, určitě nezůstanou v šuplíku.
+
+Více informací dodáme v průběhu května.
+
+------
+
+We have the honour of hosting our colleagues from far across the ocean – a big band based at the Pierre Elliott Trudeau High School located near Toronto, Canada. The band will arrive with its more than 50 members to enchant us with their music in Paspa hall, Smíchov brewery. 
+
+Big Band Biskupská and our soloist Kateřina Tošnarová will also be part of this event, and even though it is too soon to predict the playlist of the concert now, it can be said for certain that the biggest hits of this season, such as The Jazz Police or Trumpet Blues, will not be left out.
+
+We are going to publish more information in May."
+            ],
+            (object) [
                 "id" => 16,
                 "lattitude" => 49.4707622,
                 "longitude" => 15.0016789,
