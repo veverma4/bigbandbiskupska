@@ -310,7 +310,12 @@ img.alignleft {
 /* ------------------ nation flag --------- */
 
 .nation_flag {
-	height: 1em;
+	height: 15px;
+	vertical-align: unset;
+}
+
+.lang-toggle {
+	max-height: 35px;
 }
 
 /* ------------------ lead ---------------- */
