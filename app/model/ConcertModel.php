@@ -206,7 +206,7 @@ Těšíme se na viděnou!",
                 "location_text" => "Tyršova 456, 394 68 Žirovnice, Česká Republika",
                 "photo_id" => "6406574402663490770",
                 "album_id" => self::ALBUM_ID,
-                "description" => "Již pošesté za sebou se Big Band Biskupská zúčastní koncertu Jazz Na Hradě v Žirovnici nedaleko Pelhřimova. Parkety místní sokolovny, jež hostily i Karla Gotta, obsadí více než 30členný orchestr big bandu spolu se sborem Arietta.
+                "description" => "Již pošesté za sebou se Big Band Biskupská zúčastní koncertu Jazz Na Hradě v Žirovnici nedaleko Pelhřimova. Parkety místní sokolovny, jež hostily i Karla Gotta, obsadí více než 30členný big band spolu se sborem Arietta.
 
 Exkluzivní hostem koncertu bude sólista opery Národního divadla František Zahradníček, který zazpívá klasické „hálovky“, ale i moderní hity například z pera Michaela Bublého.
 
