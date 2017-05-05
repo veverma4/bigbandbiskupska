@@ -62,13 +62,11 @@ Začátek akce je plánován na 17h."
 
 ------
 
-Máme tu čest v Praze přivítat hudební kolegy až z dalekého zámoří, konkrétně z střední školy Pierre Elliotta Trudeaua, která se nachází v okolí kanadského Toronta.
-Více než pádesátičlenné uskupení přijede, aby vás potěšilo svými melodiemi v Paspově sále, který je součástí Smíchovského pivovaru.
+Máme tu čest v Praze přivítat hudební kolegy až z dalekého zámoří, konkrétně ze střední školy Pierra Elliotta Trudeaua, nacházející se nedaleko kanadského Toronta. Více než pádesátičlenné uskupení přijede, aby vás potěšilo svými melodiemi v Paspově sále, který je součástí Smíchovského pivovaru.
 
-Neopomenutelnou součástí tohoto koncertu bude také vystoupení Big Bandu Biskupská s naší sóliskou Kateřinou Tošnarovou. Na predikce repertoáru na tento koncert je
-ještě brzy, nicméně jisté je, že největší hity letošní sezóny, jako jsou The Jazz Police nebo Trumpet Blues, určitě nezůstanou v šuplíku.
+Neopomenutelnou součástí tohoto koncertu bude také vystoupení Big Bandu Biskupská se sóliskou Kateřinou Tošnarovou. Na predikce repertoáru pro tento koncert je ještě brzy, nicméně je jisté, že největší hity letošní sezóny, jako jsou The Jazz Police nebo Trumpet Blues, určitě nezůstanou v šuplíku.
 
-Více informací dodáme v průběhu května.
+Podrobnější informace dodáme v průběhu května.
 
 ------
 
