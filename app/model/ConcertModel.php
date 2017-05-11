@@ -232,7 +232,7 @@ zdroj: http://www.ndm.cz/cz/osoba/5697-zahradnicek-frantisek.html
 </div>
 \---
 
-Večerem se ponese také hlas stálé sólistky big bandu Kateřiny Tošnarové.
+Večerem se ponese také hlas stálé sólistky big bandu Kateřiny Tošnarové a neochvějného talentu ze středních Čech Ester Kubátové.
 
 Big Band Biskupská koncertuje již od roku 2010 a za léta své činnosti má za sebou vystoupení s známými českými zpěváky - Ondřej Ruml, Tomáš Savka, Michaela Nosková, František Zahradníček a vystoupení na prestižních akcích - Ples Prahy 1 nebo Mezinárodní studentský ples, obojí v komplexu na Žofíně v Praze.
 
