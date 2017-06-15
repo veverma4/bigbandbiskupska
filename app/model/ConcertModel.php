@@ -147,8 +147,8 @@ Vy, co už jste déle ze školy nebo vy, co k nám jdete poprvé: Vstupte hlavn�
             ],
             (object) [
                 "id" => 14,
-                "lattitude" => 49.9733874,
-                "longitude" => 14.3899573,
+                "lattitude" => 49.973348,
+                "longitude" => 14.392128,
                 "date" => DateTime::from( "2017-06-29 18:00:00" ),
                 "name" => "Swing pro Zbraslav - Big Band Biskupská",
                 "location_text" => "Bowling Zbraslav U Stromečku, Elišky Přemyslovny 433, 15600 Zbraslav",
