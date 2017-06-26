@@ -97,7 +97,8 @@
             <div class="col-lg-10 link-target">
                 <div class="player-name">
                     <h4>
-                        <span n:if="$_member->flash" class="glyphicon glyphicon-flash"></span>
+                        <span n:if="isset($_member->extra['flash']) && $_member->extra['flash']" class="glyphicon glyphicon-flash"></span>
+                        <span n:if="isset($_member->extra['diplom']) && $_member->extra['diplom']" class="fa fa-trophy"></span>
                         {$_member->name|capitalize} <small class="player-instrument">{$_member->instrument|capitalize}</small>
                     </h4>
                 </div>
