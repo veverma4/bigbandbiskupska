@@ -22,6 +22,49 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     public function __construct () {
         $this -> concerts = array (
             (object) [
+                "id" => 21,
+                "lattitude" => 48.492639,
+                "longitude" => 13.895044,
+                "date" => DateTime::from( "2017-10-06 19:30:00" ),
+                "name" => "Koncert v Alfons Dorfner Halle - Big Band Biskupská",
+                "location_text" => "Prostor pod Petrskou věží, Praha",
+                "photo_id" => "6388966290308299618",
+                "album_id" => self::ALBUM_ID,
+                "description" => "------
+
+Big Band Biskupská vystoupí 6. 10. 2017 od 19.30 hod v Alfons Dorfner Halle poblíž rakouského Neufeldenu.
+
+------
+
+Big Band Biskupská is going to perform on 6th of October at 19:30 in Alfons Dorfner Halle near Neufelden, Austria."
+            ],
+            (object) [
+                "id" => 20,
+                "lattitude" => 50.0912747,
+                "longitude" => 14.4347625,
+                "date" => DateTime::from( "2017-09-27 17:30:00" ),
+                "name" => "Den otevřených dveří - ZUŠ Biskupská",
+                "location_text" => "ZUŠ Biskupská, Praha",
+                "photo_id" => "6464999115345049362",
+                "album_id" => self::ALBUM_ID,
+                "description" => "Srdečně Vás zveme na Den otevřených dveří při příležitosti zahájení provozu v nové učebně hry na bicí nástroje a rekonstrukce půdní vestavby školy v budově Biskupská. Dále Vás zveme na prohlídku učeben do Biskupské 12 a Na Poříčí 1.
+
+Den otevřených dveří bude v 17.30 hod. zakončen malým koncertem v podání Big bandu Biskupská za řízení Milana Tolknera.
+
+Těšíme se na setkání s Vámi."
+            ],
+            (object) [
+                "id" => 19,
+                "lattitude" => 50.0914069,
+                "longitude" => 14.4343022,
+                "date" => DateTime::from( "2017-09-23 11:00:00" ),
+                "name" => "Svatopetrského kování - Big Band Biskupská",
+                "location_text" => "Park pod Petrskou věží, Praha",
+                "photo_id" => "6464998911551433362",
+                "album_id" => self::ALBUM_ID,
+                "description" => "Big band Biskupská zahájí novou koncertní sezónu v rámci pražského setkání uměleckých kovářů a žáků odborných škol pod Petrskou věží. Začátek vystoupení byl stanoven na 11 hodin v parku pod Petrskou věží."
+            ],
+            (object) [
                 "id" => 18,
                 "lattitude" => 49.9780750,
                 "longitude" => 14.3922092,
